@@ -1,0 +1,14 @@
+Javascript fundamentals - part 1
+
+6. Section intro
+-What is Javascript?
+Javascript is a high-level, object oriented, multi-paradigm programming language
+7. Hello World!
+8. Brief introduction to javascript
+9. Linking a javascript file
+10. Values and variables
+11. Practise
+12. Data Types
+13. let, const and var
+14. Basic operators
+15. 
