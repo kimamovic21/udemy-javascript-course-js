@@ -11,4 +11,11 @@ Javascript is a high-level, object oriented, multi-paradigm programming language
 12. Data Types
 13. let, const and var
 14. Basic operators
-15. 
+15. Operator Precendence
+16. Coding Challange #1 (Body Mass Index)
+17. Strings and template literals
+18. Taking decisions: if/else statement
+19. Coding Challange #2 (Improve BMI calculator)
+20. Type Conversion and Coercion
+21. Truthy nad Falsy values
+22. Equality operators == vs ===
