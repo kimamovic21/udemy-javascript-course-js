@@ -19,3 +19,8 @@ Javascript is a high-level, object oriented, multi-paradigm programming language
 20. Type Conversion and Coercion
 21. Truthy nad Falsy values
 22. Equality operators == vs ===
+23. Boolean Logic
+24. Logical Operators
+25. Coding Challange #3
+26. The Switch Statement
+27. Statements and Expressions

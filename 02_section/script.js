@@ -408,3 +408,187 @@
 //     console.log('Why not 26?');
 // }
 
+
+
+
+
+// ******************************************************************************************************
+// 23. Boolean Logic
+// Basic Boolean Logic: The And, Or, and Not Operators
+
+
+
+
+
+// ******************************************************************************************************
+// 24. Logical Operators
+
+
+// (AND) && (true && true) 
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
+
+// console.log(hasDriversLicense && hasGoodVision); // true
+
+
+// (AND) && (true && false) 
+// const hasDriversLicense = true; // A
+// const hasGoodVision = false; // B
+
+// console.log(hasDriversLicense && hasGoodVision); // false
+
+
+//  (OR) ||
+// const hasDriversLicense = true; // A
+// const hasGoodVision = false; // B
+
+// console.log(hasDriversLicense || hasGoodVision); // true
+
+
+// (!)
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
+
+// console.log(!hasDriversLicense); // false
+// console.log(!hasGoodVision); // true
+
+// if(hasDriversLicense && hasGoodVision) {
+//     console.log('Kerim is able to drive :)');
+// } else {
+//     console.log('Someone else should drive...');
+// };
+
+// const isTired = false; // C
+
+// console.log(hasDriversLicense || hasGoodVision || isTired);
+// console.log(hasDriversLicense && hasGoodVision && isTired);
+// console.log(hasDriversLicense && hasGoodVision && !isTired);
+
+
+
+
+
+// ******************************************************************************************************
+// 25. Coding Challange #3
+
+
+// Moj nacin
+
+// const dolphinsSport1 = 100;
+// const dolphinsSport2 = 100;
+// const dolphinsSport3 = 100;
+// const dolphinsSportsAveragePoints = ((dolphinsSport1 + dolphinsSport2 + dolphinsSport3) / 3).toFixed(2);
+// console.log(dolphinsSportsAveragePoints);
+
+// const koalasSport1 = 100;
+// const koalasSport2 = 100;
+// const koalasSport3 = 100;
+// const koalasSportsAveragePoints = ((koalasSport1 + koalasSport2 + koalasSport3) / 3).toFixed(2);
+// console.log(koalasSportsAveragePoints);
+
+// if ( dolphinsSportsAveragePoints > koalasSportsAveragePoints && dolphinsSportsAveragePoints >= 100 ) {
+//     console.log(`Dolphins team wins!!!`);
+// } else if (koalasSportsAveragePoints > dolphinsSportsAveragePoints && koalasSportsAveragePoints >= 100 ) {
+//     console.log(`Koalas team wins!!!`);
+// } else if (dolphinsSportsAveragePoints === koalasSportsAveragePoints && dolphinsSportsAveragePoints >= 100 && koalasSportsAveragePoints >= 100) {
+//         console.log(`It's tied`);
+// } else {
+//     console.log(`Min 100 points to win a trophy... `)
+// } 
+
+// 1. napisati slucaj kad delfini pobjede
+// 2. napisati slucaj kad koale pobjede
+// 3. napisati rezultat kad bude izjednaceno
+// 4. napisati sta ce se desiti kad timovi budu imali manje od 100 bodova
+
+
+
+// Prvi dio
+// const scoreDolphins = ((96 + 108 + 89) / 3).toFixed(2);
+// const scoreKoalas = ((88 + 91 + 110) / 3).toFixed(2);
+// console.log(scoreDolphins, scoreKoalas);
+
+// if (scoreDolphins > scoreKoalas) {
+//     console.log(`Dolphins win the trophy !!!`);
+// } else if (scoreKoalas > scoreDolphins) {
+//     console.log(`Koalas win the trophy !!!`);
+// } else if (scoreDolphins === scoreKoalas) {
+//     console.log(`It's tied !!!`);
+// }
+
+
+
+
+// BONUS 1
+// const scoreDolphins = ((97 + 112 + 101) / 3).toFixed(2);
+// const scoreKoalas = ((109 + 95 + 123) / 3).toFixed(2);
+// console.log(scoreDolphins, scoreKoalas);
+
+// if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+//     console.log(`Dolphins win the trophy !!!`);
+// } else if (scoreKoalas > scoreDolphins && scoreKoalas >= 100) {
+//     console.log(`Koalas win the trophy !!!`);
+// } else if (scoreDolphins === scoreKoalas && scoreDolphins >= 100 & scoreKoalas >= 100) {
+//     console.log(`It's tied !!!`);
+// } else {
+//     console.log(`No one wins the trophy ! :(`);
+// };
+
+ 
+
+
+
+// ******************************************************************************************************
+// 26. The Switch Statement
+
+// const day = 'monday';
+
+// switch(day) {
+//     case 'monday':  
+//         console.log(`Plan course structure`);
+//         console.log(`Go to coding meetup`);
+//         break;
+//     case 'tuesday':
+//         console.log(`Prepare theory videos`);
+//         break;
+//     case 'wednesday': 
+//     case 'thursday':
+//         console.log(`Write code examples`);
+//         break;
+//     case 'friday':
+//         console.log(`Record videos`);
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log(`Enjoy the weekend :D`);
+//         break;
+//     default: 
+//         console.log(`Not a valid day!`);
+// };
+
+
+
+// if (day === 'monday') {
+//     console.log(`Plan course structure`);
+//     console.log(`Go to coding meetup`);
+// } else if (day === 'tuesday') {
+//     console.log(`Prepare theory videos`);
+// } else if (day === 'wednesday' || day === 'thursday') {
+//     console.log(`Write code examples`);
+// } else if (day === 'friday') {
+//     console.log(`Record videos`);
+// } else if (day === 'saturday' || day === 'sunday') {
+//     console.log(`Enjoy the weekend :D`);
+// } else {
+//     console.log(`Not a valid day`)
+// }
+
+
+
+
+
+// ******************************************************************************************************
+// 27. Statements and Expressions
+ // Expressions produce a value, and that value will be passed into the function. Statements don't produce a value, and so they can't be used as function arguments.
+
+
