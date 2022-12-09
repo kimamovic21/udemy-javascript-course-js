@@ -24,3 +24,6 @@ Javascript is a high-level, object oriented, multi-paradigm programming language
 25. Coding Challange #3
 26. The Switch Statement
 27. Statements and Expressions
+28. The Conditional (Ternary) Operator
+29. Coding Challenge #4
+30. Javascript Releases : ES5, ES6+ and ESNext

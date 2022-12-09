@@ -592,3 +592,71 @@
  // Expressions produce a value, and that value will be passed into the function. Statements don't produce a value, and so they can't be used as function arguments.
 
 
+
+
+
+// ******************************************************************************************************
+// 28. The Conditional (Ternary) Operator
+
+// const age = 26;
+// age >= 18 ? console.log(`You can drive 🚗 !`) : console.log(`You can't drive 🚫 !`);
+
+// const drive = age >= 18 ? `ternary: car 🚗` : `ternary: can't 🚫`;
+// console.log(drive);
+
+// let drive2;
+// if (age >= 18) {
+//     drive2 = `car 🚗`;
+// } else {
+//     drive2 = `can't 🚫`;
+// };
+
+// console.log(`if-else:`, drive2);
+
+// console.log(`Can I drive ? ${age >= 18 ? `Yes 🚗` : `Can't 🚫`}`);
+
+
+
+
+
+// ******************************************************************************************************
+// 29. Coding Challenge #4
+
+// Moj nacin
+// const bill = 400;
+// let tip = 20/100 * 100;
+// let totalBill = bill + tip;
+
+// console.log(`$:`, bill);
+// console.log(`$:`, tip);
+// console.log(`$:`, totalBill);
+
+// if (bill >= 50 && bill <= 300) {
+//     let tip = 15/100 * 100;
+//     let totalBill = bill + tip;
+//     console.log(totalBill);
+// } else if (bill <= 0){
+//     console.log(`Your total bill is less than 0 !!!`);
+// } else {    
+//     let totalBill = bill + tip;
+//     console.log(totalBill);
+// }
+
+
+// const bill = 300;
+// const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+// const totalValue = bill + tip;
+
+// console.log(`Bill: $`, bill);
+// console.log(`Tip: $`, tip);
+// console.log(`Boolean value:`, bill >= 50 && bill <= 300);
+// console.log(`Total value: $`, totalValue);
+// console.log(`The bill was $${bill}, the tip was $${tip} and the total value was $${totalValue}.`);
+
+
+
+
+
+// ******************************************************************************************************
+// 30. Javascript Releases : ES5, ES6+ and ESNext
+
