@@ -1,5 +1,7 @@
-Javascript fundamentals - part 1
+Section 1: Welcome, welcome, welcome !
 
+
+Section 2: Javascript fundamentals - part 1
 6. Section intro
 -What is Javascript?
 Javascript is a high-level, object oriented, multi-paradigm programming language
@@ -27,3 +29,11 @@ Javascript is a high-level, object oriented, multi-paradigm programming language
 28. The Conditional (Ternary) Operator
 29. Coding Challenge #4
 30. Javascript Releases : ES5, ES6+ and ESNext
+
+
+Section 3: Javascript fundamentals - part 2
+31. Section Intro
+32. Activating Strict Mode
+33. Functions
+34. Function Declarations vs Expressions
+
