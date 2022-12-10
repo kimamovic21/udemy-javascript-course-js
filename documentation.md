@@ -36,4 +36,8 @@ Section 3: Javascript fundamentals - part 2
 32. Activating Strict Mode
 33. Functions
 34. Function Declarations vs Expressions
+35. Arrow Functions
+36. Functions Calling Other Functions
+37. Reviewing Functions
+38. Coding Challenge #1
 
