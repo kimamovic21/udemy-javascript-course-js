@@ -40,4 +40,13 @@ Section 3: Javascript fundamentals - part 2
 36. Functions Calling Other Functions
 37. Reviewing Functions
 38. Coding Challenge #1
+39. Introduction to Arrays
+40. Basic Array Operations (Methods)
+41. Coding Challenge #2
+42. Introduction to Objects
+43. Dot vs Bracket Notation
+44. Object Methods
+45. Coding Challenges #3
+46. Iteration: The for Loop
+47. Looping Arrays, Breaking and Continuing
 

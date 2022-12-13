@@ -403,39 +403,255 @@
 
 // *************************************************************************************************
 // 43. Dot vs Bracket Notation
-const kerim = {
-    firstName : 'Kerim',
-    lastName : 'Imamovic',
-    age: 2022 - 1996,
-    job: 'unemployed',
-    friends: ['Michael', 'Peter', 'Steven'],
-};
-console.log(kerim);
+// const kerim = {
+//     firstName : 'Kerim',
+//     lastName : 'Imamovic',
+//     age: 2022 - 1996,
+//     job: 'unemployed',
+//     friends: ['Michael', 'Peter', 'Steven'],
+// };
+// console.log(kerim);
 
-// real property name
-console.log(kerim.firstName, kerim.lastName, kerim.age, kerim.job, kerim.friends);
+// // real property name
+// console.log(kerim.firstName, kerim.lastName, kerim.age, kerim.job, kerim.friends);
 
-// computed property name
-const nameKey = 'Name';
-console.log(kerim[`first` + nameKey]);
-console.log(kerim[`last` + nameKey]);
+// // computed property name
+// const nameKey = 'Name';
+// console.log(kerim[`first` + nameKey]);
+// console.log(kerim[`last` + nameKey]);
 
-const interestedIn = prompt(`What do you want to know about Kerim ?`);
-console.log(interestedIn);
-console.log(kerim[interestedIn]);
+// const interestedIn = prompt(`What do you want to know about Kerim ?`);
+// console.log(interestedIn);
+// console.log(kerim[interestedIn]);
 
-if (kerim[interestedIn]) {
-    console.log(kerim[interestedIn]);
-} else {
-    console.log(`Wrong requests!`);
-};
+// if (kerim[interestedIn]) {
+//     console.log(kerim[interestedIn]);
+// } else {
+//     console.log(`Wrong requests!`);
+// };
 
-kerim.location = 'Bosnia and Herzegovina';
-kerim['instagram'] = 'k_imamovic';
-console.log(kerim);
+// kerim.location = 'Bosnia and Herzegovina';
+// kerim['instagram'] = 'k_imamovic';
+// console.log(kerim);
 
 
-// Challenge - random dynamic sentence
-const sentence = `${kerim.firstName} has ${kerim.friends.length} friends and he is currently speaking with ${kerim.friends[0]}.`;
-console.log(sentence);
+// // Challenge - random dynamic sentence
+// const sentence = `${kerim.firstName} has ${kerim.friends.length} friends and he is currently speaking with ${kerim.friends[0]}.`;
+// console.log(sentence);
+
+
+
+
+
+// *************************************************************************************************
+//  44. Object Methods
+// const kerim = {
+//     firstName : 'Kerim',
+//     lastName : 'Imamovic',
+//     birthYear: 1996,
+//     job: 'frontend dev',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hasDriversLicense: false,
+
+//     // calcAge: function(birthYear) {
+//     //     return 2022 - birthYear;
+//     // }
+
+//     // calcAge: function() {
+//     //     console.log(this);
+//     //     return 2022 - this.birthYear;
+//     // }
+
+//     calcAge: function() {
+//        this.age = 2022 - this.birthYear;
+//        return this.age;
+//     }
+// };
+
+// console.log(kerim);
+// console.log(kerim.calcAge());
+// console.log(kerim.calcAge(1996));
+// console.log(kerim.calcAge(kerim.birthYear));
+
+
+
+// Challenge
+// Kerim is a 26 year old frontend dev and he has no drivers license.
+// const kerim = {
+//     firstName : 'Kerim',
+//     lastName : 'Imamovic',
+//     birthYear: 1996,
+//     job: 'frontend dev',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hasDriversLicense: false,
+
+//     calcAge: function() {
+//        this.age = 2022 - this.birthYear;
+//        return this.age;
+//     },
+
+//     aboutYourself: function() {
+//        let sentence = `${this.firstName} is a ${this.calcAge()} year old ${this.job} and he ${this.hasDriversLicense ? `has` : `hasn't have`} driver's license.`;
+//        return sentence;
+//     },
+// };
+
+// console.log(kerim.aboutYourself());
+
+
+
+
+
+// *************************************************************************************************
+// 45. Coding Challenges #3
+// BMI object calculator
+// moj nacin
+
+// const mark = {
+//     name: 'Mark',
+//     weigth: 78,
+//     height: 1.69,
+//     calcBMI: function() {
+//         this.bmi = this.weigth / (this.height) ** 2;
+//         return this.bmi.toFixed(2);
+//     },
+// };
+
+// const john = {
+//     name: 'John',
+//     weigth: 92,
+//     height: 1.95,
+//     calcBMI: function() {
+//         this.bmi = this.weigth / (this.height) ** 2;
+//         return this.bmi.toFixed(2);
+//     },
+// };
+
+// function compareBMI() {
+//     if (mark.bmi > john.bmi) {
+//         console.log(`Mark's BMI is higher`)
+//     } else if (mark.bmi < john.bmi) {
+//         console.log(`John's BMI is higher`);
+//     } else {
+//         console.warn(`Something is wrong!!!`);
+//     }
+// };
+
+// console.log(`Mark:`, mark.calcBMI());
+// console.log(`John:`, john.calcBMI());
+// console.log(compareBMI());
+
+
+
+// const mark = {
+//     fullName : 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function() {
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi;
+//     },
+// };
+
+// const john = {
+//     fullName : 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function() {
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi;
+//     },
+// };
+
+// console.log(mark.calcBMI());
+// console.log(john.calcBMI());
+
+// if (mark.bmi > john.bmi) {
+//     console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`)
+// } else if (mark.bmi < john.bmi) {
+//     console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`)
+// }
+
+
+
+
+
+// *************************************************************************************************
+// 46. Iteration: The for Loop
+
+// for loops keeps running while condition is TRUE
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log('My name is Kerim Imamovic');
+// };
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep} 🏋️`);
+// };
+    
+
+
+
+
+// *************************************************************************************************
+// 47. Looping Arrays, Breaking and Continuing
+
+// const kerim = [
+//     1,
+//     'Kerim',
+//     'Imamovic',
+//     2022-1996,
+//     'frontend dev',
+//     ['Michael', 'Peter', 'Steven'],
+//     true,
+// ];
+
+// // console.log(kerim[0]);
+// // console.log(kerim[1]);
+// // ...
+// // console.log(kerim[4]);
+
+// const types = [];
+
+// for (let i = 0; i < kerim.length; i++) {
+//     // Reading from kerim array
+//     console.log(kerim[i], typeof kerim[i]);
+
+//     // Filling types array
+//     // types[i] = typeof kerim[i];
+//     // console.log(types);
+
+//     types.push(typeof kerim[i]);
+// };
+// console.log(types)
+
+
+// const years = [1991, 2007, 1970, 2002];
+// console.log(years);
+// const ages = [];
+// console.log(ages);
+// const result = years - ages;
+// console.log('Result years + ages:', result);
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2022 - years[i]);
+// };
+// console.log(ages);
+
+
+// // continue and break
+// console.log(`------------ ONLY STRINGS -------------`);
+// for (let i = 0; i < kerim.length; i++) {
+//    if (typeof kerim[i] !== 'string') continue;
+//   console.log(kerim[i], typeof kerim[i]);
+// };
+
+// console.log(`---------- BREAK WITH NUMBER -----------`);
+// for (let i = 0; i < kerim.length; i++) {
+//    if (typeof kerim[i] !== 'number') break;
+//   console.log(kerim[i], typeof kerim[i]);
+// };
+
+
+
 
