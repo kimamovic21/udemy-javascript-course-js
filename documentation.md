@@ -58,3 +58,11 @@ Section 4: How to Navigate This Course
 51. Pathways and Section Roadmaps
 52. Course Pathways
 
+
+Section 5: Developer Skills & Editor Setup
+53. Section Intro
+54. Section Roadmap
+55. Setting up Prettier and VS Code
+56. Installing Node.js and Setting Up a Dev Enviroment
+57. Learning How to Code
+58. How to Think Like a Developer: Become a Problem Solver
