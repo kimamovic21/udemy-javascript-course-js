@@ -49,4 +49,12 @@ Section 3: Javascript fundamentals - part 2
 45. Coding Challenges #3
 46. Iteration: The for Loop
 47. Looping Arrays, Breaking and Continuing
+48. Looping Backwards and Loops in Loops
+49. The While Loop
+50. Coding challenge #5
+
+
+Section 4: How to Navigate This Course
+51. Pathways and Section Roadmaps
+52. Course Pathways
 

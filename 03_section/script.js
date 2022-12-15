@@ -6,7 +6,6 @@
 
 // *************************************************************************************************
 // 32. Activating Strict mode
-// 'use strict';
 
 // let hasDriversLicense = false;
 // const passTest = true;
@@ -24,7 +23,6 @@
 
 // *************************************************************************************************
 // 33. Functions
-// 'use strict';
 
 // function logger() {
 //     console.log(`My name is Kerim.`);
@@ -158,6 +156,7 @@
 
 // *************************************************************************************************
 // 37. Reviewing Functions
+
 // const calcAge = function(year) {
 //     return 2022 - year;
 // }
@@ -305,6 +304,7 @@
 
 // *************************************************************************************************
 // 40. Basic Array Operations (Methods)
+
 // // Add elements - push, unshift
 // const friends = ['Michael', 'Steven', 'Peter'];
 // console.log(friends);
@@ -347,6 +347,7 @@
 
 // *************************************************************************************************
 // 41. Coding Challenge #2
+
 // function calculateTip(bill) {
 //     const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
 //     return tip;
@@ -388,6 +389,7 @@
 
 // *************************************************************************************************
 // 42. Introduction to Objects
+
 // const kerim = {
 //     firstName : 'Kerim',
 //     lastName : 'Imamovic',
@@ -403,6 +405,7 @@
 
 // *************************************************************************************************
 // 43. Dot vs Bracket Notation
+
 // const kerim = {
 //     firstName : 'Kerim',
 //     lastName : 'Imamovic',
@@ -445,6 +448,7 @@
 
 // *************************************************************************************************
 //  44. Object Methods
+
 // const kerim = {
 //     firstName : 'Kerim',
 //     lastName : 'Imamovic',
@@ -504,6 +508,7 @@
 
 // *************************************************************************************************
 // 45. Coding Challenges #3
+
 // BMI object calculator
 // moj nacin
 
@@ -653,5 +658,148 @@
 // };
 
 
+
+
+
+// *************************************************************************************************
+// 48. Looping Backwards and Loops in Loops
+
+// const kerim = [
+//     'Kerim',
+//     'Imamovic',
+//     2022 - 1996,
+//     'frontend dev',
+//     ['Michael', 'Peter', 'Steven'],
+//     true,
+// ];
+
+// for (let i = kerim.length - 1; i >=0; i-- ) {
+//     console.log(i, kerim[i]);
+// };
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//     console.log(`------- Starting exercise ${exercise}`);
+//     for (let rep = 1; rep < 6; rep++) {
+//         console.log(`Excercise ${exercise}: Lifting weight repetition ${rep} 🏋️.`);
+//     };
+// };
+
+
+// const cars = ['Mercedes','BMW','Audi','Volvo','Volkswagen'];
+// console.log(cars);
+
+// for (let i =  0; i < cars.length; i++ ) {
+//     console.log(cars[i]);
+// };
+
+// for (let race = 1; race < 4; race ++){
+//     console.log(`---- The race number ${race} is starting.`);
+//     for (let lap = 1; lap < 10; lap++) {
+//         console.log(`Lap number ${lap}.`);
+//     };
+// };
+
+
+
+
+
+// *************************************************************************************************
+// 49. The While Loop
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`FOR : Lifting weight repetition ${rep} 🏋️.`)
+// }
+
+
+// let rep = 1;
+// while (rep <= 10){
+//     console.log(`WHILE: Lifting weight repetition ${rep} 🏋️.`);
+//     rep++;
+// };
+
+
+// let dice = Math.trunc((Math.random() * 6) + 1);
+// console.log(dice);
+// console.log (typeof dice);
+
+// while (dice !== 6) {
+//     console.log(`You rolled a ${dice}`);
+//     dice = Math.trunc((Math.random() * 6) + 1);
+//     if (dice === 6) {
+//         console.log(`The loop is about to end...`);
+//     };
+// };
+
+
+
+
+
+// *************************************************************************************************
+// 50. Coding challenge #5
+
+// Moj nacin
+// const calcTip = function(bill) {
+//     let result = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20
+//     return result;
+// };
+// console.log(`calcTip function: `, calcTip(300));
+
+// const bills = [22, 295, 176, 440, 37, 186, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+// console.log(`Bills:`, bills);
+// console.log(`Tips:`, tips);
+// console.log(`Totals:`, totals);
+
+// for (let i = 0; i < bills.length; i++) {
+//     // console.log(bills[i]);
+//     const tip = calcTip(bills[i]);
+//     console.log(tip);
+//     tips.push(tip);
+//     console.log(tips);
+//     totals.push(tip + bills[i]);
+//     console.log(totals);
+// };
+
+// console.log(`Bills:`, bills);
+// console.log(`Tips:`, tips);
+// console.log(`Totals:`, totals);
+
+
+
+
+// const calcTip = function(bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+// };
+// console.log(`calcTip function: `, calcTip(300));
+
+// const bills = [22, 295, 176, 440, 37, 186, 10, 1100, 86, 52];
+// const tips = [];
+// const totals = [];
+// console.log(`Bills:`, bills);
+// console.log(`Tips:`, tips);
+// console.log(`Totals:`, totals);
+
+// for (let i = 0; i < bills.length; i++) {
+//     const tip = calcTip(bills[i]);
+//     tips.push(tip);
+//     totals.push(tip + bills[i]);
+// };
+
+// console.log(`Bills:`, bills);
+// console.log(`Tips:`, tips);
+// console.log(`Totals:`, totals);
+
+// const calcAverage = function(arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     };
+//     return (sum / arr.length).toFixed(2);
+// };
+// console.log(calcAverage([2, 3, 7]));
+// console.log(calcAverage(bills))
+// console.log(calcAverage(tips));
+// console.log(calcAverage(totals));
 
 
