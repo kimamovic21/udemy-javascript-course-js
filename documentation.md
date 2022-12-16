@@ -66,3 +66,8 @@ Section 5: Developer Skills & Editor Setup
 56. Installing Node.js and Setting Up a Dev Enviroment
 57. Learning How to Code
 58. How to Think Like a Developer: Become a Problem Solver
+59. Using Google, StackOverflow and MDN
+60. Debugging (Fixing Errors)
+61. Debugging with the Console and Breakpoints
+62. Coding Challenge #1
+
