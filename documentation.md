@@ -71,3 +71,10 @@ Section 5: Developer Skills & Editor Setup
 61. Debugging with the Console and Breakpoints
 62. Coding Challenge #1
 
+
+Section 6: HTML & CSS Crash Course
+63. Section Intro
+64. Basic HTML Structure and Elements
+65. Attributes, Classes and IDs
+66. Basic Styling with CSS
+67. Introduction to the CSS Box Model
