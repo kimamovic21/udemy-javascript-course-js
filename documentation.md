@@ -78,3 +78,14 @@ Section 6: HTML & CSS Crash Course
 65. Attributes, Classes and IDs
 66. Basic Styling with CSS
 67. Introduction to the CSS Box Model
+
+
+Section 7: Javascript in The Browser: DOM and Events Fundamentals
+68. Section Intro
+69. Section Roadmap
+70. PROJECT #1: Guess My Number!
+71. What's the DOM and DOM Manipulation
+72. Selecting and Manipulating Elements
+73. Handling Click Events
+74. Implementing the Game Logic
+75. Manipulating CSS Styles
