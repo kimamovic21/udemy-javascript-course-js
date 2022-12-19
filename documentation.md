@@ -89,3 +89,9 @@ Section 7: Javascript in The Browser: DOM and Events Fundamentals
 73. Handling Click Events
 74. Implementing the Game Logic
 75. Manipulating CSS Styles
+76. Coding Challenge #1
+77. Implementing highscores
+78. Refactoring Our Code: The DRY Principle
+79. PROJECT #2: Modal Window
+80. Working with Classes
+81. Handling an "Esc" Keypress Event
