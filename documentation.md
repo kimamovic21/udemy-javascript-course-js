@@ -95,3 +95,6 @@ Section 7: Javascript in The Browser: DOM and Events Fundamentals
 79. PROJECT #2: Modal Window
 80. Working with Classes
 81. Handling an "Esc" Keypress Event
+82. PROJECT #3: The Lamb Game
+83. Rolling the Dice
+84. Switching the Active Player
