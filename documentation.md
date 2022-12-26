@@ -110,3 +110,11 @@ Section 8: How JavaScript Works Behind the Scenes
 91. Execution Contexts and The Call Stack
 92. Scope and The Scope Chain
 93. Scoping in Practice
+94. Variable Environment: Hoisting and the TDZ
+95. Hoisting and TDZ in Practice
+96. The This Keyword
+97. The This Keyword in Practice
+98. The This Keyword in Practice
+99. Primitives vs. Objects (Primitive vs. Reference Types)
+100. Primitives vs. Objects in Practice
+
