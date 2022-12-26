@@ -101,3 +101,12 @@ Section 7: Javascript in The Browser: DOM and Events Fundamentals
 85. Holding Current Score
 86. Resetting the Game
 
+
+Section 8: How JavaScript Works Behind the Scenes
+87. Section Intro
+88. Section Roadmap
+89. An High-Level Overview of JavaScript
+90. The JavaScript Engine and Runtime
+91. Execution Contexts and The Call Stack
+92. Scope and The Scope Chain
+93. Scoping in Practice
