@@ -2,11 +2,35 @@
 
 // 89. An High-Level Overview of JavaScript
 
+// Javascript is a high-level, object-oriented, multi-paradigm programming language
+
 
 
 
 // ************************************************************************************
 // 90. The JavaScript Engine and Runtime
+
+// JS Engie is a program that executes javascript code
+
+// Example: V8 Engine
+// https://www.youtube.com/watch?v=hWhMKalEicY
+// Javascript engine contains Call Stack and Heap
+// Call Stack - place where our code is executed
+// Heap - unstructured memory pool which stores all the objects that our application needs
+
+
+// Compilation vs. Interpretation
+
+// Compilation: Entire code is converted into machine code at once, and written to a binary file that can be executed by a computer
+// Interpretation: Interpreter runs through the source code an executes it line by line
+// Just-in-time (JIT) compilation: Entire code is converted into machine code at once, then executed immediately
+
+
+// Modern Just-in-time compilation of javascript
+
+
+// Javascript Runtime
+
 
 
 
@@ -14,11 +38,64 @@
 // ************************************************************************************
 // 91. Execution Contexts and The Call Stack
 
+// Execution context - environment in which a pice of JavaScript is executed. Stores all the necessary information for some code to be executed.
+
+// const name = 'Kerim';
+
+// const first = () => {
+//     let a = 1;
+//     const b = second();
+//     a = a + b;
+//     return a;
+// };
+// console.log('first():',first());
+
+// function second() {
+//     var c = 2;
+//     return c;
+// };
+// console.log('second():', second());
+
+// const x = first();
+// console.log('x:', x);
+
+// Cal. stact ensures that the order of execution never get lost
+
+
 
 
 
 // ************************************************************************************
 // 92. Scope and The Scope Chain
+
+// Lexical scoping: Scoping is controlled by placement of functions and blocks in the code
+
+// Scope: Space or environment in which a certain variable is declared. There is global scope, function scope and block scope
+
+// Scope of a variable: Region of our code where a certain variable can be accessed
+
+// Scope chain vs. Call stack
+
+// const a = 'Kerim';
+// first();
+
+// function first() {
+//     const b = 'Hello!';
+//     second();
+
+//     function second() {
+//         const c = 'Hi!';
+//         third();
+//     };
+// };
+
+// function third() {
+//     const d = 'Hey!';
+//     console.log(d + c + b + a); // ReferenceError
+// };
+
+// Scoping asks the question "Where do variables live" or "Where can we access a certain variable and where not ?"
+
 
 
 

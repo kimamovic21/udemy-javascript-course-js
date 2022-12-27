@@ -118,3 +118,9 @@ Section 8: How JavaScript Works Behind the Scenes
 99. Primitives vs. Objects (Primitive vs. Reference Types)
 100. Primitives vs. Objects in Practice
 
+
+Section 9: Data Structures, Modern Operators and Strings
+101. Section Intro
+102. Section Roadmap
+103. Desctructuring Arrays
+104. Desctructuring Objects
