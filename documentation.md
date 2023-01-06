@@ -124,3 +124,7 @@ Section 9: Data Structures, Modern Operators and Strings
 102. Section Roadmap
 103. Desctructuring Arrays
 104. Desctructuring Objects
+105. The Spread Operator (...)
+106. Rest Pattern and Parameters
+107. Short Cicuiting (&& and ||);
+108. The Nullish Coalescing Operator (??)
