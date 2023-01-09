@@ -128,3 +128,7 @@ Section 9: Data Structures, Modern Operators and Strings
 106. Rest Pattern and Parameters
 107. Short Cicuiting (&& and ||);
 108. The Nullish Coalescing Operator (??)
+109. Logical Assignment Operators
+110. Coding Challenge #1
+111. Looping Arrays: The for-of Loop
+112. Enhanced Object Literals
