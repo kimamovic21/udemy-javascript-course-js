@@ -132,3 +132,8 @@ Section 9: Data Structures, Modern Operators and Strings
 110. Coding Challenge #1
 111. Looping Arrays: The for-of Loop
 112. Enhanced Object Literals
+113. Optional Chaining (?.)
+114. Looping Objects: Object Keys, Values and Entries
+115. Coding Challenge #2
+116. Sets
+
