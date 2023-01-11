@@ -136,4 +136,7 @@ Section 9: Data Structures, Modern Operators and Strings
 114. Looping Objects: Object Keys, Values and Entries
 115. Coding Challenge #2
 116. Sets
-
+117. Maps: Fundamentals
+118. Maps: Iteration
+119. Summary: Which Data Structure to Use ?
+120. Coding Challenge #3
