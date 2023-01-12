@@ -140,3 +140,8 @@ Section 9: Data Structures, Modern Operators and Strings
 118. Maps: Iteration
 119. Summary: Which Data Structure to Use ?
 120. Coding Challenge #3
+121. Working With Strings - Part 1
+122. Working With Strings - Part 2
+123. Working With Strings - Part 3
+124. Coding Challenge #4
+125. String Methods Practice

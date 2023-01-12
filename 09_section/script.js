@@ -1361,3 +1361,314 @@ Let's continue with our football betting app! This time, we have a map with a lo
 //     console.log(`[${half} HALF] ${min}: ${event}`);
 // };
 
+
+
+
+
+// **************************************************************************************************************************
+// 121. Working With Strings - Part 1
+
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// console.log(plane[0]); // A
+// console.log(plane[1]); // 3
+// console.log(plane[2]); // 2
+// console.log(plane[3]); // 0
+// console.log('B737'[0]); // B
+
+// console.log(airline.length); // 16
+// console.log('B737'.length); // 4
+
+// console.log(airline.indexOf('r')); // 6
+// console.log(airline.lastIndexOf('r')); // 10
+// console.log(airline.indexOf('Portugal')); // 8
+// console.log(airline.indexOf('portugal')); // -1
+
+// console.log(airline.slice(4)); // Air Portugal
+// console.log(airline.slice(4, 7)); // Air
+
+// console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal
+// console.log(airline.slice(-2)); // al
+// console.log(airline.slice(1, -1)); // AP Air Portugal
+
+// const checkMiddleSeat = function(seat) {
+//     // B and E are middle seats
+//     const seatPlace = seat.slice(-1); // Extract part of a string from a right side
+//     if (seatPlace === 'B' || seatPlace === 'E') {
+//         console.log(`You got the middle seat...`);
+//     } 
+//     else {
+//         console.log(`You got lucky :D`);
+//     }
+// };
+// checkMiddleSeat('11B'); // You got the middle seat...
+// checkMiddleSeat('23C'); // You got lucky :D
+// checkMiddleSeat('3E'); // You got the middle seat...
+
+// console.log(new String('kerim')); // String {'kerim'}
+// console.log(typeof new String('kerim')); // object
+
+// console.log(typeof new String('kerim').slice(1)); // string
+
+
+
+
+
+// **************************************************************************************************************************
+// 122. Working With Strings - Part 2
+
+// const airline = 'TAP Air Portugal';
+
+// console.log(airline.toLowerCase()); // tap air portugal
+// console.log(airline.toUpperCase()); // TAP AIR PORTUGAL
+
+// // Fix capitalization in name
+// const passenger = 'kErim'; 
+// const passengerLower = passenger.toLowerCase();
+// console.log(passengerLower);
+// const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+
+
+// // function 
+// function fixCapitalization(name) {
+//     const passenger = name.toLowerCase();
+//     const passengerCorrect = passenger[0].toUpperCase() + passenger.slice(1);
+//     return passengerCorrect;
+// };
+// console.log(fixCapitalization('jOnas'));
+
+
+// // Check email
+// const email = 'hello@kerim.io';
+// console.log(email);
+// const loginEmail = '   Hello@Kerim.Io \n';
+// console.log(loginEmail);
+
+// const lowerEmail = loginEmail.toLowerCase();
+// console.log(lowerEmail);
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+// const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+// console.log(normalizedEmail);
+
+// console.log(email === normalizedEmail); // true
+
+// // replacing
+// const priceGB = '288,97£';
+// console.log(priceGB);
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
+
+// const announcement = `All passengers come to boarding door 23. Boarding door 23!`;
+// console.log(announcement);
+// console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+
+// // Reg Exp
+// console.log(announcement.replace(/door/g, 'gate'));
+
+
+// // Booleans
+// const plane = 'Airbus 320neo';
+// const anotherPlane = 'Airbus 320';
+
+// console.log(plane.includes('A320')); // true
+// console.log(plane.includes('Boeing')); // false
+// console.log(plane.startsWith('Air')); // true
+// console.log(plane.startsWith('Aib')); // false
+
+// if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+//     console.log('Part of the NEW Airbus family');
+// } 
+// else {
+//     console.log('Not a family member...');
+// }
+
+// if (anotherPlane.startsWith('Airbus') && anotherPlane.endsWith('neo')) {
+//     console.log('Part of the NEW Airbus family');
+// }
+// else {
+//     console.log('Not a family member...');
+// }
+
+
+// // Practice exercise
+// const checkBaggage = function(items) {
+//     const baggage = items.toLowerCase();
+//     // const baggage = items;
+//     if ( baggage.includes('knife') || baggage.includes('gun') ) {
+//         console.log(`You are NOT allowed on board! ⛔`);
+//     } 
+//     else {
+//         console.log(`Welcome aboard 😃`);
+//     };
+// };
+
+// checkBaggage('I have a laptop, some food and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
+
+
+
+
+
+// **************************************************************************************************************************
+// 123. Working With Strings - Part 3
+
+// console.log('a+very+nice+string'.split('+')); // (4)
+// console.log('Kerim Imamovic'.split(' '));  //(2)
+
+// const [firstName, lastName] = 'Kerim Imamovic'.split(' ');
+// console.log(firstName);
+// console.log(lastName);
+
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
+
+
+// // 1. nacin 
+
+// const capitalizeName = function(name) {
+//     const names = name.split(' ');
+//     // console.log(names);
+//     const namesUpper = [];
+
+//     for (const personName of names) {
+//         // console.log(personName);
+//         namesUpper.push( personName[0].toUpperCase() + personName.slice(1) );
+//         // console.log(namesUpper);
+//     };
+//     // console.log(namesUpper);
+//     console.log(namesUpper.join(' '));
+// };
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('kerim imamovic');
+
+
+// // 2. nacin 
+
+// const capitalizeName = function(name) {
+//     const names = name.split(' ');
+//     const namesUpper = [];
+
+//     for (const firstLetter of names) {
+//         namesUpper.push( 
+//             firstLetter.replace(firstLetter[0], firstLetter[0].toUpperCase())
+//         );
+//     };
+//     console.log(namesUpper.join(' '));
+// };
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('kerim imamovic');
+
+
+// // Padding
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(25, '+').padEnd(35, '+'));
+// console.log('Kerim'.padStart(25, '-').padEnd(30, '-'));
+
+
+// const maskCreditCard = function(number) {
+//     const str = number + '';
+//     const last = str.slice(-4);
+//     return last.padStart(str.length, '*');
+// };
+// console.log(maskCreditCard(1122334455667788));
+// console.log(maskCreditCard('8877665544332211'));
+
+
+// // Repeat
+// const message = 'Bad weather... All Departues Delayed...';
+// console.log(message.repeat(5));
+
+// const planesInLine = function(numberOfPlanes) {
+//     console.log(`There are ${numberOfPlanes} planes in line ${'✈️'.repeat(numberOfPlanes)}.`);
+// }; 
+// planesInLine(5);
+// planesInLine(10);
+// planesInLine(20);
+
+
+
+
+
+// **************************************************************************************************************************
+// 124. Coding Challenge #4
+
+/*
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+first_name
+Some_Variable
+calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✔️
+firstName           ✔️✔️
+someVariable        ✔️✔️✔️
+calculateAge        ✔️✔️✔️✔️
+delayedDeparture    ✔️✔️✔️✔️✔️
+
+HINT 1: Remember which character defines a new line in the textarea
+HINT 2: The solution only need to work fo a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✔️. Tackle That only after you have the variable name conversion working
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. The pause and continue!
+
+Afterwards, test with your own test data!
+*/
+
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
+
+// document.querySelector('button').addEventListener('click', function() {
+//     const text = document.querySelector('textarea').value;
+//     const rows = text.split('\n');
+//     console.log(rows);
+
+//     for (const [i, row] of rows.entries()) {
+//         const [first, second] = row.toLowerCase().trim().split('_');
+//         // console.log(row, first, second);
+//         const output = `${first}${second.replace(
+//             second[0], 
+//             second[0].toUpperCase()
+//         )}`;
+//         console.log(`${output.padEnd(20)} ${'✔️'.repeat(i + 1)}`);        
+//     };
+// });
+
+
+
+
+
+// **************************************************************************************************************************
+// 125. String Methods Practice
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+// const flights = '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// console.log(flights.split('+'));
+
+// const getCode = str => str.slice(0, 3).toUpperCase();
+
+// for(const flight of flights.split('+')) {
+//     // console.log(flight.split(';'));
+//     const [type, from, to, time] = flight.split(';');
+//     const output = `${type.startsWith('_Delayed') ? '🔴' : ''} ${type.replaceAll('_', ' ')} from ${getCode(from)} to ${getCode(to)} (${time.replace(':', 'h')})`
+//                     .padStart(50);
+//     console.log(output);
+// };
+
+
