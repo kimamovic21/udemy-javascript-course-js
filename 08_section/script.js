@@ -291,7 +291,7 @@
 
 
 // ************************************************************************************
-// 98. The This Keyword in Practice
+// 98. Regular Functions vs. Arrow Functions
 
 // Example 1
 // var firstName = 'John';

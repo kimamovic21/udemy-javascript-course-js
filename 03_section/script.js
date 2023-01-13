@@ -250,6 +250,7 @@
 
 // *************************************************************************************************
 // 39. Introduction to Arrays
+
 // const friends = ['Michael', 'Steven', 'Peter'];
 // console.log(friends);
 // console.log(typeof friends);
