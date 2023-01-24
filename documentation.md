@@ -145,3 +145,12 @@ Section 9: Data Structures, Modern Operators and Strings
 123. Working With Strings - Part 3
 124. Coding Challenge #4
 125. String Methods Practice
+
+
+Section 10: A Closer Look at Functions
+126. Section Intro
+127. Section Roadmap
+128. Default Parameters
+129. How Passing Arguments Works: Value vs. Reference
+130. First-Class and Higher-Order Functions
+131. Functions Accepting Callback Functions
