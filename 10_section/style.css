@@ -13,3 +13,23 @@ h1 {
     text-align: center;
     padding: 30px;
 }
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 16px;
+    font-size: 24px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(7, 7, 220);
+    color: #fff;
+}
+
+button:hover {
+    background-color: rgb(8, 8, 192);
+}

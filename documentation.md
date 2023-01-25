@@ -154,3 +154,11 @@ Section 10: A Closer Look at Functions
 129. How Passing Arguments Works: Value vs. Reference
 130. First-Class and Higher-Order Functions
 131. Functions Accepting Callback Functions
+132. Functions Returning Functions
+133. The call and apply Methods
+134. The bind Method
+135. Coding Challenge #1
+136. Immediately Invoked Functions Expressions (IIFE)
+137. Closures
+138. More Closures examples
+139. Coding Challenge #2
