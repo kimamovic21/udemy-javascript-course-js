@@ -1,4 +1,4 @@
-// 94. Variable Environment: Hoisting and the TDZ
+// 94. Variable Environment: Hoisting and the TDZ (Temporal dead zone)
 
 'use strict';
 

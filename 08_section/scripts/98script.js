@@ -3,6 +3,7 @@
 'use strict';
 
 // Example 1
+
 // var firstName = 'John';
 // const kerim = {
 //     firstName: 'Kerim',
@@ -11,7 +12,7 @@
 //         console.log(2022 - this.year); 
 //     },
 //     greet: () => {
-//         console.log(this); // Window
+//         console.log(this); // Arrow function - Window object
 //         console.log(`Hey ${this.firstName}`);
 //     },
 // };
@@ -24,6 +25,7 @@
 
 
 // Example 2
+
 // const kerim = {
 //     firstName: 'Kerim',
 //     year: 1996,
@@ -65,7 +67,12 @@ const kerim = {
         isMillenial();
     },
 
-    greet: () => {
+    // greet: () => {
+    //     console.log(this); 
+    //     console.log(`Hey ${this.firstName}`);
+    // },
+
+    greet: function() {
         console.log(this); 
         console.log(`Hey ${this.firstName}`);
     },

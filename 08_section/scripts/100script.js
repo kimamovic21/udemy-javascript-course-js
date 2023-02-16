@@ -19,7 +19,8 @@ const jessica = {
 // console.log('jessica:', jessica);
 
 const marriedJessica = jessica;
-// console.log('marriedJessica', marriedJessica);
+console.log('marriedJessica', marriedJessica);
+console.log('------------------------------------');
 
 marriedJessica.lastName = 'Davis';
 
@@ -36,7 +37,7 @@ const jessica2 = {
 };
 console.log('jessica2:', jessica2);
 
-const jessicaCopy = Object.assign({}, jessica2);
+const jessicaCopy = Object.assign({}, jessica2);  // Oject.assign only creates a shallow copy
 jessicaCopy.lastName = 'Davis';
 console.log('jessicaCopy', jessicaCopy);
 
@@ -44,6 +45,7 @@ console.log('Before marriage:', jessica2); // 'Williams'
 console.log('After marriage:', jessicaCopy); // 'Davis'
 console.log('------------------------------------');
 
+console.log('----------- Family members ---------');
 jessicaCopy.family.push('Mary');
 jessicaCopy.family.push('John');
 

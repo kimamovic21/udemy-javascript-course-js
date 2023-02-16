@@ -2,7 +2,7 @@
 
 'use strict';
 
-console.log(this);
+console.log(this); // Window object
 
 function calcAgeDecl (birthYear) {
     console.log(2022 - birthYear);
@@ -42,7 +42,12 @@ john.calcAge = kerim.calcAge;
 john.calcAge();
 
 
+// f function is just a regular function call
+// it is not attached to any object
+// there is no owner of this function anymore
+
 const f = kerim.calcAge;
-f();
+console.log(f);
+// f();
 
 // this keyword always points to the object that is calling the method

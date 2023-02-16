@@ -6,8 +6,8 @@ let age = 26;
 let oldAge = age;
 age = 27;
 
-console.log(age);
-console.log(oldAge);
+console.log('age:', age);
+console.log('oldAge:', oldAge);
 
 const me = {
     name: 'Kerim',

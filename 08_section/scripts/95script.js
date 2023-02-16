@@ -1,4 +1,4 @@
-// 95. Hoisting and TDZ in Practice
+// 95. Hoisting and TDZ (Temporal Dead Zone )in Practice
 
 'use strict';
 
