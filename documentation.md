@@ -162,3 +162,26 @@ Section 10: A Closer Look at Functions
 137. Closures
 138. More Closures examples
 139. Coding Challenge #2
+
+
+Section 11: Working With Arrays
+140. Section Intro
+141. Section Roadmap
+142. Simple Array Methods
+143. The new at Method
+144. Looping Arrays: forEach
+145. forEach With Maps and Sets
+146. PROJECT: "Bankist" App
+147. Creating DOM Elements
+148. Coding Challenge #1
+149. Data Transformations: map, filter, reduce
+150. The map Method
+151. Computing Usernames
+152. The filter Method
+153. The reduce Method
+154. Coding Challenge #2
+155. The Magic of Chaining Methods
+156. Coding Challenge #3
+157. The find Method
+158. Implementing Login
+159. Implementing Transfers
