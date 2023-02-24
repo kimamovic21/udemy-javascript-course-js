@@ -185,3 +185,9 @@ Section 11: Working With Arrays
 157. The find Method
 158. Implementing Login
 159. Implementing Transfers
+160. The findIndex Method
+161. some and every
+162. flat and flatMap
+163. Sorting Arrays
+164. More ways of Creating and Filling Arrays
+165. Summary: Which Array Method to Use ?
