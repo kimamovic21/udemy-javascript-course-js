@@ -191,3 +191,5 @@ Section 11: Working With Arrays
 163. Sorting Arrays
 164. More ways of Creating and Filling Arrays
 165. Summary: Which Array Method to Use ?
+166. Array Methods Practice
+167. Coding Challenge #4
