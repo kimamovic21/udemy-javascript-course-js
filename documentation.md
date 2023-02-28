@@ -193,3 +193,20 @@ Section 11: Working With Arrays
 165. Summary: Which Array Method to Use ?
 166. Array Methods Practice
 167. Coding Challenge #4
+
+
+Section 12: Numbers, Dates, Intl and Timers
+168. Section Intro
+169. Section Roadmap
+170. Converting and Checking Numbers
+171. Math and Rounding
+172. The Remainder Operator
+173. Numeric Separators
+174. Working with BigInt
+175. Creating Dates
+176. Adding Dates to "Bankist" App
+177. Operations With Dates
+178. Internationalizing Dates (Intl)
+179. Internationalizing Numbers (Intl)
+180. Timers: setTimeout and setInterval
+181. Implementing a Countdown Timer
