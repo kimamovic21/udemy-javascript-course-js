@@ -50,6 +50,7 @@ forEach method
 //     }
 // });
 
+// How .forEach method works
 // 0: function(200)
 // 1: function(450)
 // 2: function(400)
@@ -59,9 +60,11 @@ forEach method
 
 
 // forEach - Example 2
+
 // mov - movement
 // i - index
 // arr - array
+
 movements.forEach(function(mov, i, arr) {
     console.log(i + 1, mov);
     if (mov > 0) {

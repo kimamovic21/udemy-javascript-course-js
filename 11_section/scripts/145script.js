@@ -14,11 +14,16 @@ currencies.forEach(function(value, key, map) {
     console.log(`${key} : ${value}`);
 });
 
+
 console.log(`---------------------------------------`);
 
 // Set
 const currenciesUnique = new Set(['USD', 'EUR', 'GBP', 'USD', 'EUR']);
 console.log(currenciesUnique); // Set(3) 
+
+// currenciesUnique.forEach(function(value, key, map) {
+//     console.log(`${value} : ${key}`);
+// });
 
 currenciesUnique.forEach(function(value, _, map) {
     console.log(`${value} : ${value}`);

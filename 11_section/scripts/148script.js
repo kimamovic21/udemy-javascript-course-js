@@ -24,15 +24,20 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 */
 
 const checkDogs = function(dogsJulia, dogsKate) {
-    const dogsJuliaCorrected = dogsJulia.slice();
+    // 1.
+    const dogsJuliaCorrected = dogsJulia.slice();  // shallow copy
     dogsJuliaCorrected.splice(0, 1);
     dogsJuliaCorrected.splice(-2);
+
     // dogsJulia.slice(1, 3);
+
     console.log(dogsJuliaCorrected);  // (2) [5, 2]
 
+    // 2.
     const dogs = dogsJuliaCorrected.concat(dogsKate);
     console.log(dogs);  // 7) [5, 2, 9, 16, 6, 8, 3]
 
+    // 3.
     dogs.forEach(function(dog, i) {
         if(dog >= 3) {
             console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old.`)
