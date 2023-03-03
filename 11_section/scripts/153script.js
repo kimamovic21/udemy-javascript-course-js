@@ -89,7 +89,11 @@ console.log(account1.movements); // (8) [200, 450, -400, 3000, -650, -130, 70, 
 
 const createUsernames = function(accs) {
     accs.forEach(function(acc) {
-       acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+       acc.username = acc.owner
+            .toLowerCase()
+            .split(' ')
+            .map(name => name[0])
+            .join('');
     });
 };
 createUsernames(accounts);
@@ -105,11 +109,13 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // curr - current value
 // i - index
 // arr - array
+// 0 - initial value of the accumulator in the first loop iteration
 const balance = movements.reduce(function(acc, curr, i, arr) {
-    console.log(`Iteration number ${i + 1}: ${acc}`);
+    // console.log(acc);
     // console.log(curr);
+    console.log(`Iteration number ${i + 1}: ${acc}`);
     return acc + curr;
-}, 0);
+}, 0);   
 console.log('balance:', balance);  // 3840
 
 
@@ -128,11 +134,7 @@ console.log('balance3:', balance3); // 3840
 
 // Maximum value
 const max = movements.reduce((acc, mov) => {
-    if (acc > mov) {
-        return acc;
-    } 
-    else {
-        return mov;
-    }
+    if (acc > mov) return acc;
+    else return mov;
 }, movements[0]);
 console.log(max); // 3000

@@ -98,11 +98,12 @@ const calcDisplaySummary = function(movements) {
         .reduce((acc, mov) => acc + mov, 0);
     labelSumOut.textContent = `${Math.abs(out)} €`;
 
+    // interest is paid on each deposit above 1
     const interest = movements
         .filter(mov => mov > 0)
         .map(deposit => deposit * 1.2 / 100)
         .filter((int, i, arr) => {
-            console.log(arr);
+            // console.log(arr);
             return int >= 1;
         })
         .reduce((acc, int) => acc + int, 0);
@@ -127,36 +128,36 @@ const eurToUsd = 1.1;
 
 // Example 1
 // const totalDepositsUSD = movements
-// .filter((mov) => {
-//     return mov > 0;
-// })
-// .map((mov) => {
-//     return mov * eurToUsd
-// })
-// .reduce((acc, mov) => {
-//     return acc + mov
-// }, 0);
+//     .filter((mov) => {
+//         return mov > 0;
+//     })
+//     .map((mov) => {
+//         return mov * eurToUsd
+//     })
+//     .reduce((acc, mov) => {
+//         return acc + mov
+//     }, 0);
 // console.log(totalDepositsUSD);  // 5522
 
 
 // Pipeline
 // Example 2
-// const totalDepositsUSD = movements
-//     .filter(mov => mov > 0)    
-//     .map((mov)=> mov * eurToUsd)
-//     .reduce((acc, mov) => acc + mov, 0)
-// console.log(totalDepositsUSD);  // 5522
+const totalDepositsUSD = movements
+    .filter(mov => mov > 0)    
+    .map(mov => mov * eurToUsd)
+    .reduce((acc, mov) => acc + mov, 0)
+console.log(totalDepositsUSD);  // 5522
 
 
 // Pipeline
 // Example 3
-console.log(movements);  // (8)
-const totalDepositsUSD = movements
-    .filter(mov => mov > 0)    
-    .map((mov, i, arr)=> {
-       console.log(arr);  // (5)
-       return mov * eurToUsd;
-    })
-    .reduce((acc, mov) => acc + mov, 0)
-console.log(totalDepositsUSD);   
+// console.log(movements);  // (8)
+// const totalDepositsUSD = movements
+//     .filter(mov => mov > 0)    
+//     .map((mov, i, arr)=> {
+//        console.log(arr);  // (5)
+//        return mov * eurToUsd;
+//     })
+//     .reduce((acc, mov) => acc + mov, 0)
+// console.log(totalDepositsUSD);   
 

@@ -21,9 +21,8 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 */
 
 
-// 1.
+// 1. map method
 const calcAverageHumanAge = function(ages) {
-    // map method
     const humanAges = ages.map((age) => {
         if (age <= 2) {
             return age * 2;
@@ -40,12 +39,14 @@ const calcAverageHumanAge = function(ages) {
     });
     console.log(adults);
 
+    // 3. average
     const average = adults.reduce((acc, age) => {
         return acc + age;
     }, 0) / adults.length;
     return average;
 };
 
+// 4. call the function
 const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 console.log(avg1); // 44
 const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);

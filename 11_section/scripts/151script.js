@@ -81,17 +81,20 @@
 // Example 1
 // const createUsernames = function(user) {
 //     const username = user
-//       .toLowerCase()
-//       .split(' ')
-//       .map(name => name[0]) // return name[0]
-//       .join('');
+//       .toLowerCase()  // steven thomas williams
+//       .split(' ')  // split method returns an array (3) ['steven', 'thomas', 'williams']
+//       .map(name => name[0]) // return name[0]  (3) ['s', 't', 'w']
+//       .join('');  // stw
 //       return username;
 // };
 // console.log(createUsernames('Steven Thomas Williams'));  // stw
-// console.log(username); //  stw
+
 
 
 // Example 2
+// accs - accounts
+// side effects
+
 const createUsernames = function(accs) {
     accs.forEach(function(acc) {
        acc.username = acc.owner
@@ -103,3 +106,14 @@ const createUsernames = function(accs) {
 };
 createUsernames(accounts);
 console.log(accounts);  // (4) [{…}, {…}, {…}, {…}]
+
+
+/* 
+const account1 = {
+      owner: 'Jonas Schmedtmann',
+      movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+      interestRate: 1.2, // %
+      pin: 1111,
+      username: 'js',
+};
+*/

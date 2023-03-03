@@ -18,7 +18,7 @@ for (const mov of movements) {
         depositsFor.push(mov);
     }
 };
-console.log(depositsFor)  // (5) [200, 450, 3020, 70, 1300]
+console.log(depositsFor);  // (5) [200, 450, 3020, 70, 1300]
 
 
 const withdrawals = movements.filter(mov => mov < 0);

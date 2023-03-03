@@ -1,5 +1,8 @@
 // 157. The find method
 
+// .find() method retrieves one element of an array based on condition
+// .find() method only returns the first element which fulfills the condition
+
 'use strict';
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
@@ -46,7 +49,8 @@ const accounts = [account1, account2, account3, account4];
 
 console.log(accounts);
 
-// Using find we can now basically find an object in the array based on some property of that object
+
+// Using .find() method we can now basically find an object in the array based on some property of that object
 
 const account = accounts.find((acc) => {
     return acc.owner === 'Jessica Davis'; 
