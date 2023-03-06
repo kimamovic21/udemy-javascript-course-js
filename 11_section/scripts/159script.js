@@ -113,7 +113,7 @@ const createUsernames = function(accs) {
     });
 };
 createUsernames(accounts);
-console.log(accounts);  // (4) [{…}, {…}, {…}, {…}]
+// console.log(accounts);  // (4) [{…}, {…}, {…}, {…}]
 
 
 const updateUI = function(acc) {
@@ -152,29 +152,30 @@ btnLogin.addEventListener('click', function(e) {
         inputLoginPin.blur();
 
         //  Update UI
-        updateUI(currentAccount) ;
+        updateUI(currentAccount);
     };
 });
+
 
 btnTransfer.addEventListener('click', function(e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
+    // const receiverAcc = inputTransferTo.value;
     const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
+    console.log(amount);
+    console.log(receiverAcc);
+
     inputTransferAmount.value = '';
     inputTransferTo.value = '';
-    // console.log(amount);
-    // console.log(receiverAcc);
-    if (
-        amount > 0 && 
-        receiverAcc &&
-        currentAccount.balance >= amount && 
-        receiverAcc?.username !== currentAccount.username) {
-        // Doing the transfer
-        // console.log('Transfer valid!');
+
+    if ( amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
+
+    // Doing the transfer
+        console.log('Transfer valid!');
         currentAccount.movements.push(-amount);
         receiverAcc.movements.push(amount);
 
-        // Update UI
+    // Update UI
         updateUI(currentAccount);
     };
 });

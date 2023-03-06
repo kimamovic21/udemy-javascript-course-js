@@ -38,7 +38,7 @@ const account1 = {
 const bankDepositSum = accounts
     .flatMap(acc => acc.movements)
     .filter(mov => mov > 0)
-    .reduce((sum, cur) => sum + cur)
+    .reduce((sum, cur) => sum + cur, 0)
 console.log(bankDepositSum); // (25180)
 
 
@@ -47,6 +47,7 @@ console.log(bankDepositSum); // (25180)
 //     .flatMap(acc => acc.movements)
 //     .filter(mov => mov > 1000).length
 // console.log(numDeposits1000);  // (5)
+
 
 const numDeposits1000 = accounts
     .flatMap(acc => acc.movements)

@@ -6,7 +6,7 @@
 
 const arr = [[1,2,3], [4,5,6], 7, 8];
 console.log(arr);  // (4) [Array(3), Array(3), 7, 8]
-console.log(arr.flat());  // (8) 
+console.log(arr.flat());  // (8) [1, 2, 3, 4, 5, 6, 7, 8]
 
 const arrDeep = [[[1,2],3], [4,[5,6]], 7, 8];
 console.log(arrDeep);  // (4) [Array(2), Array(2), 7, 8]
@@ -45,6 +45,7 @@ const account1 = {
   
 const accounts = [account1, account2, account3, account4];
 
+
 // const accountMovements = accounts.map(acc => acc.movements);
 // console.log(accountMovements);  // (4) [Array(8), Array(8), Array(8), Array(5)]
 // const allMovements = accountMovements.flat();
@@ -52,6 +53,7 @@ const accounts = [account1, account2, account3, account4];
 
 // const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
 // console.log(overalBalance);  // 17840
+
 
 // flat
 const overalBalanceFlat = accounts

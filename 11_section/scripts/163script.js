@@ -66,7 +66,7 @@ const displayMovements = function(movements, sort = false) {
 
       const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
-      movs.forEach(function(mov, i) {
+      movs.forEach(function (mov, i) {
           const type = mov > 0 ? 'deposit' : 'withdrawal';
           const html = `
               <div class="movements__row">
@@ -159,19 +159,19 @@ btnLogin.addEventListener('click', function(e) {
     };
 });
 
+
 btnTransfer.addEventListener('click', function(e) {
     e.preventDefault();
+
     const amount = Number(inputTransferAmount.value);
     const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
-    inputTransferAmount.value = '';
-    inputTransferTo.value = '';
     // console.log(amount);
     // console.log(receiverAcc);
-    if (
-        amount > 0 && 
-        receiverAcc &&
-        currentAccount.balance >= amount && 
-        receiverAcc?.username !== currentAccount.username) {
+
+    inputTransferAmount.value = '';
+    inputTransferTo.value = '';
+
+    if ( amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
         // Doing the transfer
         // console.log('Transfer valid!');
         currentAccount.movements.push(-amount);
@@ -224,9 +224,11 @@ let sorted = false;
 
 btnSort.addEventListener('click', function(e) {
     e.preventDefault();
+    // displayMovements(currentAccount.movements, true);  // works just once
     displayMovements(currentAccount.movements, !sorted);
     sorted = !sorted;
 });
+
 
 
 
@@ -244,6 +246,8 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // return < 0, A, B (keep order)
 // return > 0, B, A (switch order)
 
+// a - current value
+// b -next value
 
 // Ascending
 movements.sort((a, b) => {

@@ -156,6 +156,7 @@ btnLogin.addEventListener('click', function(e) {
     };
 });
 
+
 btnTransfer.addEventListener('click', function(e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
@@ -184,6 +185,7 @@ btnLoan.addEventListener('click', function(e) {
     e.preventDefault();
 
     const amount = Number(inputLoanAmount.value);
+    console.log(amount);
 
     if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
         // Add movement
