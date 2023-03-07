@@ -11,7 +11,6 @@ const account1 = {
     movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
     interestRate: 1.2, // %
     pin: 1111,
-  
     movementsDates: [
       '2019-11-18T21:31:17.178Z',
       '2019-12-23T07:42:02.383Z',
@@ -31,7 +30,6 @@ const account1 = {
     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
     interestRate: 1.5,
     pin: 2222,
-  
     movementsDates: [
       '2019-11-01T13:15:33.035Z',
       '2019-11-30T09:48:16.867Z',
@@ -48,6 +46,7 @@ const account1 = {
   
   const accounts = [account1, account2];
   
+
   /////////////////////////////////////////////////
   // Elements
   const labelWelcome = document.querySelector('.welcome');
@@ -99,11 +98,13 @@ const account1 = {
     });
   };
   
+
   const calcDisplayBalance = function (acc) {
     acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
     labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
   };
   
+
   const calcDisplaySummary = function (acc) {
     const incomes = acc.movements
       .filter(mov => mov > 0)
@@ -126,6 +127,7 @@ const account1 = {
     labelSumInterest.textContent = `${interest.toFixed(2)}€`;
   };
   
+
   const createUsernames = function (accs) {
     accs.forEach(function (acc) {
       acc.username = acc.owner
@@ -137,6 +139,7 @@ const account1 = {
   };
   createUsernames(accounts);
   
+
   const updateUI = function (acc) {
     // Display movements
     displayMovements(acc.movements);
@@ -148,6 +151,7 @@ const account1 = {
     calcDisplaySummary(acc);
   };
   
+
   ///////////////////////////////////////
   // Event handlers
   let currentAccount;
@@ -177,6 +181,7 @@ const account1 = {
     }
   });
   
+
   btnTransfer.addEventListener('click', function (e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
@@ -200,6 +205,7 @@ const account1 = {
     }
   });
   
+
   btnLoan.addEventListener('click', function (e) {
     e.preventDefault();
   
@@ -215,6 +221,7 @@ const account1 = {
     inputLoanAmount.value = '';
   });
   
+
   btnClose.addEventListener('click', function (e) {
     e.preventDefault();
   
@@ -238,7 +245,9 @@ const account1 = {
     inputCloseUsername.value = inputClosePin.value = '';
   });
   
+
   let sorted = false;
+
   btnSort.addEventListener('click', function (e) {
     e.preventDefault();
     displayMovements(currentAccount.movements, !sorted);
@@ -275,9 +284,10 @@ console.log(Math.random());  // random value between 0 and 0.99
 console.log(Math.random() * 6);  // random value between 0 and 5.99
 console.log(Math.trunc(Math.random() * 6) + 1);  // random value between 1 and 6
 
+
 const randomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min) + 1) + min;
-}
+};
 // 0...1 -> 0...(max - min) -> min...max
 console.log(randomInt(10, 20));
 
@@ -299,7 +309,7 @@ console.log(Math.floor(-23.3));  // -24
 
 
 // Rounding decimals
-console.log((2.7).toFixed(0));  // 3
-console.log((2.7).toFixed(3));  // 2.700
-console.log((2.3456).toFixed(2));  // 2.35
-console.log(+(2.3456).toFixed(2));  // 2.35
+console.log((2.7).toFixed(0));  // 3  string 
+console.log((2.7).toFixed(3));  // 2.700   string 
+console.log((2.3456).toFixed(2));  // 2.35   string
+console.log(+(2.3456).toFixed(2));  // 2.35   number

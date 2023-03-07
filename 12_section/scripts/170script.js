@@ -9,15 +9,17 @@ console.log(23 === 23.0);   // true
 console.log(0.1 + 0.2);  // 0.30000000000000004
 console.log(0.1 + 0.2 === 0.3);  // false
 
+
 // Conversion
 console.log(Number('23'));  // 23
 console.log(+'23');  // 23
 
+
 // Parsing
 console.log(Number.parseInt('30px'));  // 30
 console.log(Number.parseInt('e23'));  // NaN
-
 console.log(Number.parseInt('2.5rem'));  // 2
+
 console.log(Number.parseFloat('2.5rem'));  // 2.5
 console.log(Number.parseFloat('   2.5rem   '));  // 2.5
 

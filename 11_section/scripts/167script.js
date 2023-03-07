@@ -39,29 +39,31 @@ const dogs = [
 // 1.
 dogs.forEach(dog => dog.recFood = Math.trunc( dog.weight ** 0.75 * 28));
 console.log(dogs);
+// Math.trunc() - cut decimal part
 
 
 // 2.
 const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
 console.log(dogSarah);
-console.log(`Sarah's dog is eating too ${dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'}`)
+console.log(`Sarah's dog is eating too ${dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'}.`);
 
 
 // 3.
+// .flatMap() - .map() + .flat()
 const ownersEatTooMuch = dogs
     .filter(dog => dog.curFood > dog.recFood)
-    .flatMap(dog => dog.owners)
-console.log(ownersEatTooMuch); //  (3) ['Matilda', 'Sarah', 'John']
+    .flatMap(dog => dog.owners);
+console.log('ownersEatTooMuch:', ownersEatTooMuch); //  (3) ['Matilda', 'Sarah', 'John']
 
 const ownersEatTooLittle = dogs
     .filter(dog => dog.curFood < dog.recFood)
-    .flatMap(dog => dog.owners)
-console.log(ownersEatTooLittle); //  (3) ['Alice', 'Bob', 'Michael']
+    .flatMap(dog => dog.owners);
+console.log('ownersEatTooLittle:', ownersEatTooLittle); //  (3) ['Alice', 'Bob', 'Michael']
 
 
 // 4.
-console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
-console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
+console.log(`${ownersEatTooMuch.join(', ')}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(', ')}'s dogs eat too little!`);
 
 
 // 5.
@@ -74,11 +76,11 @@ console.log(dogs.some(checkEatingOkay));  // true
 
 
 // 7. 
-console.log(dogs.filter(checkEatingOkay));
+console.log(dogs.filter(checkEatingOkay));  // [{…}]  owners ['Michael']
 
 
 // 8. 
 const dogsSorted = dogs
     .slice()
     .sort((a, b) => a.recFood - b.recFood);
-console.log(dogsSorted);
+console.log(dogsSorted);  // (4) [{…}, {…}, {…}, {…}]

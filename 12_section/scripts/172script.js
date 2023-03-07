@@ -75,6 +75,7 @@ const account1 = {
   const inputCloseUsername = document.querySelector('.form__input--user');
   const inputClosePin = document.querySelector('.form__input--pin');
   
+  
   /////////////////////////////////////////////////
   // Functions
   
@@ -104,6 +105,7 @@ const account1 = {
     labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
   };
   
+
   const calcDisplaySummary = function (acc) {
     const incomes = acc.movements
       .filter(mov => mov > 0)
@@ -125,6 +127,7 @@ const account1 = {
       .reduce((acc, int) => acc + int, 0);
     labelSumInterest.textContent = `${interest.toFixed(2)}€`;
   };
+
   
   const createUsernames = function (accs) {
     accs.forEach(function (acc) {
@@ -136,6 +139,7 @@ const account1 = {
     });
   };
   createUsernames(accounts);
+
   
   const updateUI = function (acc) {
     // Display movements
@@ -148,6 +152,7 @@ const account1 = {
     calcDisplaySummary(acc);
   };
   
+
   ///////////////////////////////////////
   // Event handlers
   let currentAccount;
@@ -177,6 +182,7 @@ const account1 = {
     }
   });
   
+
   btnTransfer.addEventListener('click', function (e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
@@ -200,6 +206,7 @@ const account1 = {
     }
   });
   
+
   btnLoan.addEventListener('click', function (e) {
     e.preventDefault();
   
@@ -215,6 +222,7 @@ const account1 = {
     inputLoanAmount.value = '';
   });
   
+
   btnClose.addEventListener('click', function (e) {
     e.preventDefault();
   
@@ -238,12 +246,14 @@ const account1 = {
     inputCloseUsername.value = inputClosePin.value = '';
   });
   
+
   let sorted = false;
   btnSort.addEventListener('click', function (e) {
     e.preventDefault();
     displayMovements(currentAccount.movements, !sorted);
     sorted = !sorted;
   });
+
 
 
 
@@ -264,8 +274,10 @@ console.log(isEven(8));  // true
 console.log(isEven(23));  // false
 console.log(isEven(514));  // true
 
+
 labelBalance.addEventListener('click', function() {
     [...document.querySelectorAll('.movements__row')].forEach(function(row, i) {
+      // console.log(row, i);
         // 0, 2, 4, 6
         if( i % 2 === 0) row.style.backgroundColor = 'orangered';
         // 0, 3, 6, 9

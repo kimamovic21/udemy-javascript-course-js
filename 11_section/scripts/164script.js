@@ -226,6 +226,14 @@ btnSort.addEventListener('click', function(e) {
 });
 
 
+labelBalance.addEventListener('click', function() {
+    const movementsUI = Array.from(
+        document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', ''))
+    );
+    console.log(movementsUI); // (8) [1300, 70, -130, -650, 3000, -400, 450, 200]
+});
+
+
 
 
 const x = new Array(7);
@@ -253,10 +261,3 @@ console.log(y); // (7) [1, 1, 1, 1, 1, 1, 1]
 const z = Array.from({length: 7}, (_, i) => i + 1);
 console.log(z);  // (7) [1, 2, 3, 4, 5, 6, 7]
 
-
-labelBalance.addEventListener('click', function() {
-    const movementsUI = Array.from(
-        document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', ''))
-    );
-    console.log(movementsUI); // (8) [1300, 70, -130, -650, 3000, -400, 450, 200]
-});
