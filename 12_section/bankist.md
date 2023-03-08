@@ -48,7 +48,8 @@ njemu - containerMovements.innerHTML = '';
 -isto ovo uradimo i za out varijablu samo sa sa razlikom da filtriramo sve vrijednosti u nizu koje su manje od 0
 -pomocu metode .textContent varijabli labelSumIn dodijelimo vrijednost incomes
 -pomocu metode .textContent varijabli labelSumOut dodijelimo vrijednost out
--koristimo Math.abs() metodu da ukupni zbir svih dobivenih negativnih vrijednosti predstavimo kao pozitivan broj (crvena boja)
+-koristimo Math.abs() metodu da ukupni zbir svih dobivenih negativnih vrijednosti predstavimo kao pozitivan 
+broj (crvena boja)
 -kreiramo interest varijablu u kojoj ce banka uzimati jedan dio procenta za svaki depozit
 -interest varijabli dodijelimo movements parametar sa metodama .filter(), .map() i reduce()
 -metoda .filter() filtrira sve pozitivne vrijednosti
@@ -134,7 +135,8 @@ zelimo izbrisati
 163. 
 -funkciji displayMovements() dodajemo jos jedan parametar sort = false
 -kreiramo novu varijablu movs koju definisemo sa uslovom
--ako je sort true, onda movements nizu dodajemo metode .slice() i sort(), a ako je sort false onda prikazujemo samo movements
+-ako je sort true, onda movements nizu dodajemo metode .slice() i sort(), a ako je sort false onda prikazujemo 
+samo movements
 -umjesto movements.forEach() sada pisemo movs.forEach()
 -dugmetu btnSort dodajemo addEventListener sa dva parametra click i callback funkcijom
 -unutar callback funkcije dodajemo e.preventDefault() funkciju
@@ -150,4 +152,78 @@ zelimo izbrisati
 -u funkciji calcDisplaySummary dodajemo .toFixed(2) varijablama labelSumIn, labelSumOut i labelSumInterest
 
 
+176. 
+-pisemo kod za Fake always logged in pomocu koje cemo uvijek biti ulogovani sa account1
+-u btnLogin addEventListener, unutar callback funkcije, pisemo varijable u koje pohranjujemo podatke o datumu
+-metodu .textContent dodajemo labelDate varijabli kojoj pohranjujemo unutar template literals varijable u kojima su 
+sacuvani podaci o datumima
+-dodajemo metodu .padStart() varijablama kako bismo dodali 0 ispred jednog broja, tj. ako je broj samo jedna vrijednost
+-kod metode za .getMonth() dodajemo +1 da datum mjesec ne bi pocinjao od 0
+-u funkciji dispayMovements mijenjao parametar movements u acc 
+-u varijabli movs mijenjamo movements u acc.movements
+-u funkciji updateUI sada pozivamo displayMovements funkciju sa argumentom acc umjesto acc.movements
+-u btnSort addEventListener, unutar callback funkcije, mijenjamo parametar currentAccount.movements u currentAccount
+-u displayMovements funkciji, unutar html varijable, dodajemo div element sa klasom movements__date
+-u displayMovements funkciji, kreiramo varijable unutar kojih pohranimo podatke o datumu: date, day, month, year
+-kreiramo varijablu displayDate kojoj dodijelimo vrijednost day, month i year, unutar template literals
+-unutar div elementa sa klasom movements__date, unutar template literas, prikazujemo varijablu displayDate
+-u btnTransfer addEventListener, unutar callback funkcije, dodajemo kod za Add transfer date, pomocu kojeg cemo trenutni 
+datum pushati u movementsDates niz za posiljaoca novca i primaoca novca
+-u btnLoan addEventListener, unutar callback funkcije, dodajemo kod za Add loan date, pomocu kojeg cemo trenutni datum 
+pushati u movementsDates niz za korisnika koji je posudio novac iz banke
+-datumima u btnTransfer i btnLoan dodajmoe .toISOString() metodu
 
+
+177. 
+-kreiramo funkciju formatMovementsDate
+-u funkciji displayMovements pravimo izmjene u varijablama date i displayDate
+-varijabli date dodjeljujemo vrijednost new Date objekta sa argumentom acc.movementsDates[i]
+-varijabli displayDate dodjeljujemo vrijednost funkcije koju pozivamo sa argumentom date
+-u funkciji formatMovementsDate kreiramo varijablu daysPassed kojoj dodijeljujemo vrijednost funkciji koju pozivamo sa 
+dva argumenta newDate() i date
+-kreiramo uslov za prikazivanje datuma transakcija
+-ako je proslo 0 dana od transakcije prikazujemo Danas, ako je prosao 1 prikazujemo Jucer, ako je proslo manje od 7 dana
+prikazujemo taj broj dana, a ako je od transakcije proslo vise od 7 dana tada prikazujemo datum transakcije
+
+
+178. 
+-u btnLogin addEventListener, unutar callback funkcije, mijenjamo izmjene u prikazivanju datuma koristeci Intl.DateTimeFormat
+datum objekt
+-funkciji formatMovementDate dodajemo parametar locale
+-u funkciji formatMovementDate mijenjamo nacin prikazivanja datuma koristeci Intl.DateTimeFormat
+-unutar displayMovements funkcije, funkciji formatMovementsDate ciji smo rezulat pohranili u varijablu displayDate, dodajemo
+argument acc.locale
+
+
+179. 
+-unutar funkcije displayMovements kreiramo varijablu formattedMov kojoj dodjeljujemo vrijednost funkcije formatCur sa 
+argumentima mov, acc.locale i acc.currency
+-u varijabli html, unutar div elementa sa klasom movements__value dodajemo varijablu formattedMov pod template strings
+-kreiramo novu funkciju formatCur sa tri parametra value, locale i currency
+-unutar te funkcije koristimo Intl.NumberFormat() metodu
+-unutar funkcije calcDisplayBalance varijabli labelBalance.textContent dodjeljujemo vrijednost funkcije formatCur
+-unutar funkcije calcDisplaySummary pravimo izmjene u labelSumIn, labelSumOut i labelSumInterest varijablama kojima 
+dodjeljujemo vrijednost funkcije formatCur sa argumentima
+
+
+180. 
+-unutar btnLoan addEventListener, unutar callback funkcije, unutar if uslova, dodajemo funkciju setTimeot
+-setTimeout funkcija ima 2 parametra, callback funkciju i vrijeme trajanja
+
+
+181. 
+-kreiramo funkciju startLogOutTimer
+-deklarisemo varijable min i sec
+-koristeci metodu .textContent varijabli labelTimer dodjeljujemo vrijednost varijabli min i sec
+-deklarisemo varijablu time
+-dodajemo uslov ako je vrijeme jednako nuli
+-unutar uslova dodajemo clearInterval funkciju sa argumentom timer
+-labelWelcome varibli dodajemo tekst
+-koristeci style metodu podesimo da opacity containerApp varijabla bude jadnaka nuli
+-unutar startLogOut funkcije kreiramo tick funkciju
+-pozivamo funkciju tick()
+-varijabli timer dodajemo vrijednost funkcije setInterval sa argumentima tick i 1000 milisekundi
+-deklarisemo varijable timer 
+-dodajemo kod da resetujemo varijablu timer
+-unutar btnTransfer i btnLoan addEventListener pozivamo clearInterval funkciju sa argumentom timer
+-varijabli timer dodjeljujemo vrijednost startLogOutTimer

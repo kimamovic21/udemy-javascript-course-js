@@ -105,11 +105,13 @@ const account1 = {
     });
   };
   
+
   const calcDisplayBalance = function (acc) {
     acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
     labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
   };
   
+
   const calcDisplaySummary = function (acc) {
     const incomes = acc.movements
       .filter(mov => mov > 0)
@@ -132,6 +134,7 @@ const account1 = {
     labelSumInterest.textContent = `${interest.toFixed(2)}€`;
   };
   
+
   const createUsernames = function (accs) {
     accs.forEach(function (acc) {
       acc.username = acc.owner
@@ -143,6 +146,7 @@ const account1 = {
   };
   createUsernames(accounts);
   
+
   const updateUI = function (acc) {
     // Display movements
     displayMovements(acc);
@@ -164,20 +168,17 @@ const account1 = {
   updateUI(currentAccount);
   containerApp.style.opacity = 100;
   
+
   btnLogin.addEventListener('click', function (e) {
     // Prevent form from submitting
     e.preventDefault();
   
-    currentAccount = accounts.find(
-      acc => acc.username === inputLoginUsername.value
-    );
+    currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
     console.log(currentAccount);
   
     if (currentAccount?.pin === Number(inputLoginPin.value)) {
       // Display UI and message
-      labelWelcome.textContent = `Welcome back, ${
-        currentAccount.owner.split(' ')[0]
-      }`;
+      labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
       containerApp.style.opacity = 100;
 
       // Create current date and time
@@ -199,20 +200,14 @@ const account1 = {
     }
   });
   
+
   btnTransfer.addEventListener('click', function (e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
-    const receiverAcc = accounts.find(
-      acc => acc.username === inputTransferTo.value
-    );
+    const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
     inputTransferAmount.value = inputTransferTo.value = '';
   
-    if (
-      amount > 0 &&
-      receiverAcc &&
-      currentAccount.balance >= amount &&
-      receiverAcc?.username !== currentAccount.username
-    ) {
+    if (amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
       // Doing the transfer
       currentAccount.movements.push(-amount);
       receiverAcc.movements.push(amount);
@@ -226,6 +221,7 @@ const account1 = {
     }
   });
   
+
   btnLoan.addEventListener('click', function (e) {
     e.preventDefault();
   
@@ -243,17 +239,13 @@ const account1 = {
     }
     inputLoanAmount.value = '';
   });
+
   
   btnClose.addEventListener('click', function (e) {
     e.preventDefault();
   
-    if (
-      inputCloseUsername.value === currentAccount.username &&
-      Number(inputClosePin.value) === currentAccount.pin
-    ) {
-      const index = accounts.findIndex(
-        acc => acc.username === currentAccount.username
-      );
+    if ( inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
+      const index = accounts.findIndex(acc => acc.username === currentAccount.username);
       console.log(index);
       // .indexOf(23)
   
@@ -267,10 +259,12 @@ const account1 = {
     inputCloseUsername.value = inputClosePin.value = '';
   });
   
+
   let sorted = false;
   btnSort.addEventListener('click', function (e) {
     e.preventDefault();
-    displayMovements(currentAccount.movements, !sorted);
+    displayMovements(currentAccount, !sorted);
     sorted = !sorted;
   });
 
+// currentAccount.movements -> currentAccount

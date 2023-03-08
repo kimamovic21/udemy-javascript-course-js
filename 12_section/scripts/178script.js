@@ -19,8 +19,8 @@ const account1 = {
       '2020-04-01T10:17:24.185Z',
       '2020-05-08T14:11:59.604Z',
       '2020-05-27T17:01:17.194Z',
-      '2020-07-11T23:36:17.929Z',
-      '2020-07-12T10:51:36.790Z',
+      '2023-03-06T23:36:17.929Z',
+      '2023-03-07T10:51:36.790Z',
     ],
     currency: 'EUR',
     locale: 'pt-PT', // de-DE
@@ -40,7 +40,7 @@ const account1 = {
       '2020-02-05T16:33:06.386Z',
       '2020-04-10T14:43:26.374Z',
       '2020-06-25T18:49:59.371Z',
-      '2020-07-26T12:01:20.894Z',
+      '2023-03-07T12:01:20.894Z',
     ],
     currency: 'USD',
     locale: 'en-US',
@@ -83,7 +83,7 @@ const account1 = {
     const calcDaysPassed = (date1, date2) => Math.round(Math.abs(date2 - date1 / (1000 * 60 * 60 * 24)));
 
     const daysPassed = calcDaysPassed(new Date(), date);
-    console.log(daysPassed);
+    // console.log(daysPassed);
 
     if(daysPassed === 0) return 'Today';
     if(daysPassed === 1) return 'Yesterday';
@@ -122,10 +122,12 @@ const account1 = {
     });
   };
   
+
   const calcDisplayBalance = function (acc) {
     acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
     labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
   };
+
   
   const calcDisplaySummary = function (acc) {
     const incomes = acc.movements
@@ -149,6 +151,7 @@ const account1 = {
     labelSumInterest.textContent = `${interest.toFixed(2)}€`;
   };
   
+
   const createUsernames = function (accs) {
     accs.forEach(function (acc) {
       acc.username = acc.owner
@@ -160,6 +163,7 @@ const account1 = {
   };
   createUsernames(accounts);
   
+
   const updateUI = function (acc) {
     // Display movements
     displayMovements(acc);
@@ -182,37 +186,17 @@ const account1 = {
   updateUI(currentAccount);
   containerApp.style.opacity = 100;
 
-
-  // Experimenting API
-  const now = new Date();
-  const options = {
-      hour: 'numeric',
-      minute: 'numeric',
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric',
-      weekday: 'long',
-  };
-  const locale = navigator.language;
-  console.log(locale);
-
-  labelDate.textContent = new Intl.DateTimeFormat('en-UK', options).format(now);
-
   
   btnLogin.addEventListener('click', function (e) {
     // Prevent form from submitting
     e.preventDefault();
   
-    currentAccount = accounts.find(
-      acc => acc.username === inputLoginUsername.value
-    );
+    currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
     console.log(currentAccount);
   
     if (currentAccount?.pin === Number(inputLoginPin.value)) {
       // Display UI and message
-      labelWelcome.textContent = `Welcome back, ${
-        currentAccount.owner.split(' ')[0]
-      }`;
+      labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
       containerApp.style.opacity = 100;
 
     //  Create current date and time
@@ -223,7 +207,7 @@ const account1 = {
             day: '2-digit',
             month: 'long',
             year: 'numeric',
-            weekday: 'long',
+            // weekday: 'long',
         };
         // const locale = navigator.language;
         // console.log(locale);
@@ -248,20 +232,14 @@ const account1 = {
     }
   });
   
+
   btnTransfer.addEventListener('click', function (e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
-    const receiverAcc = accounts.find(
-      acc => acc.username === inputTransferTo.value
-    );
+    const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
     inputTransferAmount.value = inputTransferTo.value = '';
   
-    if (
-      amount > 0 &&
-      receiverAcc &&
-      currentAccount.balance >= amount &&
-      receiverAcc?.username !== currentAccount.username
-    ) {
+    if (amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
       // Doing the transfer
       currentAccount.movements.push(-amount);
       receiverAcc.movements.push(amount);
@@ -275,6 +253,7 @@ const account1 = {
     }
   });
   
+
   btnLoan.addEventListener('click', function (e) {
     e.preventDefault();
   
@@ -293,16 +272,12 @@ const account1 = {
     inputLoanAmount.value = '';
   });
   
+
   btnClose.addEventListener('click', function (e) {
     e.preventDefault();
   
-    if (
-      inputCloseUsername.value === currentAccount.username &&
-      Number(inputClosePin.value) === currentAccount.pin
-    ) {
-      const index = accounts.findIndex(
-        acc => acc.username === currentAccount.username
-      );
+    if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
+      const index = accounts.findIndex(acc => acc.username === currentAccount.username);
       console.log(index);
       // .indexOf(23)
   
@@ -316,11 +291,33 @@ const account1 = {
     inputCloseUsername.value = inputClosePin.value = '';
   });
   
+
   let sorted = false;
   btnSort.addEventListener('click', function (e) {
     e.preventDefault();
-    displayMovements(currentAccount.movements, !sorted);
+    displayMovements(currentAccount, !sorted);
     sorted = !sorted;
   });
 
 
+
+
+  // Experimenting API
+  // Configuration object defined outside
+  const now = new Date();
+  const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+      // weekday: 'long',
+  };
+  const locale = navigator.language;
+  console.log(locale);  // en-US
+
+  labelDate.textContent = new Intl.DateTimeFormat('en-UK', options).format(now);
+  // labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
+  // labelDate.textContent = new Intl.DateTimeFormat('pt-PT', options).format(now);
+  // labelDate.textContent = new Intl.DateTimeFormat('en-US', options).format(now);
+  // labelDate.textContent = new Intl.DateTimeFormat('ar-SA', options).format(now);

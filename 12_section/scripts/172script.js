@@ -89,9 +89,7 @@ const account1 = {
   
       const html = `
         <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${
-        i + 1
-      } ${type}</div>
+          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
           <div class="movements__value">${mov.toFixed(2)}€</div>
         </div>
       `;
@@ -161,16 +159,12 @@ const account1 = {
     // Prevent form from submitting
     e.preventDefault();
   
-    currentAccount = accounts.find(
-      acc => acc.username === inputLoginUsername.value
-    );
+    currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
     console.log(currentAccount);
   
     if (currentAccount?.pin === Number(inputLoginPin.value)) {
       // Display UI and message
-      labelWelcome.textContent = `Welcome back, ${
-        currentAccount.owner.split(' ')[0]
-      }`;
+      labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
       containerApp.style.opacity = 100;
   
       // Clear input fields
@@ -186,17 +180,10 @@ const account1 = {
   btnTransfer.addEventListener('click', function (e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
-    const receiverAcc = accounts.find(
-      acc => acc.username === inputTransferTo.value
-    );
+    const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
     inputTransferAmount.value = inputTransferTo.value = '';
   
-    if (
-      amount > 0 &&
-      receiverAcc &&
-      currentAccount.balance >= amount &&
-      receiverAcc?.username !== currentAccount.username
-    ) {
+    if (amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
       // Doing the transfer
       currentAccount.movements.push(-amount);
       receiverAcc.movements.push(amount);
@@ -226,13 +213,8 @@ const account1 = {
   btnClose.addEventListener('click', function (e) {
     e.preventDefault();
   
-    if (
-      inputCloseUsername.value === currentAccount.username &&
-      Number(inputClosePin.value) === currentAccount.pin
-    ) {
-      const index = accounts.findIndex(
-        acc => acc.username === currentAccount.username
-      );
+    if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
+      const index = accounts.findIndex(acc => acc.username === currentAccount.username);
       console.log(index);
       // .indexOf(23)
   
