@@ -210,3 +210,18 @@ Section 12: Numbers, Dates, Intl and Timers
 179. Internationalizing Numbers (Intl)
 180. Timers: setTimeout and setInterval
 181. Implementing a Countdown Timer
+
+
+Section 13: Advanced DOM and Events
+182. Section Intro
+183. Section Roadmap
+184. PROJECT: "Bankist" Website
+185. How the DOM Really Works
+186. Selecting, Creating and Deleting Elements
+187. Styles, Attributes and Classes
+188. Implementing Smooth Scrolling 
+189. Types of Events and Event Handlers
+190. Event Propagation: Bubbling and Capturing
+191. Event Propagation in Practice
+192. Event Delegation: Implementing Page Navigation
+193. DOM Traversing
