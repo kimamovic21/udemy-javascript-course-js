@@ -225,3 +225,9 @@ Section 13: Advanced DOM and Events
 191. Event Propagation in Practice
 192. Event Delegation: Implementing Page Navigation
 193. DOM Traversing
+194. Building a Tabbed Component
+195. Passing Arguments to Event Handlers
+196. Implementing a Sticky Navigation: The Scroll Event
+197. A Better Way: The Intersection Observer API
+198. Revealing Elements on Scroll
+199. Lazy Loading Images
