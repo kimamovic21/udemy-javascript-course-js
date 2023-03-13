@@ -231,3 +231,8 @@ Section 13: Advanced DOM and Events
 197. A Better Way: The Intersection Observer API
 198. Revealing Elements on Scroll
 199. Lazy Loading Images
+200. Building a Slider Component: Part 1
+201. Building a Slider Component: Part 2
+202. Lifecycle DOM Events
+203. Efficient Script Loading: defer and async
+
