@@ -236,3 +236,29 @@ Section 13: Advanced DOM and Events
 202. Lifecycle DOM Events
 203. Efficient Script Loading: defer and async
 
+
+Section 14: Object-Oriented Programming (OOP) With Javascript
+204. Section Intro
+205. Section Roadmap
+206. What is Object-Oriented Programming ?
+207. OOP in Javascript
+208. Constructor Functions and the new Operator
+209. Prototypes
+210. Prototypal Inheritance on Built-In Objects
+211. Prototypal Inheritance on Built-In Objects
+212. Coding Challenge #1
+213. ES6 Classes
+214. Setters and Getters
+215. Static Methods
+216. Object.create
+217. Coding Challenge #2
+218. Inheritance between "Classes"
+219. Coding Challenge #3
+220. Inheritance Between "Classes": ES6 Classes
+221. Inheritance Between "Classes": Object.create
+222. Another Class Example
+223. Encapsulation: Protected Properties and Methods
+224. Encapsulation: Private Class Fields and Methods
+225. Chaining Methods
+226. ES6 Classes Summary
+227. Coding Challenge #4
