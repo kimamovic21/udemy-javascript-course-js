@@ -262,3 +262,22 @@ Section 14: Object-Oriented Programming (OOP) With Javascript
 225. Chaining Methods
 226. ES6 Classes Summary
 227. Coding Challenge #4
+
+
+Section 15: Mapty App: OOP, Geolocation, External Libraries and More!
+228. Section Intro
+229. Section Roadmap
+230. Project Overview
+231. How to Plan a Web Project
+232. Using the Geolocation API
+233. Displaying a Map Using Leaflet Library
+234. Displaying a Map Marker
+235. Rendering Workout Input Form
+236. Project Architecture
+237. Refactoring for Project Architecture
+238. Managing Workout Data: Creating Classes
+239. Creating a New Workout
+240. Rendering Workouts
+241. Move to Marker On Click
+242. Working with localStorage
+243. Final Considerations
