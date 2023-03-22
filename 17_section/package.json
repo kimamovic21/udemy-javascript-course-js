@@ -4,12 +4,19 @@
   "description": "",
   "main": "clean.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "Kerim",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.29.1",
     "leaflet": "^1.9.3",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "regenerator-runtime": "^0.13.11"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
   }
 }

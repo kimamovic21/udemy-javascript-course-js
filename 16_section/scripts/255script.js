@@ -1,4 +1,4 @@
-// 254. Handling Rejected Promises
+// 255. Throwing Errors Manually
 
 'use strict';
 

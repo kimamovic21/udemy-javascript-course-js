@@ -281,3 +281,49 @@ Section 15: Mapty App: OOP, Geolocation, External Libraries and More!
 241. Move to Marker On Click
 242. Working with localStorage
 243. Final Considerations
+
+
+Section 16: Asynchronous Javascript: Promises, Async/Await, and AJAX
+244. Section Intro
+245. Section Roadmap
+246. Asyncchronous Javascript, AJAX and APIs
+247. IMPORTANT: API URL Chane
+248. Our First AJAX Call: XMLHttpRequest
+249. How the Web Works: Requests and Responses
+250. Welcome to Callback Hell
+251. Promises and the Fetch API
+252. Consuming Promises
+253. Chaining Promises
+254. Handling Rejected Promises
+255. Throwing Errors Manually
+256. Coding Challenge #1
+257. Asynchronous Behind the Scenes: The Event loop
+258. The Event Loop in Practice
+259. Building a Simple Promise
+260. Promisifying the Geolocation API
+261. Coding Challenge #2
+262. Consuming Promises with Async/Await
+263. Error Handling With try...catch
+264. Returning Values from Async Functions
+265. Running Promises in Parallel
+266. Other Promise Combinators: race, allSettled and any
+267. Coding Challenge #3
+
+
+Section 17: Modern Javascript Development: Modules, Tooling, and Functional Progamming
+268. Section Intro
+269. Section Roadmap
+270. An Overview of Modern Javascript Development
+271. An Overview of Modules in Javascript
+272. Exporting and Importing in ES6 Modules
+273. Top-Level await(ES2022)
+274. The Module Pattern
+275. CommonJS Modules
+276. A Brief Introduction to the Command Line
+277. Introduction to NPM
+278. Bundling With Parcel and NPM Scripts
+279. Configuring Babel and Polyfilling
+280. Review: Writing Clean and Modern Javascript
+281. Let's Fix Some Bad Code: Part 1
+282. Declarative and Functional Javascript Principles
+283. Let's Fix Some Bad Code: Part 2
