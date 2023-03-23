@@ -80,9 +80,9 @@ console.log(message.style.height);  // empty
 
 // console.log(getComputedStyle(message));
 console.log(getComputedStyle(message).color);  // rgb(187, 187, 187)
-console.log(getComputedStyle(message).height);  // 49px
+console.log(getComputedStyle(message).height);  // 47.5px
 
-message.style.height = Number.parseFloat(getComputedStyle(message).height,10) + 30 + 'px';
+message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 
 document.documentElement.style.setProperty('--color-primary', 'orangered');
 
@@ -95,21 +95,22 @@ console.log(logo.className);
 
 logo.alt = 'Beautiful minimalist logo';
 
+
 // Non-standard
 console.log(logo.designer);  // undefined
 console.log(logo.getAttribute('designer'));  // Jonas
 logo.setAttribute('company', 'Bankist');
 
-console.log(logo.src);
-console.log(logo.getAttribute('src'));
+console.log(logo.src);  // http://127.0.0.1:5500/13_section/img/logo.png
+console.log(logo.getAttribute('src'));  // img/logo.png
 
 const twitterLink = document.querySelector('.twitter-link');
-console.log(twitterLink.href);
-console.log(twitterLink.getAttribute('href'));
+console.log(twitterLink.href);  // https://twitter.com/jonasschmedtman
+console.log(twitterLink.getAttribute('href'));  // https://twitter.com/jonasschmedtman
 
 const navLinkBtn = document.querySelector('.nav__link--btn');
-console.log(navLinkBtn.href);
-console.log(navLinkBtn.getAttribute('href'));
+console.log(navLinkBtn.href);  // http://127.0.0.1:5500/13_section/index.html#
+console.log(navLinkBtn.getAttribute('href'));  // #
 
 
 // Data attributes
@@ -117,10 +118,10 @@ console.log(logo.dataset.versionNumber);  // 3.0
 
 
 // Classes
-logo.classList.add('class-name');
-logo.classList.remove('class-name');
-logo.classList.toggle('class-name');
-logo.classList.contains('class-name');
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c');
+logo.classList.contains('c');
 
 // Don't use this
 // logo.className = 'kerim';

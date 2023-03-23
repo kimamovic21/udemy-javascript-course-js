@@ -34,18 +34,20 @@ document.addEventListener('keydown', function (e) {
 
 
 // Selecting elements
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
+console.log(document.documentElement);  // <html></html>
+console.log(document.head);   // <head></head>
+console.log(document.body);   // <body></body>
 
 const header = document.querySelector('.header');
+console.log(header);  // <header></header>
+
 const allSections = document.querySelectorAll('.section');
-console.log(header);
 console.log(allSections);  // NodeList(4)
 
 const section1 = document.getElementById('section--1');
+console.log(section1);   // <section></section>
+
 const allButtons = document.getElementsByTagName('button');
-console.log(section1);
 console.log(allButtons);  // HTMLCollection(9)
 
 const allButtons2 = document.getElementsByClassName('btn');
@@ -53,13 +55,16 @@ console.log(allButtons2);  // HTMLCollection(5) 
 
 
 // Creating and inserting elements
+
 const message = document.createElement('div');
 message.classList.add('cookie-message');
+
 // message.textContent = `We use cookies for improved functionality and analytics.`;
 message.innerHTML = `
         We use cookies for improved functionality and analytics. 
         <button class="btn btn--close-cookie">Got it</button>
 `;
+
 // header.prepend(message);
 header.append(message);
 // header.append(message.cloneNode(true));
@@ -69,9 +74,8 @@ header.append(message);
 
 
 // Delete elements
-document
-    .querySelector('.btn--close-cookie')
-    .addEventListener('click', function() {
-    // message.remove();
-    message.parentElement.removeChild(message);
+document.querySelector('.btn--close-cookie')
+        .addEventListener('click', function() {
+        message.remove();
+        // message.parentElement.removeChild(message);
 });
