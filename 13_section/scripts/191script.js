@@ -69,7 +69,9 @@ const randomColor = () => `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${ran
 console.log(randomColor(0, 255));
 
 
-document.querySelector('.nav__link').addEventListener('click', function(e) {
+document
+    .querySelector('.nav__link')
+    .addEventListener('click', function(e) {
     // console.log('LINK');
     // in event handler, this keyword points always to the element on which that event handler is attached
     this.style.backgroundColor = randomColor();
@@ -79,16 +81,23 @@ document.querySelector('.nav__link').addEventListener('click', function(e) {
     console.log(e.currentTarget === this);
 
     // Stop propagation
+    // This is not a good idea in practice
     // e.stopPropagation();
 });
 
-document.querySelector('.nav__links').addEventListener('click', function(e) {
+
+document
+    .querySelector('.nav__links')
+    .addEventListener('click', function(e) {
     // console.log('LINK');
     this.style.backgroundColor = randomColor();
     console.log('CONTAINER', e.target, e.currentTarget);  
 });
 
-document.querySelector('.nav').addEventListener('click', function(e) {
+
+document
+    .querySelector('.nav')
+    .addEventListener('click', function(e) {
     // console.log('LINK');
     this.style.backgroundColor = randomColor();
     console.log('NAV', e.target, e.currentTarget); 

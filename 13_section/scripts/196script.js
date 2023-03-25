@@ -45,17 +45,13 @@ document.addEventListener('keydown', function (e) {
 
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
+
   console.log(s1coords);
-
   console.log(e.target.getBoundingClientRect());
-
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
-
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  console.log('Current scroll X:', window.pageXOffset);
+  console.log('Current scroll Y:', window.pageYOffset);
+  console.log('height:', document.documentElement.clientHeight);
+  console.log('width:', document.documentElement.clientWidth);
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
@@ -89,8 +85,8 @@ tabsContainer.addEventListener('click', function(e) {
     if(!clicked) return;
 
     // Remove active classes
-    tabs.forEach(t => t.classList.remove('operations__tab--active'));
-    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+    tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+    tabsContent.forEach(content => content.classList.remove('operations__content--active'));
 
     // Activate tab
     clicked.classList.add('operations__tab--active');
@@ -125,12 +121,14 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 ///////////////////////////////////////
 // Sticky navigation
 const initialCoords = section1.getBoundingClientRect();
-console.log(initialCoords);
+console.log(initialCoords);  // DOMRect
 
 window.addEventListener('scroll', function(e) {
-    // console.log(e);
+    // console.log(e);  // Event
     // console.log(window.scrollX);
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
+
+    // Navigation becomes sticky as soon as we reach the first section
     if (window.scrollY > initialCoords.top) {
         nav.classList.add('sticky');
     } 

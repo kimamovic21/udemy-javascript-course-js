@@ -40,18 +40,18 @@ document.addEventListener('keydown', function (e) {
 // Button scrolling
 
 btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+  // const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords);
 
-  console.log(e.target.getBoundingClientRect());
+  // console.log(e.target.getBoundingClientRect());
 
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+  // console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
 
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  // console.log(
+  //   'height/width viewport',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
@@ -70,16 +70,19 @@ btnScrollTo.addEventListener('click', function (e) {
 //     });
 // });
 
-// 1. Add event listener co common parent element
+
+// Event delegation
+// 1. Add event listener to common parent element
 // 2. Determine what element originated the event
 
 document.querySelector('.nav__links').addEventListener('click', function(e) {
-    // console.log(e.target);
+    // console.log(e.target);  // the HTML element we click on
     e.preventDefault();
 
     // Matching strategy
     if(e.target.classList.contains('nav__link')) {
         // console.log('LINK');
+        // const id = this.getAttribute('href');
         const id = e.target.getAttribute('href');
         console.log(id);
         document.querySelector(id).scrollIntoView({behavior: 'smooth'});

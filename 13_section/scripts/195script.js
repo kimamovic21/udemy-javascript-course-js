@@ -45,17 +45,13 @@ document.addEventListener('keydown', function (e) {
 
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
+
   console.log(s1coords);
-
   console.log(e.target.getBoundingClientRect());
-
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
-
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  console.log('Current scroll X:', window.pageXOffset);
+  console.log('Current scroll Y:', window.pageYOffset);
+  console.log('height:', document.documentElement.clientHeight);
+  console.log('width:', document.documentElement.clientWidth);
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
@@ -89,8 +85,8 @@ tabsContainer.addEventListener('click', function(e) {
     if(!clicked) return;
 
     // Remove active classes
-    tabs.forEach(t => t.classList.remove('operations__tab--active'));
-    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+    tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+    tabsContent.forEach(content => content.classList.remove('operations__content--active'));
 
     // Activate tab
     clicked.classList.add('operations__tab--active');
@@ -105,18 +101,39 @@ tabsContainer.addEventListener('click', function(e) {
 ///////////////////////////////////////
 // Menu fade animation
 const handleHover = function(e) {
+    // console.log(this);
     if (e.target.classList.contains('nav__link')) {
         const link = e.target;
+        // console.log(link);
         const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+        // console.log(siblings);
         const logo = link.closest('.nav').querySelector('img');
+        // console.log(logo);
 
         siblings.forEach(el => {
-            if (el !== link) el.style.opacity = this;
+            if (el !== link) {
+              // el.style.opacity = 0.5;
+              el.style.opacity = this;
+            }
         });
+        // el.style.opacity = 0.5;
         logo.style.opacity = this;
     };
 };
 
 // Passing "argument" into handler
+
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
+
+
+// nav.addEventListener('mouseover', handleHover(e, 0.5));  // does not work
+// nav.addEventListener('mouseout', handleHover(e, 1));  // does not work
+
+
+// nav.addEventListener('mouseover', function(e) {
+//   handleHover(e, 0.5);
+// });
+// nav.addEventListener('mouseout', function(e) {
+//   handleHover(e, 1);
+// });
