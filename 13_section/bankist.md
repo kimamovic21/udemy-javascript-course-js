@@ -97,3 +97,28 @@ Bankist website
 -kreiramo initialCoords varijablu
 -varijabli initialCoords dodjeljujemo varijablu section1 sa metodom getBoundingClientRect()
 -dodajemo uslov za pojavljivanje sticky navigacije
+
+
+197. 
+-kreiramo varijablu header
+-kreiramo varijablu navHeight
+-kreiramo stickyNav funkciju
+-dodajemo if uslov unutar stickyNav funkcije
+-kreiramo varijablu headerObserver
+-varijabli headerObserver dodajemo metodu .observe() sa parametrom header
+
+
+198. 
+-kreiramo varijablu sectionObserver
+-kreiramo funkciju revealSection
+-kreiramo varijablu allSections
+-allSections varijabli dodajemo .forEach() metodu
+-varijabli observer dodajemo .unobserve() metodu sa parametrom entry.target
+
+
+199. 
+-kreiramo varijablu imgTargets
+-kreiramo imgObserver varijablu
+-imgTargets varijabli dodajemo .forEach() metodu
+-kreiramo loadImg funkciju
+-varijabli observer dodajemo metodu .unobserve() metodu sa parametrom entry.target;

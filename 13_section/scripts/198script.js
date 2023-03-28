@@ -45,17 +45,13 @@ document.addEventListener('keydown', function (e) {
 
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
+
   console.log(s1coords);
-
   console.log(e.target.getBoundingClientRect());
-
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
-
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  console.log('Current scroll X:', window.pageXOffset);
+  console.log('Current scroll Y:', window.pageYOffset);
+  console.log('height:', document.documentElement.clientHeight);
+  console.log('width:', document.documentElement.clientWidth);
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
@@ -73,7 +69,7 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
     // Matching strategy
     if(e.target.classList.contains('nav__link')) {
         const id = e.target.getAttribute('href');
-        console.log(id);
+        // console.log(id);
         document.querySelector(id).scrollIntoView({behavior: 'smooth'});
     };
 });
@@ -89,8 +85,8 @@ tabsContainer.addEventListener('click', function(e) {
     if(!clicked) return;
 
     // Remove active classes
-    tabs.forEach(t => t.classList.remove('operations__tab--active'));
-    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+    tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+    tabsContent.forEach(content => content.classList.remove('operations__content--active'));
 
     // Activate tab
     clicked.classList.add('operations__tab--active');
@@ -133,8 +129,13 @@ const stickyNav = function(entries) {
     const [entry] = entries;
     // console.log(entry);
 
-    if(!entry.isIntersecting) nav.classList.add('sticky')
-    else nav.classList.remove('sticky');
+    // entry.isIntersecting === false
+    if(!entry.isIntersecting) {
+      nav.classList.add('sticky')
+    }
+    else {
+      nav.classList.remove('sticky');
+    };
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, {
@@ -151,8 +152,10 @@ const allSections = document.querySelectorAll('.section');
 
 const revealSection = function(entries, observer) {
     const [entry] = entries;
-    console.log(entry);
+    // console.log(entry);  // IntersectionObserverEntry
 
+    // Guard clause
+    // entry.isIntersecting === false
     if(!entry.isIntersecting) return;
     
     entry.target.classList.remove('section--hidden');

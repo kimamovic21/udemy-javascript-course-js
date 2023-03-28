@@ -45,17 +45,13 @@ document.addEventListener('keydown', function (e) {
 
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
+
   console.log(s1coords);
-
   console.log(e.target.getBoundingClientRect());
-
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
-
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  console.log('Current scroll X:', window.pageXOffset);
+  console.log('Current scroll Y:', window.pageYOffset);
+  console.log('height:', document.documentElement.clientHeight);
+  console.log('width:', document.documentElement.clientWidth);
 
   section1.scrollIntoView({ behavior: 'smooth' });
 });
@@ -73,7 +69,7 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
     // Matching strategy
     if(e.target.classList.contains('nav__link')) {
         const id = e.target.getAttribute('href');
-        console.log(id);
+        // console.log(id);
         document.querySelector(id).scrollIntoView({behavior: 'smooth'});
     };
 });
@@ -83,14 +79,14 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
 // Tabbed component
 tabsContainer.addEventListener('click', function(e) {
     const clicked = e.target.closest('.operations__tab');
-    console.log(clicked);
+    // console.log(clicked);
 
     // Guard clause
     if(!clicked) return;
 
     // Remove active classes
-    tabs.forEach(t => t.classList.remove('operations__tab--active'));
-    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+    tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+    tabsContent.forEach(content => content.classList.remove('operations__content--active'));
 
     // Activate tab
     clicked.classList.add('operations__tab--active');
@@ -124,9 +120,10 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 ///////////////////////////////////////
 // Sticky Navigation: The Intersection Observer API
+
 // const obsCallback = function(entries, observer) {
 //     entries.forEach(entry => {
-//         console.log(entry);
+//         console.log(entry);  // IntersectionObserverEntry
 //     });
 // };
   
@@ -142,14 +139,19 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 const header = document.querySelector('.header');
 
 const navHeight = nav.getBoundingClientRect().height;
-console.log(navHeight);
+// console.log(navHeight);
 
 const stickyNav = function(entries) {
-    const [entry] = entries;
-    console.log(entry);
+    const [entry] = entries;  // first element out of entries
+    console.log(entry);  // IntersectionObserverEntry
 
-    if(!entry.isIntersecting) nav.classList.add('sticky')
-    else nav.classList.remove('sticky');
+    // entry.isIntersecting === false
+    if(!entry.isIntersecting) {
+      nav.classList.add('sticky')
+    }
+    else {
+      nav.classList.remove('sticky');
+    }; 
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, {
