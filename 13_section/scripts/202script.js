@@ -44,20 +44,16 @@ document.addEventListener('keydown', function (e) {
 // Button scrolling
 
 btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+    const s1coords = section1.getBoundingClientRect();
 
-  console.log(e.target.getBoundingClientRect());
-
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
-
-  console.log(
-    'height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
-
-  section1.scrollIntoView({ behavior: 'smooth' });
+    console.log(s1coords);
+    console.log(e.target.getBoundingClientRect());
+    console.log('Current scroll X:', window.pageXOffset);
+    console.log('Current scroll Y:', window.pageYOffset);
+    console.log('height:', document.documentElement.clientHeight);
+    console.log('width:', document.documentElement.clientWidth);
+  
+    section1.scrollIntoView({ behavior: 'smooth' });
 });
 
 
@@ -73,7 +69,7 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
     // Matching strategy
     if(e.target.classList.contains('nav__link')) {
         const id = e.target.getAttribute('href');
-        console.log(id);
+        // console.log(id);
         document.querySelector(id).scrollIntoView({behavior: 'smooth'});
     };
 });
@@ -83,14 +79,14 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
 // Tabbed component
 tabsContainer.addEventListener('click', function(e) {
     const clicked = e.target.closest('.operations__tab');
-    console.log(clicked);
+    // console.log(clicked);
 
     // Guard clause
     if(!clicked) return;
 
     // Remove active classes
-    tabs.forEach(t => t.classList.remove('operations__tab--active'));
-    tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+    tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
+    tabsContent.forEach(content => content.classList.remove('operations__content--active'));
 
     // Activate tab
     clicked.classList.add('operations__tab--active');
@@ -133,8 +129,13 @@ const stickyNav = function(entries) {
     const [entry] = entries;
     // console.log(entry);
 
-    if(!entry.isIntersecting) nav.classList.add('sticky')
-    else nav.classList.remove('sticky');
+    // entry.isIntersecting === false
+    if(!entry.isIntersecting) {
+        nav.classList.add('sticky')
+    }
+    else {
+        nav.classList.remove('sticky');
+    };
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, {
@@ -153,6 +154,7 @@ const revealSection = function(entries, observer) {
     const [entry] = entries;
     // console.log(entry);
 
+    // entry.isIntersecting === false
     if(!entry.isIntersecting) return;
     
     entry.target.classList.remove('section--hidden');
@@ -179,6 +181,7 @@ const loadImg = function(entries, observer){
     const [entry] = entries;
     // console.log(entry);
 
+    // entry.isIntersecting === false
     if(!entry.isIntersecting) return;
 
     // Replace src with data-src
@@ -214,6 +217,8 @@ const slider = function() {
 
     // Functions
     const createDots = function() {
+        // s - slide (we do not need this)
+        // i - index
         slides.forEach(function(s, i) {
             dotContainer.insertAdjacentHTML(
             'beforeend', 
@@ -273,7 +278,7 @@ const slider = function() {
     btnLeft.addEventListener('click', prevSlide);
 
     document.addEventListener('keydown', function(e) {
-        console.log(e);
+        // console.log(e);
         if (e.key === 'ArrowLeft') prevSlide();
         // Short circuiting
         e.key === 'ArrowRight' && nextSlide();

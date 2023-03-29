@@ -122,3 +122,43 @@ Bankist website
 -imgTargets varijabli dodajemo .forEach() metodu
 -kreiramo loadImg funkciju
 -varijabli observer dodajemo metodu .unobserve() metodu sa parametrom entry.target;
+
+
+200. 
+-kreiramo varijablu slides
+-varijabli slides dodajemo metodu .forEach() sa parametrima s(slide) i i(index)
+-kreiramo varijablu slider
+-kreiramo varijable btnRight i btnLeft
+-btnRight varijabli dodajemo addEventListener
+-kreiramo varijablu curSlide sa vrijednosti 0
+-kreiramo varijablu maxSlide
+-kreiramo funkciju goToSlide() sa parametrom slide
+-unutar goToSlide() funkcije dodajemo slides.forEach()
+-kreiramo funkciju nextSlide()
+-unutar nextSlide() funkcije dodajemo if - else uslov
+-kreiramo funkciju prevSlide()
+-unutar prevSlide() funkcije dodajemo if - else uslov
+
+
+201. 
+-dokumentu elementu dodajemo addEventListener sa keydown dogadajem
+-kreiramo varijablu dotContainer
+-kreiramo funkciju createDots()
+-unutar createDots funkcije varijabli slides dodajemo .forEach() metodu
+-unutar createDots funkcije, dotContainer varijabli dodajemo insertAdjacentHTML metodu
+-dotContainer varijabli dodajemo addEventListener sa click dogadajem i callback funkciju sa e parametrom
+-unutar callback funkcije kreiramo slide varijablu
+-unutar callback funkcije pozivamo goToSlide funkciju sa slide parametrom
+-kreiramo funkciju activateDot() sa parametrom slide
+-selektujemo sve elemente sa klasom .dots__dot
+-dodajemo .forEach() metodu
+-selektujemo sve elemente sa klasom .dots__dot[data-slide="${slide}"]
+-selektovanim elementima dodajemo .classList.add metode
+-unutar funkcija nextSlide i prevSlide pozivamo goToSlide i activateDot funkcije sa parametrima curSlide
+-kreiramo funkciju init()
+-kod koji smo pisali za slider komponentu ubacimo u slider() funkciju
+
+
+202. 
+-dokumentu dodajemo addEventListener sa DOMContentLoaded dogadajem i callback funkcijom sa parametrom e
+-window varijabli dodajemo addEventListener sa load dogadajem i callback funkcijom sa parametrom e
