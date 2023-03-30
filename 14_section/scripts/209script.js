@@ -33,6 +33,7 @@ console.log(kerim.__proto__);  // {calcAge: ƒ, constructor: ƒ}
 console.log(kerim.__proto__ === Person.prototype);  // true
 console.log(Person.prototype.isPrototypeOf(kerim));  // true
 console.log(Person.prototype.isPrototypeOf(Person));  // false
+// console.log(Person.prototype.isPrototypeOf(mike));  // ERROR
 
 // .prototypeOfLinkedObjects
 
@@ -40,5 +41,6 @@ Person.prototype.species = 'Homo Sapiens';
 
 console.log(kerim);  // Person -> [[Prototype]]: Object -> species: "Homo Sapiens";
 console.log(kerim.species);   // Homo Sapiens
+console.log(jonas.species);   // Homo Sapiens
 console.log(kerim.hasOwnProperty('firstName'));  // true
 console.log(kerim.hasOwnProperty('species'));  // false
