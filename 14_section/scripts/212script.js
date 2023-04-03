@@ -32,8 +32,8 @@ Car.prototype.brake = function() {
 const bmw = new Car('BMW', 120);
 const mercedes = new Car('Mercedes', 95);
 
-console.log(bmw);
-console.log(mercedes);
+console.log(bmw);  // Car {make: 'BMW', speed: 120}
+console.log(mercedes);  // Car {make: 'Mercedes', speed: 95}
 
 bmw.accelerate();
 bmw.accelerate();

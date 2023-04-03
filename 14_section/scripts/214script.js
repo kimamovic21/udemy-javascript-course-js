@@ -24,20 +24,25 @@ class PersonClass {
     // Set a property that already exists
     set fullName(name) {
         console.log(name);
-        if(name.includes(' ')) this._fullName = name;
-        else alert(`${name} is not a full name`);
+        if(name.includes(' ')) {
+            this._fullName = name;
+        }
+        else {
+            alert(`${name} is not a full name`);
+        };
     };
 
     get fullName() {
         return this._fullName;
-    }
+    };
 };
 
 const kerim = new PersonClass('Kerim Imamovic', 1996);
 console.log(kerim.age); // 27
 
+// const walter = new PersonClass('Walter White', 1965);
 const walter = new PersonClass('Walter', 1965);
-
+console.log(walter);  // PersonClass {birthYear: 1965}
 
 
 const account = {

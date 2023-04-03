@@ -43,23 +43,29 @@ console.log(kerim.species);   // Homo Sapiens
 console.log(kerim.hasOwnProperty('firstName'));  // true
 console.log(kerim.hasOwnProperty('species'));  // false
 
+console.log('-----------------------------------------');
 
 // Object.prototype (top of prototype chain)
-console.log(kerim.__proto__.__proto__);
+console.log(kerim.__proto__);  // {}
+console.log(kerim.__proto__.__proto__);  // {}
 console.log(kerim.__proto__.__proto__.__proto__);  // null
 
 console.log(Person.prototype.constructor);  // function itself
 console.dir(Person.prototype.constructor);  // ƒ Person(firstName, birthYear)
 
-const arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];  // new Array === []
-console.log(arr.__proto__);
+const arr = [1, 1, 2, 2, 3, 4, 5, 6, 7];  // new Array === []
+console.log(arr.__proto__);  // []
 console.log(arr.__proto__ === Array.prototype);  // true
-console.log(arr.__proto__.__proto__);
+console.log(arr.__proto__.__proto__);  // {}
+
 
 Array.prototype.unique = function() {
-    return [...new Set(this)];
+    return [...new Set(this)];  // this keyword is going to be array on which this method will be called
 };
-console.log(arr.unique());
+console.log(arr.unique());  // (7) [1, 2, 3, 4, 5, 6, 7]
+
 
 const h1 = document.querySelector('h1');
-console.dir(x => x + 1);
+console.dir(h1);  // h1
+
+console.dir(x => x + 1);  // anonymous()

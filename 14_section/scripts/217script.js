@@ -14,8 +14,8 @@ DATA CAR 1: 'Ford' going at 120 km/h
 
 class CarClass { 
     constructor (make, speed) {
-    this.make = make;
-    this.speed = speed;
+        this.make = make;
+        this.speed = speed;
     };
 
     accelerate() {
@@ -42,5 +42,6 @@ console.log(ford.speedUS);  // 75
 ford.accelerate();
 ford.accelerate();
 ford.brake();
+
 ford.speedUS = 50;
-console.log(ford);
+console.log(ford);  // CarClass {make: 'Ford', speed: 80}

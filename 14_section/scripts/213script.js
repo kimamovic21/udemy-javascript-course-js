@@ -24,16 +24,19 @@ class PersonClass {
     };
 };
 
-const kerim = new PersonClass('Kerim', 1996);
+const kerim = new PersonClass('Kerim', 1996);  // new keyword
 console.log(kerim);  // PersonClass {}
 kerim.calcAge();  // 27
 
 console.log(kerim.__proto__ === PersonClass.prototype);  // true
 
+kerim.greet();  // Hey Kerim !!!
+
+
 // PersonClass.prototype.greet = function() {
 //     console.log(`Hey ${this.firstName} !!!`);
 // };
-kerim.greet();  // Hey Kerim !!!
+// kerim.greet();  // Hey Kerim !!!
 
 // 1. Classes are NOT hoisted
 // 2. Classes are first-class citizens

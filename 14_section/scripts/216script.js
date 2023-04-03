@@ -15,6 +15,7 @@ const PersonProto = {
 
 const steven = Object.create(PersonProto);
 console.log(steven);  // {}
+
 steven.name = 'Steven';
 steven.birthYear = 2002;
 steven.calcAge();  // 21
@@ -25,3 +26,4 @@ console.log(steven.__proto__ === PersonProto);  // true
 const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1979);
 sarah.calcAge();  // 44
+console.log(sarah);

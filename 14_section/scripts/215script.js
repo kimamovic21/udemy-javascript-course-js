@@ -8,10 +8,9 @@ const Person = function(firstName, birthYear) {
 }
 
 Person.hey = function() {
-    console.log('Hey there 🖐');
+    console.log('Hey there 🖐');  // Hey there 🖐
     console.log(this);  // f () {}
 };
-
 Person.hey();
 
 
@@ -49,8 +48,8 @@ class PersonClass {
 
     // Static method
     static hey() {
-        console.log('Hey there 🖐');
-        console.log(this); 
+        console.log('Hey there 🖐');  // Hey there 🖐
+        console.log(this);  // classPersonClasss {}
     }
 };
 
@@ -58,3 +57,4 @@ const kerim = new PersonClass('Kerim Imamovic', 1996);
 console.log(kerim.age); // 27
 
 PersonClass.hey();  // class PersonClass { }
+// kerim.hey();  // Error - kerim.hey is not a function
