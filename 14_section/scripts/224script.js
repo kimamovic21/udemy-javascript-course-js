@@ -53,13 +53,13 @@ class Account {
 
     // 4) Private methods
     // #approveLoan(val) {
-        _approveLoan(val) {
+    _approveLoan(val) {
         return true;
     };
 };
 
 const acc1 = new Account('Kerim', 'EUR', 1111);
-console.log(acc1);
+console.log(acc1);  // Account
 
 // acc1._movements.push(250);
 // acc1._movements.push(-200);
@@ -71,7 +71,7 @@ acc1.requestLoan(1000);
 // acc1._approveLoan(1000);
 acc1.getMovements(acc1.getMovements);
 
-console.log(acc1);
+console.log(acc1);  // Account
 // console.log(acc1._pin);
 
 // ._movements is not supposed  to be touched outside of the class

@@ -14,11 +14,12 @@ class CarClass {
     constructor (make, speed) {
         this.make = make;
         this.speed = speed;
-    }
+    };
     
     accelerate() {
         this.speed += 10;
         console.log(`${this.make} is going at ${this.speed} km/h.`);
+        return this;
     };
     
     brake() {
@@ -29,11 +30,11 @@ class CarClass {
 
     get speedUS() {
         return this.speed / 1.6;
-      }
+    };
 
     set speedUS(speed) {
-        this.speed = speed * 1.6;
-    }
+        return this.speed = speed * 1.6;
+    };
 };
     
 
@@ -59,8 +60,9 @@ class EVClass extends CarClass {
 };
     
 const rivian = new EVClass('Rivian', 120, 23);    
-console.log(rivian);
+console.log(rivian);  // EVClass
 // console.log(rivian.#charge);  // does not work
+
 rivian
     .accelerate()
     .accelerate()
@@ -69,4 +71,4 @@ rivian
     .chargeBattery(50)
     .accelerate();
 
-console.log(rivian.speedUS);
+console.log(rivian.speedUS);  // 121.875

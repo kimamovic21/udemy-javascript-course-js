@@ -27,20 +27,21 @@ class PersonClass {
 
     get fullName() {
         return this._fullName;
-    }
+    };
 
     // Static method
     static hey() {
         console.log('Hey there 🖐');
-    }
+    };
 };
 
 
 class StudentClass extends PersonClass {
     constructor(fullName, birthYear, course) {
         // Always needs to happen first!
-        super(fullName, birthYear)
-        this.course = course
+        super(fullName, birthYear);
+        // super - constructor function of the parent class
+        this.course = course;
     };
 
     introduce() {
@@ -55,7 +56,7 @@ class StudentClass extends PersonClass {
 // const martha = new StudentClass('Martha Jones', 2000);
 // console.log(martha);
 const martha = new StudentClass('Martha Jones', 2000, 'Computer Science');
-console.log(martha);
+console.log(martha);  // StudentClass
 
 martha.calcAge();
 martha.introduce();

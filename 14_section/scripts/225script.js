@@ -88,11 +88,13 @@ Account.helper();  // Helper function
 
 
 // Chaining
-acc1.
-    deposit(300)
+acc1
+    .deposit(300)
     .deposit(500)
     .withdraw(35)
     .requestLoan(25000)
     .withdraw(4000);
     
 console.log(acc1.getMovements());  // (8) [250, -200, 1000, 300, 500, -35, 25000, -4000]
+
+// keyword this will make methods chainable

@@ -24,6 +24,7 @@ class Account {
     };
 
     approveLoan(val) {
+        console.log(val);
         return true;
     };
 
@@ -36,7 +37,7 @@ class Account {
 };
 
 const acc1 = new Account('Kerim', 'EUR', 1111, []);
-console.log(acc1);
+console.log(acc1);  // Account
 
 // acc1.movements.push(250);
 // acc1.movements.push(-200);
@@ -46,5 +47,6 @@ acc1.deposit(250);
 acc1.withdraw(200);
 acc1.requestLoan(1000);
 acc1.approveLoan(1000);
-console.log(acc1);
-console.log(acc1.pin);
+
+console.log(acc1);  // Account
+console.log(acc1.pin);  // 1111
