@@ -28,6 +28,7 @@ const renderCountry = function(data, className = '') {
 const request = fetch(`https://restcountries.com/v2/name/portugal`);
 console.log(request);  // Promise {<pending>}
 
+
 const getCountryData = country => {
     // Country 1
     fetch(`https://restcountries.com/v2/name/${country}`)
@@ -52,3 +53,4 @@ const getCountryData = country => {
 
 getCountryData('portugal');
 // getCountryData('usa');
+// getCountryData('malta');
