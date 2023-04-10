@@ -74,6 +74,7 @@ btn.addEventListener('click', function() {
     getCountryData('australia');
 });
 
+
 // const getCountryData = country => {
 //     // Country 1
 //     fetch(`https://restcountries.com/v2/name/${country}`)

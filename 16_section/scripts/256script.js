@@ -6,6 +6,7 @@
 In this challenge you will build a function 'whereAmI' which renders a country ONLY based on GPS coordinates.
 For that, you will use a second API to geocode coordinates.
 Here are your tasks:
+
 PART 1
 1. Create a function 'whereAmI' which takes as inputs a latitude value (lat) and a longitude value (lng) 
 (these are GPS coordinates, examples are below).
@@ -19,6 +20,7 @@ provided location. Then, using this data, log a messsage like this to the consol
 5. This API allows you to make only 3 requests per second. If you reload fast, you will get this error with 
 code 403. This is an error with the request. Remember, fetch() does NOT reject the promise in this case. So create 
 an error to reject the promise yourself, with a meaningful error message.
+
 PART 2
 6. Now it's time to use the received data to render a country. So take the relevant attribute from the geocoding 
 API result, and plug it into the countries API that we have been using.
@@ -29,6 +31,9 @@ TEST COORDINATES 2: 19.037, 72.873
 TEST COORDINATES 3: -33.933, 18.474
 GOOD LUCK 😀
 */
+
+
+// Part 2
 
 const countriesContainer = document.querySelector('.countries');
 
@@ -57,19 +62,18 @@ const whereAmI = function(lat, lng) {
             // console.log(response);
             if (!response.ok)  {
                 throw new Error(`Problem with geocoding ${response.status}`);
-            }
+            };
             return response.json();
         })
         .then(data => {
-            console.log(data);
+            console.log(data);  // {}
             console.log(`You are in ${data.city}, ${data.country}.`);
-
             return fetch(`https://restcountries.com/v2/name/${data.country}`);
         })
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Country not found (${response.status})`);
-            }
+            };
             return response.json();
         })
         .then(data => renderCountry(data[0]))
@@ -80,4 +84,26 @@ whereAmI(52.508, 13.381);
 // whereAmI(19.037, 72.873);
 // whereAmI(-33.933, 18.474);
 
+
+
+
+// Part 1
+
+// const whereAmI = function(lat, lng) {
+//     // fetch(`https://geocode.xyz/52.508,13.381?geoit=json`)
+//     fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+//         .then(response => {
+//             if(!response.ok) throw new Error(`Problem with geocoding ${response.status}`);
+//             return response.json();
+//         })
+//         .then(data => {
+//             console.log(data);
+//             console.log(`You are in ${data.city}, ${data.country}`);
+//         })
+//         .catch(error => console.error(`${error.message}`));
+// };
+
+// whereAmI(52.508, 13.381);
+// // whereAmI(19.037, 72.873);
+// // whereAmI(-33.933, 18.474);
 

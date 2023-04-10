@@ -21,7 +21,7 @@ const getPosition = function() {
         //     position => resolve(position),
         //     err => reject(err)
         // );
-        navigator.geolocation.getCurrentPosition(resolve,reject)
+        navigator.geolocation.getCurrentPosition(resolve,reject);
     });
 };
 
@@ -59,7 +59,7 @@ const whereAmI = function() {
             return response.json();
         })
         .then(data => {
-            console.log(data);
+            console.log(data);  // {}
             console.log(`You are in ${data.city}, ${data.country}.`);
             return fetch(`https://restcountries.com/v2/name/${data.country}`);
         })

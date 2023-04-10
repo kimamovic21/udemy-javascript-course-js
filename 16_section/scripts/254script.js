@@ -69,3 +69,5 @@ btn.addEventListener('click', function() {
     getCountryData('portugal');
 });
 
+
+// getCountryData('kerim');  // Error

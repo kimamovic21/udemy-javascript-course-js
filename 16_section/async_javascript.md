@@ -33,3 +33,37 @@ Async Javascript
 253. 
 -unutar funkcije getCountryData, unutar then metode, dodajemo funkciju renderCountry sa parametrom
 -kreiramo varijablu neighbour
+
+
+254. 
+-btn varijabli dodajemo addEventListener sa dva parametra
+-unutar getCountryData funkcije dodajemo catch metodu
+-kreiramo funkciju renderError sa msg parametrom
+-unutar renderError funkcije varijabli countriesContainer dodajemo metodu insertAdjacentHTML
+-countriesContainer varijabli dodajemo opacity 1
+-nakon catch metode dodajemo finally metodu
+
+
+255. 
+-kreiramo funkciju getJSON sa dva parametra
+-unutar getJSON funkcije dodajemo fetch, then metode
+-nakon toga dadajemo if uslov i throw new Error
+-unutar getCountryData dodajemo getJSON funkciju
+
+
+256. 
+-kreiramo funkciju whereAmI
+
+
+258. 
+-Promise.resolve metoda
+
+
+259. 
+-kreiramo varijablu lotteryPromise
+-kreiramo wait funkciju
+
+
+260. 
+-kreiramo funkciju getPosition
+

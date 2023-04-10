@@ -2,7 +2,7 @@
 
 'use strict';
 
-const lotteryPromise= new Promise(function(resolve, reject) {
+const lotteryPromise = new Promise(function(resolve, reject) {
     console.log(`Lottery draw is happening ✨`);
     setTimeout(function() {
         if(Math.random() >= 0.5) {
@@ -17,6 +17,7 @@ const lotteryPromise= new Promise(function(resolve, reject) {
 // console.log(lotteryPromise);
 lotteryPromise.then(res => console.log(res))
               .catch(err => console.log(err));
+
 
 // Promisifying setTimeout
 const wait = function(seconds) {
@@ -40,5 +41,10 @@ wait(1)
     })
     .then(() => console.log(`I waited for 4 seconds`)); 
 
-Promise.resolve(`abc`).then(x => console.log(x));
-Promise.reject(new Error(`Problem!`)).catch(y => console.log(y));
+    
+Promise
+    .resolve(`abc`)
+    .then(x => console.log(x));
+Promise
+    .reject(new Error(`Problem!`))
+    .catch(y => console.log(y));
