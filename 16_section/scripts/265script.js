@@ -4,7 +4,10 @@
 
 const getJSON = function(url, errorMsg = 'Something went wrong') {
     return fetch(url).then(response => {
-        if (!response.ok) throw new Error(`Country not found (${errorMsg})!`);
+        if (!response.ok) {
+            throw new Error(`Country not found (${errorMsg})!`);
+        };
+        console.log(response);  // Response
         return response.json();
     });
 };
@@ -24,11 +27,13 @@ const get3Countries = async function(country1, country2, country3) {
             getJSON(`https://restcountries.com/v2/name/${country3}`),
         ]);
 
-       console.log(data.map(d => d[0]));
-       console.log(data.map(d => d[0].capital));
+       console.log(data);  // (3) [Array(1), Array(1), Array(1)]
+       console.log(data.map(d => d[0]));  // (3) [{…}, {…}, {…}]
+       console.log(data.map(d => d[0].capital));  // (3) ['Lisbon', 'Ottawa', 'Berlin']
     }
     catch(err) {
-        console.log(err);
+        console.error(err);
     };
 };
+
 get3Countries('Portugal', 'Canada', 'Germany');

@@ -67,3 +67,71 @@ Async Javascript
 260. 
 -kreiramo funkciju getPosition
 
+
+261. 
+-kreiramo createImage funkciju sa parametrom imgPath
+-unutar funkcije kreiramo Promise
+-unutar Promise, kreiramo funkciju sa dva parametra resolve i reject
+-kreiramo img varijablu
+-img varijabli dodajemo src koji je jednak imgPath
+-img varijabli dodajemo addEventListener sa load dogadajem
+-unutar callback funkcije, kreiramo imgContainer varijablu
+-imgContainer varijabli dodajemo append metodu
+-dodajemo resolve metodu sa parametrom img
+-img varijabli dodajemo jos jedan addEventListener sa error dogadajem
+-unutar callback funkcije dodajemo reject metodu unutar koje se nalazi Error objekat
+-pozivamo funkciju createImage sa argumentom koji je lokacija slike
+-createImage funkciji dodajemo then metode
+-createImage funkciji dodajemo catch metodu
+-kreiramo wait funkciju
+-kreiramo currentImg varijablu
+-unutar prve then metode currentImg varijabli dodjeljujemo vrijednost img varijable
+-pozivamo wait funkciju sa argumentom 2
+-unutar druge then metode currentImg varijabli dodajemo display metodu
+-pozivamo createImage funkciju sa argumentom lokacijom slike
+-unutar trece then metode dodajemo currentImg varijablu koja je jednaka img varijabli
+-pozivamo wait funkciju sa argumentom 2
+-unutar cetvrte then metode currentImg varijabli dodajemo display metodu
+
+
+262. 
+-kreiramo funkciju whereAmI dodavajuci async keyword
+-unutar funkcije kreiramo res varijablu
+-vrijednost res varijable ce biti jednaka await fetch metodi
+-res varijabli dodajemo await i json metodu()
+-kreiramo data varijablu u koju pohranimo vrijednost res varijable 
+-pozivamo renderCountry funkciju sa argumentom data[0]
+-kreiramo funkciju getPosition
+-unutar whereAmI funkcije kreiramo pos varijablu koja je jednaka vrijednosti await getPosition()
+-kreiramo lat i lng varijable
+-kreiramo resGeo varijablu cija je vrijednost jednaka await fetch metodi
+-resGeo varijabli dodajemo json metodu
+-ispred resGeo varijable dodajemo await
+-dobiveni rezultat pohranimo u dataGeo varijablu
+
+
+263. 
+-dodajemo try - catch metode
+-u try bloku dodajemo dva if uslova
+
+
+264. 
+-dodajemo return prije catch bloka
+-nakon catch blocka dodajemo throw err
+
+
+265. 
+-kreiramo get3Countries async funkciju
+-dodajemo try - catch blokove koda
+-kreiramo getJSON funkciju
+-kreiramo data varijablu unutar get3Countries funkcije
+-varijabli data dodajemo await Promise.all metodu
+
+
+266. 
+-kreiramo async iife funkciju
+-kreiramo timeout funkciju
+-kreiramo Promise.race metodu
+-kreiramo Promise.allSettled metodu
+-kreiramo Promise.all metodu
+-kreiramo Promise.any metodu

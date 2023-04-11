@@ -58,7 +58,7 @@ const whereAmI = async function() {
         return `You are in ${dataGeo.city}, ${dataGeo.country}.`;
     }
     catch(err) {
-        console.log(`${err} ⛔`);
+        console.error(`${err} ⛔`);
         // renderError(`Something went wrong ${err.message} ⛔`);
     };
 
@@ -84,7 +84,7 @@ console.log(`1: will get location`);
        console.log(`2: ${city}`);
     }
     catch (err) {
-        console.log(`2:${err.message} ⛔`);
+        console.error(`2:${err.message} ⛔`);
     }
     console.log(`3: Finished getting location`)
 })();

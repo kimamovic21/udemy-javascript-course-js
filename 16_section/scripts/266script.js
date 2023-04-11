@@ -16,7 +16,7 @@ const getJSON = function(url, errorMsg = 'Something went wrong') {
         getJSON(`https://restcountries.com/v2/name/egypt`),
         getJSON(`https://restcountries.com/v2/name/mexico`),
     ]);
-    console.log(res[0]);
+    console.log(res[0]);  // {}
 })();
 
 
@@ -33,8 +33,8 @@ Promise.race([
         getJSON(`https://restcountries.com/v2/name/bosnia`),
         timeout(1)
 ])
-    .then(res => console.log(res[0]))
-    .catch(err => console.log(err));
+    .then(res => console.log(res[0]))  // {}
+    .catch(err => console.error(err));
 
 
 // Promise.allSettled
@@ -44,7 +44,7 @@ Promise.allSettled([
     Promise.resolve('Another success'),
 ])
     .then(res => console.log(res))  // [{…}, {…}, {…}]
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
 
 
 // Promise.all
@@ -54,7 +54,7 @@ Promise.all([
     Promise.resolve('Another success'),
 ])
     .then(res => console.log(res))
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));  // Error
 
 
 // Promise.any (ES2021)
@@ -63,5 +63,5 @@ Promise.any([
     Promise.reject('Error'),
     Promise.resolve('Another success'),
 ])
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
+    .then(res => console.log(res))  // Success
+    .catch(err => console.error(err));
