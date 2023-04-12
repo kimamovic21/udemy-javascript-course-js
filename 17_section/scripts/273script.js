@@ -23,11 +23,11 @@ const getLastPost = async function() {
 };
 
 const lastPost = getLastPost();
-console.log(lastPost);
+console.log(lastPost);  // Promise {<pending>}
 
 // Not very clean
 // lastPost.then(last => console.log(last));
 
 // Top-level await
 const lastPost2 = await getLastPost();
-console.log(lastPost2);
+console.log(lastPost2);  // {title: '...'}

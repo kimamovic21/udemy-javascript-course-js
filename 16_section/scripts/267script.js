@@ -63,7 +63,7 @@ const loadNPause = async function() {
     }
     catch(err) {
         console.error(err);
-    }
+    };
 };
 // loadNPause();
 

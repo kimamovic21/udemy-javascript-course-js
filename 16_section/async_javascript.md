@@ -135,3 +135,30 @@ Async Javascript
 -kreiramo Promise.allSettled metodu
 -kreiramo Promise.all metodu
 -kreiramo Promise.any metodu
+
+
+267. 
+-Part 1
+-kreiramo imgContainer varijablu
+-kreiramo wait funkciju
+-kreiramo createImage funkciju
+-kreiramo async loadNPause funkciju
+-unutar lodNPause funkcije dodajemo try - catch blokove koda
+-dodajemo prvo kod za load image 1
+-unutar try blok koda pozivamo createImage funkciju sa argumentom koji je putanja slika
+-ispred createImage funkcije dodajemo await keyword
+-dobiveni rezultat pohranimo u img varijablu
+-pozivamo wait funkciju sa argumentom 2 i dodajemo await keyword
+-img varijabli dodajemo display metodu
+-dodajemo isti kod za load image 2
+-pozivamo loadNPause funkciju bez argumenta
+-Part 2
+-kreiramo async loadAll funkciju sa imgArr parametrom
+-unutar loadAll funkcije dodajemo try - catch blokove koda
+-unutar try blok koda kreiramo imgs varijablu
+-unutar imgs varijable pohranjujemo rezultat map metodu koji koristimo kod imgArr niza
+-unutar map metode dodajemo async i await
+-dodajemo Promise.all metodu gdje kao argument uzimamo imgs varijablu
+-unutar try bloka koda kreiramo imgsEl varijablu u koju pohranimo dobijeni rezultat
+-imgsEl varijabli dodajemo forEach metodu pomocu koje svakoj slici dodajemo klasu
+-pozivamo loadAll funkciju sa nizom slika kao argumentom 
