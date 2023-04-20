@@ -48,7 +48,7 @@ const budget = [
       output += entry.value <= -bigLimit ? `${entry.description.slice(-2)} / ` : '';
     
     output = output.slice(0, -2); // Remove last '/ '
-    console.log(output);
+    console.log(output);  //  📱 / 💻
   };
 
   console.log(budget);

@@ -22,8 +22,8 @@ const stateClone = Object.assign({}, state);
 const stateDeepClone = cloneDeep(state);
 
 state.user.loggedIn = false;
-console.log(stateClone);
-console.log(stateDeepClone);
+console.log(stateClone);  // {cart: Array(2), user: {…}}
+console.log(stateDeepClone);  // LodashWrapper
 
 if(module.hot) {
     module.hot.accept();
@@ -38,13 +38,13 @@ class Person {
     }
 }
 const kerim = new Person('Kerim');
-console.log(kerim);
+console.log(kerim);  // Person
 
-console.log('Kerim' ?? null);
+console.log('Kerim' ?? null);  // Kerim
 
-console.log(cart.find(element => element.quantity >= 2));
+console.log(cart.find(element => element.quantity >= 2));  // {product: 'pizzas', quantity: 2}
 
-Promise.resolve('TEST').then( x => console.log(x));
+Promise.resolve('TEST').then( x => console.log(x));  // TEST
 
 // npm install core-js
 

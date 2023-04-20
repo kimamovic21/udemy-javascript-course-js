@@ -7,7 +7,9 @@ const ShoppingCart = (function() {
     const totalQuantity = 23;
 
     const addToCart = function(product, quantity) {
+        // cart.push(product, quantity);
         cart.push({product, quantity});
+        console.log(cart);  // [{...}]
         console.log(`${quantity} ${product} added to cart. Shipping cost is ${shippingCost}.`
         );
     };
@@ -18,13 +20,21 @@ const ShoppingCart = (function() {
 
     return {
         addToCart,
+        orderStock,
         cart,
         totalPrice,
         totalQuantity,
     };
 })();
 
+// addToCart('apples', 4);  // Error
+// orderStock('bread', 3);  // Error
 ShoppingCart.addToCart('apples', 4);
 ShoppingCart.addToCart('pizzas', 2);
-console.log(ShoppingCart);
-console.log(ShoppingCart.shippingCost);
+ShoppingCart.orderStock('bread', 3);
+console.log(ShoppingCart);  // {}
+console.log(ShoppingCart.cart);  // (2) [{…}, {…}]
+console.log(ShoppingCart.shippingCost);  // undefined
+console.log(ShoppingCart.totalPrice);  // 237
+console.log(ShoppingCart.totalQuantity);  // 23
+

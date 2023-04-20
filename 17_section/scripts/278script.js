@@ -1,9 +1,12 @@
 // 278. Bundling With Parcel and NPM Scripts
 
+// npx parcel index.html
 // npm i parcel --save-dev
 // npm run start
 // npm run build
-// npm i parcel -g
+// npm install parcel -g
+// npm uninstall parcel
+// npm run start index.html
 
 console.log(`Importing module`);
 
@@ -14,7 +17,7 @@ import add, {cart} from './278shoppingCart.js';
 add('pizzas', 2);
 add('breads', 5);
 add('apples', 4);
-console.log(cart);
+console.log(cart);  // (3) [{…}, {…}, {…}]
 
 const state = {
     cart: [
@@ -28,9 +31,10 @@ const stateClone = Object.assign({}, state);
 const stateDeepClone = cloneDeep(state);
 
 state.user.loggedIn = false;
-console.log(stateClone);
-console.log(stateDeepClone);
+console.log(stateClone);  // {cart: Array(2), user: {…}}
+console.log(stateDeepClone);  // LodashWrapper
 
+// Code that parcel understands
 if(module.hot) {
     module.hot.accept();
 };

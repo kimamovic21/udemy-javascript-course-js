@@ -1,7 +1,7 @@
 // 277. Introduction to NPM
 
 // NPM commands
-// npm -v  8.12.1 (21.03.2023.)
+// npm -v  8.12.1 (14.04.2023.)
 // npm init
 // npm install leaflet
 // npm install lodash-es
@@ -21,5 +21,6 @@ const stateClone = Object.assign({}, state);
 const stateDeepClone = cloneDeep(state);
 
 state.user.loggedIn = false;
-console.log(stateClone);
-console.log(stateDeepClone);
+
+console.log(stateClone);  // {loggedIn: false}
+console.log(stateDeepClone);  // {loggedIn: true}

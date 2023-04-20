@@ -10,8 +10,9 @@
   "author": "Kerim",
   "license": "ISC",
   "dependencies": {
-    "core-js": "^3.29.1",
+    "core-js": "^3.30.1",
     "leaflet": "^1.9.3",
+    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "regenerator-runtime": "^0.13.11"
   },

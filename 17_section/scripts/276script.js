@@ -5,8 +5,10 @@
 // ls 
 // cd .. 
 // cd ../
+// cd ../../
+// clear
 // mkdir TEST
-// echo - (edit, touch)
+// echo > index.html
 // live-server
 // mv file-name
 // rm - remove
