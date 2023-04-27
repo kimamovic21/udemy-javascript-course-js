@@ -327,3 +327,12 @@ Section 17: Modern Javascript Development: Modules, Tooling, and Functional Prog
 281. Let's Fix Some Bad Code: Part 1
 282. Declarative and Functional Javascript Principles
 283. Let's Fix Some Bad Code: Part 2
+
+
+Section 18: Forkify App: Building a Modern Application
+284. Section Intro
+285. Section Roadmap
+286. Project Overview and Planning(I)
+287. Latest Code Updates(Parcel v2 and more)
+288. Loading a Recipe from API
+289. Rendering the Recipe
