@@ -81,3 +81,30 @@ Forkify app
 30. unutar 292recipeView.js fajla kreiramo privatnu metodu generateMarkupIngredient sa parametrom ing 
 31. pravimo izmjene u map metodi gdje kao parametar uzimamo generateMarkupIngredient privatnu metodu
 
+
+293. 
+1. kreiramo 293config.js fajl
+2. u 293config.js fajlu kreiramo API_URL varijablu
+3. u 293model.js fajlu importujemo API_URL varijablu
+4. u const red varijablu pravimo izmjenu u fetch metodi
+5. kreiramo 293helpers.js fajl
+6. u 293helpers.js fajlu kreiramo async getJSON funkciju
+7. u 293model.js fajl importujemo getJSON funkciju
+8. u 293helpers fajlu kreiramo timeout funkciju
+9. u 293helpers fajlu kreiramo fetchPromise varijablu
+10. u 293config fajlu kreiramo TIMEOUT_SEC varijablu
+11. u 293helpers fajl importujemo TIMEOUT_SEC varijablu
+
+
+294. 
+1. u 294recipeView fajlu dodajemo metodu addHandlerRender()
+2. u 294controller fajlu kreiramo init funkciju
+
+
+295. 
+1. u 295recipeView fajlu kreiramo renderError metodu
+2. unutar renderError metode kreiramo markup varijablu
+3. u 295recipeView fajlu kreiramo privatnu varijablu #errorMessage
+4. u 295recipeView fajlu kreiramo renderMessage metodu
+5. u 295recipeView fajlu kreiramo #message privatnu varijablu
+
