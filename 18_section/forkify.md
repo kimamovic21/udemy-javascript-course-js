@@ -108,3 +108,28 @@ Forkify app
 4. u 295recipeView fajlu kreiramo renderMessage metodu
 5. u 295recipeView fajlu kreiramo #message privatnu varijablu
 
+
+296. 
+1. u 296model.js fajlu kreiramo async funkciju loadSearchResults
+2. unutar loadSearchResults funkcije kreiramo try - catch blokove koda
+3. u varijabli state dodajemo search objekt
+4. u 296controller.js fajlu kreiramo controlSearchResults funkciju
+5. unutar controlSearchResults funkcije dodajemo try - catch blokove koda
+6. kreiramo novi searchView.js fajl
+7. u 296searchView.js fajlu kreiramo SearchView klasu
+8. unutar klase kreiramo privatnu varijablu #parentElement
+9. kreiramo getQuery metodu
+10. u 296controller.js fajlu importujemo searchView
+11. u 296searchView.js fajlu dodajemo addHandlerSearch metodu
+12. dodajemo clearInput metodu
+
+
+297. 
+1. kreiramo resultsView.js fajl
+2. unutar resultsView.js fajla kreiramo ResultsView klasu
+3. kreiramo View.js fajl
+4. u View.js fajlu kreiramo klasu View
+5. u 297recipeView.js fajlu umjesto # za varijable i metode pisemo _
+6. u 297searchView.js fajlu umjesto # za varijable i metode pisemo _
+7. u resultsView.js fajlu kreiramo _generateMarkup metodu
+
