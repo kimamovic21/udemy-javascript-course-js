@@ -64,7 +64,7 @@ const showRecipe = async function() {
         // 2)Rendering recipe
         let markup = `
             <figure class="recipe__fig">
-                <img src="${recipe.image}" alt="${recipe.title}" class="recipe__img" />
+                <img src="${recipe.image}" alt="${recipe.title}" class="recipe__img" crossorigin/>
                 <h1 class="recipe__title">
                 <span>${recipe.title}</span>
                 </h1>

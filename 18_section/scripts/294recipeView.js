@@ -37,7 +37,7 @@ class RecipeView {
     #generateMarkup() {
         return `
             <figure class="recipe__fig">
-                <img src="${this.#data.image}" alt="${this.#data.title}" class="recipe__img" />
+                <img src="${this.#data.image}" alt="${this.#data.title}" class="recipe__img" crossorigin/>
                 <h1 class="recipe__title">
                 <span>${this.#data.title}</span>
                 </h1>
