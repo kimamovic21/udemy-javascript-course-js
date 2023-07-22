@@ -3,7 +3,17 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
+/.parcel-cache
+/dist
+/package.lock.json
+/.pnp.js
+/17_section\-parcel-cache
+/17_section\dist
+/17_section\node_modules
+/18_section\.parcel-cache
+/18_section\.parcel-cache\data.mdb
+/18_section\dist
+/18_section\node_modules
 
 # testing
 /coverage

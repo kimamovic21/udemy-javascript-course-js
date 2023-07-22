@@ -336,3 +336,19 @@ Section 18: Forkify App: Building a Modern Application
 287. Latest Code Updates(Parcel v2 and more)
 288. Loading a Recipe from API
 289. Rendering the Recipe
+290. Listening For load and hashchange Events
+291. The MVC Architecture
+292. Refactoring for MVC
+293. Helpers and Configuration Files
+294. Event Handlers in MVC: Publisher-Subscriber Pattern
+295. Implementing Error and Success Messages
+296. Implementing Search Results - Part 1
+297. Implementing Search Results - Part 2
+298. Implementing Pagination - Part 1
+299. Implementing Pagination - Part 2
+300. Project Planning II
+301. Updating Recipe Servings
+302. Developing a DOM Updating Algorithm
+303. Implementing Bookmarks - Part 1
+304. Implementing Bookmarks - Part 2
+305. Storing Bookmarks With localStorage
