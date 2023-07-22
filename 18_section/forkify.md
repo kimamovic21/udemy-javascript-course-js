@@ -261,4 +261,7 @@ Forkify app
 11. u controller.js fajlu kreiramo controlBookmakrs funkciju
 12. u controlBookmakrs funkciju dodajemo bookmarksView.render(...)
 13. u funkciju init dodajemo bookmarksView.addHandlerRender(...)
-14. 
+14. u model.js fajlu kreiramo clearBookmarks funkciju
+15. u clearBookmarks funkciju dodajemo localStorage
+
+306. Project Planning III 
