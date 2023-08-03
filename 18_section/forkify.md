@@ -264,4 +264,68 @@ Forkify app
 14. u model.js fajlu kreiramo clearBookmarks funkciju
 15. u clearBookmarks funkciju dodajemo localStorage
 
+
 306. Project Planning III 
+
+
+307. Uploading a New Recipe - Part 1
+1. kreiramo addRecipeView.js fajl
+2. kreiramo varijablu _parentElement
+3. kreiramo metodu _generateMarkup()
+4. kreiramo varijable _window, _overlay, _btnOpen i _btnClose
+5. kreiramo _addHandlerShowWindow() metodu
+6. varijabli _btnClose dodajemo this i addEventListener
+7. u callback funkciji dodajemo varijabli _overlay metodu toggle
+8. u callback funkciji dodajemo varijabli _window metodu toggle
+9. kreiramo metodu constructor() 
+10. u constructor() metodi dodajemo super() i metodu _addHandlerShowWindow()
+11. u controller.js fajl importujemo addRecipeView fajl
+12. kreiramo metodu toggleWindow()
+13. u metodi _addHandlerShowWindow, drugi argument funkcije addEventListener je metoda toggleWindow
+14. kreiramo metodu _addHandlerHideWindow()
+15. u metodu _addHandlerHideWindow dodajemo _btnClose i _overlay varijable sa funkcijom addEventListener
+16. u metodi constructor() dodajemo metodu _addHandlerHideWindow()
+17. kreiramo metodu addHandlerUpload
+18. u metodu addHandlerUpload() dodajemo varijablu _parentElement sa addEventListener
+19. u callback funkciji kreiramo varijablu dataArr
+20. u controller.js fajlu kreiramo funkciju controlAddRecipe
+21. u funkciju init() dodajemo addRecipeView.addHandlerUpload(controlAddRecipe)
+22. u addRecipeView.js fajlu kreiramo varijablu data 
+23. u metodu addHandlerUpload dodajemo funkciju handler(data)
+
+
+308. Uploading a New Recipe - Part 2
+1. u model.js fajlu kreiramo asinhronu funkciju uploadRecipe() sa parametrom newRecipe
+2. u funkciji uploadRecipe kreiramo varijablu const ingredients
+3. u controller.js fajlu, unutar controlAddRecipe dodajemo model.uploadRecipe(newRecipe)
+4. dodajemo blokove koda try-catch
+5. u model.js fajlu, u upload Recipe() funkciji dodajemo blokove koda try-catch
+6. u try bloku koda kreiramo varijablu objekt recipe
+7. u helper.js fajlu kreiramo funkciju sendJSON
+8. u funkciji sendJSON kreiramo objekt varijablu fetchPro
+9. u model.js fajl importujemo sendJSON funkciju
+10. u try blok koda dodajemo sendJSON funkciju
+11. na stranici Forkify API generisemo API kljuc
+12. u config.js fajlu kreiramo const varijablu KEY
+13. u model.js importujemo varijablu KEY
+14. kreiramo varijablu const data koja je jednaka rezultatu awawit sendJSON funkcije
+15. u model.js kreiramo funkciju createRecipeObject
+16. u try blok koda dodajemo addBookmark(state.recipe)
+17. u controller.js fajl, u controlAddRecipe dodajemo recipeView.render(model.state.recipe)
+18. u try blok koda kreiramo setTimeout funkciju
+19. u config.js fajlu kreiramo varijablu const MODAL_CLOSE_SEC
+20. u controller.js fajl importujemo varijablu MODAL_CLOSE_SEC 
+21. u addRecipeView.js fajlu kreiramo varijablu _message
+22. u controller.js fajl, u try blok koda dodajemo addRecipeView.renderSpinner()
+
+
+309. Uploading a New Recipe - Part 3
+1. u controller.js fajlu, u try bloku koda dodajemo bookmarksView.render(model.state.bookmarks)
+2. window objektu dodajemo history metodu
+3. u helpers.js fajlu, kreiramo funkciju asinhronu funkciju AJAX
+4. u funkciji AJAX kreiremo varijablu fetchProp 
+5. u model.js fajl importujemo funkciju AJAX
+
+
+310. Wrapping Up: Final Considerations
+1. u View.js fajl dodajemo komentar kojim opisujemo funkciju

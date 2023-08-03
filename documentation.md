@@ -1,19 +1,23 @@
-Section 1: Welcome, welcome, welcome !
+The Complete JavaScript Course 2023: From Zero to Expert!
 
+Section 1: Welcome, welcome, welcome !
+1. Course Structure and Projects
+2. Read Before You Start!
+3. Watch Before You Start!
+4. Setting Up Our Code Editor
 
 Section 2: Javascript fundamentals - part 1
-6. Section intro
--What is Javascript?
-Javascript is a high-level, object oriented, multi-paradigm programming language
-7. Hello World!
-8. Brief introduction to javascript
-9. Linking a javascript file
-10. Values and variables
-11. Practise
-12. Data Types
-13. let, const and var
-14. Basic operators
-15. Operator Precendence
+5. Section intro
+6. Hello World!
+7. Brief introduction to javascript
+8. Linking a javascript file
+9. Values and variables
+10. Practise
+11. Data Types
+12. let, const and var
+13. Basic operators
+14. Operator Precendence
+15. A Note About Challenges
 16. Coding Challange #1 (Body Mass Index)
 17. Strings and template literals
 18. Taking decisions: if/else statement
@@ -353,3 +357,7 @@ Section 18: Forkify App: Building a Modern Application
 304. Implementing Bookmarks - Part 2
 305. Storing Bookmarks With localStorage
 306. Project Planning III 
+307. Uploading a New Recipe - Part 1
+308. Uploading a New Recipe - Part 2
+309. Uploading a New Recipe - Part 3
+310. Wrapping Up: Final Considerations
