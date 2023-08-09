@@ -361,3 +361,22 @@ Section 18: Forkify App: Building a Modern Application
 308. Uploading a New Recipe - Part 2
 309. Uploading a New Recipe - Part 3
 310. Wrapping Up: Final Considerations
+
+
+Section 19: Setting Up Git and Deployment
+311. Section Intro
+312. Section Roadmap
+313. Simple Deployment With Netlify
+314. Setting Up Git and GitHub
+315. Git Fundamentals
+316. Pushing to Github 
+317. Setting Up Continuous Integration With Netlify
+
+
+Section 20: The End !
+318. Where to Go from Here
+319. My Other Courses + Updates
+
+
+Section 21: [LEGACY] Access the Old Course
+320. Access the Old Course
