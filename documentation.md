@@ -1,4 +1,4 @@
-The Complete JavaScript Course 2023: From Zero to Expert!
+The Complete JavaScript Course 2025: From Zero to Expert!
 
 Section 1: Welcome, welcome, welcome !
 1. Course Structure and Projects
@@ -12,22 +12,22 @@ Section 2: Javascript fundamentals - part 1
 7. Brief introduction to javascript
 8. Linking a javascript file
 9. Values and variables
-10. Practise
+10. Practice Assignments
 11. Data Types
 12. let, const and var
 13. Basic operators
-14. Operator Precendence
+14. Operator Precedence
 15. A Note About Challenges
-16. Coding Challange #1 (Body Mass Index)
+16. Coding Challenge #1 (Body Mass Index)
 17. Strings and template literals
 18. Taking decisions: if/else statement
-19. Coding Challange #2 (Improve BMI calculator)
+19. Coding Challenge #2 (Improve BMI calculator)
 20. Type Conversion and Coercion
 21. Truthy nad Falsy values
 22. Equality operators == vs ===
 23. Boolean Logic
 24. Logical Operators
-25. Coding Challange #3
+25. Coding Challenge #3
 26. The Switch Statement
 27. Statements and Expressions
 28. The Conditional (Ternary) Operator
@@ -67,60 +67,62 @@ Section 5: Developer Skills & Editor Setup
 53. Section Intro
 54. Section Roadmap
 55. Setting up Prettier and VS Code
-56. Installing Node.js and Setting Up a Dev Enviroment
+56. Installing Node.js and Setting Up a Dev Environment
 57. Learning How to Code
 58. How to Think Like a Developer: Become a Problem Solver
 59. Using Google, StackOverflow and MDN
 60. Debugging (Fixing Errors)
 61. Debugging with the Console and Breakpoints
 62. Coding Challenge #1
+63. The Rise of AI Tools (ChatGPT, Copilot, Cursor AI, etc.)
+64. Solving CHALLENGE #2 With AI
 
 
 Section 6: HTML & CSS Crash Course
-63. Section Intro
-64. Basic HTML Structure and Elements
-65. Attributes, Classes and IDs
-66. Basic Styling with CSS
-67. Introduction to the CSS Box Model
+65. Section Intro
+66. Basic HTML Structure and Elements
+67. Attributes, Classes and IDs
+68. Basic Styling with CSS
+69. Introduction to the CSS Box Model
 
 
 Section 7: Javascript in The Browser: DOM and Events Fundamentals
-68. Section Intro
-69. Section Roadmap
-70. PROJECT #1: Guess My Number!
-71. What's the DOM and DOM Manipulation
-72. Selecting and Manipulating Elements
-73. Handling Click Events
-74. Implementing the Game Logic
-75. Manipulating CSS Styles
-76. Coding Challenge #1
-77. Implementing highscores
-78. Refactoring Our Code: The DRY Principle
-79. PROJECT #2: Modal Window
-80. Working with Classes
-81. Handling an "Esc" Keypress Event
-82. PROJECT #3: The Dice Game
-83. Rolling the Dice
-84. Switching the Active Player
-85. Holding Current Score
-86. Resetting the Game
+70. Section Intro
+71. Section Roadmap
+72. PROJECT #1: Guess My Number!
+73. What's the DOM and DOM Manipulation
+74. Selecting and Manipulating Elements
+75. Handling Click Events
+76. Implementing the Game Logic
+77. Manipulating CSS Styles
+78. Coding Challenge #1
+79. Implementing highscores
+80. Refactoring Our Code: The DRY Principle
+81. PROJECT #2: Modal Window
+82. Working with Classes
+83. Handling an "Esc" Keypress Event
+84. PROJECT #3: The Dice Game
+85. Rolling the Dice
+86. Switching the Active Player
+87. Holding Current Score
+88. Resetting the Game
 
 
 Section 8: How JavaScript Works Behind the Scenes
-87. Section Intro
-88. Section Roadmap
-89. An High-Level Overview of JavaScript
-90. The JavaScript Engine and Runtime
-91. Execution Contexts and The Call Stack
-92. Scope and The Scope Chain
-93. Scoping in Practice
-94. Variable Environment: Hoisting and the TDZ
-95. Hoisting and TDZ in Practice
-96. The This Keyword
-97. The This Keyword in Practice
-98. Regular Functions vs. Arrow Functions
-99. Primitives vs. Objects (Primitive vs. Reference Types)
-100. Primitives vs. Objects in Practice
+89. Section Intro
+90. Section Roadmap
+91. An High-Level Overview of JavaScript
+92. The JavaScript Engine and Runtime
+93. Execution Contexts and The Call Stack
+94. Scope and The Scope Chain
+95. Scoping in Practice
+96. Variable Environment: Hoisting and the TDZ
+97. Hoisting and TDZ in Practice
+98. The This Keyword
+99. The This Keyword in Practice
+100. Regular Functions vs. Arrow Functions
+101. Primitives vs. Objects (Primitive vs. Reference Types)
+102. Primitives vs. Objects in Practice
 
 
 Section 9: Data Structures, Modern Operators and Strings
