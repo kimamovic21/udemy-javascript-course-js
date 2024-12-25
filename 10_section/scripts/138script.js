@@ -1,57 +1,64 @@
-// 138. More Closures examples
+// 138. The call and apply Methods
 
 'use strict';
 
-// Example 1
-let f;
+const lufthansa = {
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    bookings: [],
+    // book: function() {},
+    book(flightNum, name) {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}.`);
+        this.bookings.push( {flight: `${this.iataCode} ${flightNum}`, name })
+    },
+};
+lufthansa.book(239, 'Kerim Imamovic');
+lufthansa.book(635, 'Jonas Schmedtmann');
+console.log(lufthansa);
 
-const g = function() {
-    const a = 20;
-    f = function() {
-        console.log(a * 2);
-    };
+
+const eurowings = {
+    airline: 'Eurowings',
+    iataCode: 'EW',
+    bookings: [],
 };
 
-const h = function() {
-    const b = 100;
-    f = function() {
-        console.log(b * 2);
-    };
+const book = lufthansa.book;
+// console.log(book);
+
+/* 
+-book is now a regular function call, it's not a method anymore
+-this keyword inside of it will now point to undefined 
+*/
+
+// book(23, 'John Smith'); // DOES NOT WORK !!!
+
+
+
+// Call, apply and bind methods
+
+// Call method
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+
+const swiss = {
+    airline: 'Swiss Air Lines',
+    iataCode: 'LX',
+    bookings: [],
 };
 
-g();
-f(); // 40
-console.dir(f); // ƒ f()
+book.call(swiss, 583, 'John Doe');
+console.log(swiss);
 
 
-// Re-assigning f function
-h();
-f(); // 200
-console.dir(f); // ƒ f()
+// Apply method
+const flightData = [583, 'George Cooper']; // array data
+book.apply(swiss, flightData);
+console.log(swiss);
 
+book.call(swiss, ...flightData);
 
-
-// setTimeout(function() {
-//     console.log('Timer');
-// }, 2000);
-
-
-
-// Example 2
-// n - number of Passengers
-const boardPassengers = function(n, wait) {
-    const perGroup = n / 3;
-
-    setTimeout(function() {
-        console.log(`We are now boarding all ${n} passengers`);
-        console.log(`There are 3 groups, each with ${perGroup} passengers`);
-    }, wait * 1000);
-
-    console.log(`Will start boarding in ${wait} seconds`);
-}
-
-// closure has a priority over scope chain
-const perGroup = 1000;
-boardPassengers(180, 2);
-
-console.dir(boardPassengers); 

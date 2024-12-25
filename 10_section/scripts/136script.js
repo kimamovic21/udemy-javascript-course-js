@@ -1,25 +1,32 @@
-// 136. Immediately Invoked Functions Expressions (IIFE)
+// 136. Functions Accepting Callback Functions
 
 'use strict';
 
-const runOnce = function() {
-    console.log('This will never run again! 1');
+const oneWord = function(str) {
+    return str.replace(/ /g, '').toLowerCase();
 }
-runOnce();
 
-// IIFE 
-// We transformed statement into an expression
-(function() {
-    console.log('This will never run again! 2');
-    const isPrivate = 23;
-}) ();
+const upperFirstWord = function(str) {
+    const [first, ...others] = str.split(' ');
+    return [first.toUpperCase(), ...others].join(' ');
+}; 
 
-// console.log(isPrivate);
-(() => console.log('This will never run again! 3')) ();
 
-{
-    // const isPrivate2 = 23;
-    var notPrivate = 46;
+// Higher order function
+const transformer = function(str, myFunction) {
+    console.log(`Original string: ${str}`);
+    console.log(`Transformed string: ${myFunction(str)}`);
+    console.log(`Transformed by: ${myFunction.name}`);
+};
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+
+
+// Javascript uses callbacks all the time
+const high5 = function() {
+    console.log('🖐');
 }
-// console.log(isPrivate2);
-console.log(notPrivate);
+document.body.addEventListener('click', high5);
+
+
+['Jonas', 'Martha', 'Adam'].forEach(high5);
