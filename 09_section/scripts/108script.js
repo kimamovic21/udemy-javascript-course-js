@@ -1,6 +1,6 @@
-'use strict';
+// 108. Destructuring Objects
 
-// 08. The Nullish Coalescing Operator (??)
+'use strict';
 
 const restaurant = {
     name: 'Classico Italiano',
@@ -14,17 +14,12 @@ const restaurant = {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
 
+    // orderDelivery: function(obj) {
+    //     console.log(obj);
+    // },
+
     orderDelivery: function({starterIndex = 1, mainIndex = 0, time = '20:00', address}) {
         console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`);
-    },
-
-    orderPasta: function(ing1, ing2, ing3) { // ingredients
-        console.log(`Here is your delicios pasta with ${ing1}, ${ing2}, ${ing3}.`);
-    },
-
-    orderPizza: function(mainIngr, ...otherIngr) { // mainIngredients, otherIngredients
-        console.log(mainIngr);
-        console.log(otherIngr);
     },
 
     openingHours: {
@@ -43,10 +38,67 @@ const restaurant = {
     },
 };
 
-restaurant.numGuests = 0;
-const guests = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests); // 10
+restaurant.order(2,1);
 
-// Nullish: null and undefined (NOT 0 or '');
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect); // 0
+restaurant.orderDelivery({
+    time: '22:30', 
+    address: 'Via del Sole, 21',
+    mainIndex: 2,
+    starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+    address: 'Via del Sole, 1',
+    starterIndex: 2,
+});
+
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+
+const {
+    name: restaurantName, 
+    openingHours: hours, 
+    categories: tags
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+
+// Default values
+const { 
+    menu = [],
+    starterMenu: starters = [],
+} = restaurant;
+console.log(menu, starters);
+
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = {
+    a: 23, 
+    b: 7, 
+    c: 14,
+};
+// {a, b} = obj; // unexpected token '='
+({a, b} = obj);
+console.log(a, b); // 23 7
+
+
+// Nested objects
+const {fri} = openingHours;
+console.log('fri:', fri);
+
+
+const {
+    fri: {open, close}
+} = openingHours;
+console.log(open, close); // 11 23
+console.log(`Open: ${open}am - Close: ${close}pm`);
+
+
+const {
+    fri: {open: o, close: c},
+} = openingHours;
+console.log(o, c); // 11 23

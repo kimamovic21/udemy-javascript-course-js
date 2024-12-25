@@ -1,4 +1,4 @@
-// 111. Looping Arrays: The for-of Loop
+// 111. Short Circuiting (&& and ||);
 
 'use strict';
 
@@ -43,21 +43,29 @@ const restaurant = {
     },
 };
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+console.log('------------ OR ---------------');
+// Use any data type, return any data type, short circuiting
+console.log(3 || 'Kerim'); // 3
+console.log('' || 'Kerim'); // Kerim
+console.log(true || 0); // true
+console.log(undefined || null); // null
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // Hello
 
-for (const item of menu) {
-    console.log(item);
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); // 23
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // 23
+
+
+console.log('------------- AND -------------');
+console.log(0 && 'Kerim'); // 0
+console.log(7 && 'Kerim'); // Kerim
+console.log('Hello' && 23 && null && 'Kerim'); // null
+
+if (restaurant.orderPizza) {
+    restaurant.orderPizza('mushrooms', 'spinach');
 };
 
-for (const item of menu.entries()) {
-    console.log(`${item[0] + 1}: ${item[1]}`);
-};
-
-console.log(menu.entries()); // Array Iterator {}
-console.log([...menu.entries()]); // (7);
-
-for (const [i, el] of menu.entries()) {
-    // console.log(i, el);
-    console.log(`${i + 1}: ${el}`);
-};
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');

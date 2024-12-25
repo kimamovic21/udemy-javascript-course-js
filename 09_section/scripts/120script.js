@@ -1,55 +1,45 @@
-// 120. Coding Challenge #3
+// 120. Sets
 
 'use strict';
 
-/*
-Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
+// Sets - collections of unique values
 
-1. Create an array 'events' of the different game events that happened (no duplicates)
-2. After the game has finished, it was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
-3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
-4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this: 
-    [FIRST HALF] 17: GOAL
-*/
+const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza' ]);
+console.log(ordersSet); // Set(3) {"Pasta", "Pizza", "Risotto"}
 
-const gameEvents = new Map([
-    [17, 'Goal'],
-    [36, 'Substitution'],
-    [47, 'Goal'],
-    [61, 'Substitution'],
-    [64, 'Yellow card'],
-    [69, 'Red card'],
-    [70, 'Substitution'],
-    [72, 'Substitution'],
-    [76, 'Goal'],
-    [80, 'Goal'],
-    [92, 'Yellow card'],
-]);
- 
-// 1. Create an array 'events' of the different game events that happened (no duplicates)
-console.log(gameEvents.values()); // MapIterator 
-// const events = new Set(gameEvents.values());
-// console.log(events); // Set (4)
+console.log(new Set('Kerim')); // Set(5) {'K', 'e', 'r', 'i', 'm'}
 
-const events = [...new Set(gameEvents.values())]
-console.log(events); // (4)
+console.log(ordersSet.size); // 3
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Bread')); // false
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet);  // Set(4)
+ordersSet.delete('Risotto')
+console.log(ordersSet); // Set(3)
+console.log(ordersSet[0]); // undefined
 
-
-// 2. After the game has finished, it was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
-gameEvents.delete(64);
-console.log(gameEvents);
-
-
-// 3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
-// console.log(`An event happened, on average every ${90 / gameEvents.size} minutes.`);
-
-const time = [...gameEvents.keys()].pop();
-console.log(time); // 92
-console.log(`An event happened, on average every ${time / gameEvents.size} minutes.`);
-
-
-// 4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this: [FIRST HALF] 17: GOAL
-for (const [min, event] of gameEvents) {
-    const half = min <= 45 ? 'FIRST' : 'SECOND';
-    console.log(`${half} HALF ${min}: ${event}`);
+for (const order of ordersSet) {
+    console.log(order);
 };
+
+// ordersSet.clear();
+// console.log(ordersSet); // Set(0)
+
+
+// Example 1
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// const staffUnique = new Set(staff);
+// console.log(staffUnique); // Set (3) {'Waiter', 'Chef', 'Manager'}
+
+
+// Example 2
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique); // (3) ['Waiter', 'Chef', 'Manager']
+
+console.log(
+    new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+); // 3
+
+console.log(new Set('Kerim Imamovic').size); // 11

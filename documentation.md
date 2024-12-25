@@ -126,48 +126,50 @@ Section 8: How JavaScript Works Behind the Scenes
 103. Memory Management: Garbage Collection
 
 Section 9: Data Structures, Modern Operators and Strings
-101. Section Intro
-102. Section Roadmap
-103. Desctructuring Arrays
-104. Desctructuring Objects
-105. The Spread Operator (...)
-106. Rest Pattern and Parameters
-107. Short Cicuiting (&& and ||);
-108. The Nullish Coalescing Operator (??)
-109. Logical Assignment Operators
-110. Coding Challenge #1
-111. Looping Arrays: The for-of Loop
-112. Enhanced Object Literals
-113. Optional Chaining (?.)
-114. Looping Objects: Object Keys, Values and Entries
-115. Coding Challenge #2
-116. Sets
-117. Maps: Fundamentals
-118. Maps: Iteration
-119. Summary: Which Data Structure to Use ?
-120. Coding Challenge #3
-121. Working With Strings - Part 1
-122. Working With Strings - Part 2
-123. Working With Strings - Part 3
-124. Coding Challenge #4
-125. String Methods Practice
+104. Section Intro
+105. Section Roadmap
+106. Destructuring Arrays
+107. Practice Assignments
+108. Destructuring  Objects
+109. The Spread Operator (...)
+110. Rest Pattern and Parameters
+111. Short Circuiting (&& and ||);
+112. The Nullish Coalescing Operator (??)
+113. Logical Assignment Operators
+114. Coding Challenge #1
+115. Looping Arrays: The for-of Loop
+116. Enhanced Object Literals
+117. Optional Chaining (?.)
+118. Looping Objects: Object Keys, Values and Entries
+119. Coding Challenge #2
+120. Sets
+121. New Operations to Make Sets Useful!
+122. Maps: Fundamentals
+123. Maps: Iteration
+124. Summary: Which Data Structure to Use ?
+125. Coding Challenge #3
+126. Working With Strings - Part 1
+127. Working With Strings - Part 2
+128. Working With Strings - Part 3
+129. Coding Challenge #4
+130. String Methods Practice
 
 
 Section 10: A Closer Look at Functions
-126. Section Intro
-127. Section Roadmap
-128. Default Parameters
-129. How Passing Arguments Works: Value vs. Reference
-130. First-Class and Higher-Order Functions
-131. Functions Accepting Callback Functions
-132. Functions Returning Functions
-133. The call and apply Methods
-134. The bind Method
-135. Coding Challenge #1
-136. Immediately Invoked Functions Expressions (IIFE)
-137. Closures
-138. More Closures examples
-139. Coding Challenge #2
+131. Section Intro
+132. Section Roadmap
+133. Default Parameters
+134. How Passing Arguments Works: Value vs. Reference
+135. First-Class and Higher-Order Functions
+136. Functions Accepting Callback Functions
+137. Functions Returning Functions
+138. The call and apply Methods
+139. The bind Method
+140. Coding Challenge #1
+141. Immediately Invoked Functions Expressions (IIFE)
+142. Closures
+143. More Closures examples
+144. Coding Challenge #2
 
 
 Section 11: Working With Arrays

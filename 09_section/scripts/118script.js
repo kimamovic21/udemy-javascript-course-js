@@ -1,4 +1,4 @@
-// 118. Maps: Iteration
+// 118. Looping Objects: Object Keys, Values and Entries
 
 'use strict';
 
@@ -48,43 +48,39 @@ const restaurant = {
     },
 };
 
-
-const question = new Map([
-    ['question', 'What is the best programming language in the world?'],
-    [1, 'C'],
-    [2, 'Java'],
-    [3, 'JavaScript'],
-    ['correct', 3],
-    [true, 'Correct'],
-    [false, 'Try Again'], 
-]);
-
-console.log(question); // Map (7)
-console.log(typeof question); // object
-
-// Convert object to map
-console.log(Object.entries(openingHours)); // (3) [Array(2), Array(2), Array(2)]
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap); // Map (3)
+// for (const day of Object.keys(openingHours)) {
+//     console.log(day);
+// };
 
 
-// Quiz app
-console.log(question.get('question'));
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties); // ['thu', 'fri', 'sat']
 
-for (const [key, value] of question) {
-    if(typeof key === 'number') {
-        console.log(`Answer ${key}: ${value}`);
-    };
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+    openStr += `${day}, `;
 };
+console.log(openStr);
 
-const answer = Number(prompt(`Your answer`));
-console.log(answer);
 
-// console.log(question.get('correct') === answer);
-console.log(question.get(question.get('correct') === answer)); // Boolean values as keys
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values); // [{...}, {...}, {...}]
 
-// Convert map to array
-console.log([...question]); // (7)
-console.log([...question.entries()]); // (7)
-console.log([...question.keys()]);  // (7) keys
-console.log([...question.values()]); // (7) values
+
+// Entire object
+const entries = Object.entries(openingHours);
+console.log(entries);  // (3) [Array(2), Array(2), Array(2)]
+
+
+// for (const x of entries) {
+//     console.log(x);
+// };
+
+
+// [key, value]
+for (const [day, {open, close}] of entries) {
+    console.log(`On ${day} we open at ${open} and close at ${close}.`);
+};

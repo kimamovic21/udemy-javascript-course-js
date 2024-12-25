@@ -1,45 +1,53 @@
-// 116. Sets
+// 116. Enhanced Object Literals
 
 'use strict';
 
-// Sets - collections of unique values
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza' ]);
-console.log(ordersSet); // Set(3) {"Pasta", "Pizza", "Risotto"}
+const openingHours = {
+    [weekdays[3]]: {
+      open: 12,
+      close: 22,
+    },
+    [weekdays[4]]: {
+      open: 11,
+      close: 23,
+    },
+    [weekdays[5]]: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+};
+console.log(openingHours);
 
-console.log(new Set('Kerim')); // Set(5) {'K', 'e', 'r', 'i', 'm'}
+const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-console.log(ordersSet.size); // 3
-console.log(ordersSet.has('Pizza')); // true
-console.log(ordersSet.has('Bread')); // false
-ordersSet.add('Garlic Bread');
-ordersSet.add('Garlic Bread');
-console.log(ordersSet);  // Set(4)
-ordersSet.delete('Risotto')
-console.log(ordersSet); // Set(3)
-console.log(ordersSet[0]); // undefined
+    // ES6 enhanced object literals
+    openingHours,
 
-for (const order of ordersSet) {
-    console.log(order);
+    order(starterIndex, mainIndex) {
+        console.log(this.starterMenu[starterIndex], this.mainMenu[mainIndex]); 
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    },
+
+    orderDelivery({starterIndex = 1, mainIndex = 0, time = '20:00', address}) {
+        console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} 
+                    will be delivered to ${address} at ${time}.`);
+    },
+
+    orderPasta(ing1, ing2, ing3) { // ingredients
+        console.log(`Here is your delicios pasta with ${ing1}, ${ing2}, ${ing3}.`);
+    },
+
+    orderPizza(mainIngr, ...otherIngr) { // mainIngredients, otherIngredients
+        console.log(mainIngr);
+        console.log(otherIngr);
+    },
 };
 
-// ordersSet.clear();
-// console.log(ordersSet); // Set(0)
-
-
-// Example 1
-// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-// const staffUnique = new Set(staff);
-// console.log(staffUnique); // Set (3) {'Waiter', 'Chef', 'Manager'}
-
-
-// Example 2
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique); // (3) ['Waiter', 'Chef', 'Manager']
-
-console.log(
-    new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-); // 3
-
-console.log(new Set('Kerim Imamovic').size); // 11
+console.log(restaurant);

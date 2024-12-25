@@ -1,6 +1,20 @@
-// 109. Logical Assignment Operators
+// 109. The Spread Operator (...)
 
 'use strict';
+
+const arr = [4, 5, 6];
+console.log(arr); // 4,5,6
+console.log(...arr); // 4,5,6
+
+const newArr = [1, 2, 3, arr[0], arr[1], arr[2]];
+console.log(newArr); // 1,2,3,4,5,6
+
+const spreadArr = [1, 2, 3, ...arr];
+console.log(spreadArr); // 1,2,3,4,5,6
+
+console.log(...spreadArr); // 1,2,3,4,5,6
+
+
 
 const restaurant = {
     name: 'Classico Italiano',
@@ -22,11 +36,6 @@ const restaurant = {
         console.log(`Here is your delicios pasta with ${ing1}, ${ing2}, ${ing3}.`);
     },
 
-    orderPizza: function(mainIngr, ...otherIngr) { // mainIngredients, otherIngredients
-        console.log(mainIngr);
-        console.log(otherIngr);
-    },
-
     openingHours: {
       thu: {
         open: 12,
@@ -43,46 +52,49 @@ const restaurant = {
     },
 };
 
-const restaurant1 = {
-    name: 'Capri',
-    // numGuests: 20,
-    numGuests: 0,
+// const newMenu = [restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu); 
+
+
+// shallow copy of arrays and to merge two arrays together
+
+// copy array 
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+
+// Iterables: arrays, strings, maps, sets, NOT objects
+const str = 'Kerim';
+const letters = [...str, ' ', 'I.'];
+console.log('letters:', letters); // (7) ['K', 'e', 'r', 'i', 'm', ' ', 'I.']
+console.log('str:', ...str); // K e r i m
+// console.log(`${...str} Imamovic`); //  Error: Unexpected token '...'
+
+
+// const ingredients = [prompt(`Let's make pasta! Ingredient 1?`), prompt(`Ingredient 2?`), prompt(`Ingredient 3?`)];
+// console.log(ingredients);
+
+// Old way
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// NEW ES6 way
+// restaurant.orderPasta(...ingredients);
+
+
+// Objects
+const newRestaurant = { 
+    foundedIn: 1998, 
+    ...restaurant, 
+    founder: 'Guiseppe'
 };
+console.log(newRestaurant);
 
-const restaurant2 = {
-    name: 'La Piazza',
-    owner: 'Giovanni Rossi',
-};
-
-// OR assignment operator
-// restaurant1.numGuests = restaurant1.numGuests || 10;
-// restaurant2.numGuests = restaurant2.numGuests || 10;
-
-// console.log(restaurant1); // 10
-// console.log(restaurant2); // 10
-
-// OR ||=
-// restaurant1.numGuests ||= 10;
-// restaurant2.numGuests ||= 10;
-
-// console.log(restaurant1); // 10
-// console.log(restaurant2); // 10
-
-
-// Nullish assignment operator (null or undefined)
-restaurant1.numGuests ??= 10;
-restaurant2.numGuests ??= 10;
-
-console.log(restaurant1); // 0
-console.log(restaurant2); // 10
-
-
-// AND assignment operator
-// restaurant1.owner = restaurant1.owner && '<ANONYMOUS>';
-// restaurant2.owner = restaurant2.owner && '<ANONYMOUS>';
-
-restaurant1.owner &&= '<ANONYMOUS>';
-restaurant2.owner &&= '<ANONYMOUS>';
-
-console.log(restaurant1); // Giovanni Rossi
-console.log(restaurant2); // <ANONYMOUS>
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);

@@ -1,76 +1,90 @@
-// 123. Working With Strings - Part 3
+// 123. Maps: Iteration
 
-'use script';
+'use strict';
 
-console.log('a+very+nice+string'.split('+')); // (4)
-console.log('Kerim Imamovic'.split(' '));  // (2)
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-const [firstName, lastName] = 'Kerim Imamovic'.split(' ');
-console.log(firstName); // Kerim
-console.log(lastName); // Imamovic
+const openingHours = {
+    [weekdays[3]]: {
+      open: 12,
+      close: 22,
+    },
+    [weekdays[4]]: {
+      open: 11,
+      close: 23,
+    },
+    [weekdays[5]]: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+};
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-console.log(newName); // Mr. Kerim IMAMOVIC
+const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+    // ES6 enhanced object literals
+    openingHours,
+
+    order(starterIndex, mainIndex) {
+        console.log(this.starterMenu[starterIndex], this.mainMenu[mainIndex]); 
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    },
+
+    orderDelivery({starterIndex = 1, mainIndex = 0, time = '20:00', address}) {
+        console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`);
+    },
+
+    orderPasta(ing1, ing2, ing3) { // ingredients
+        console.log(`Here is your delicios pasta with ${ing1}, ${ing2}, ${ing3}.`);
+    },
+
+    orderPizza(mainIngr, ...otherIngr) { // mainIngredients, otherIngredients
+        console.log(mainIngr);
+        console.log(otherIngr);
+    },
+};
 
 
-// 1. nacin 
+const question = new Map([
+    ['question', 'What is the best programming language in the world?'],
+    [1, 'C'],
+    [2, 'Java'],
+    [3, 'JavaScript'],
+    ['correct', 3],
+    [true, 'Correct'],
+    [false, 'Try Again'], 
+]);
 
-// const capitalizeName = function(name) {
-//     const names = name.split(' ');
-//     console.log(names);
-//     const namesUpper = [];
+console.log(question); // Map (7)
+console.log(typeof question); // object
 
-//     for (const personName of names) {
-//         console.log(personName);
-//         namesUpper.push( personName[0].toUpperCase() + personName.slice(1) );
-//     };
-//     console.log(namesUpper);
-//     console.log(namesUpper.join(' '));
-// };
-// capitalizeName('jessica ann smith davis');
-// capitalizeName('kerim imamovic');
+// Convert object to map
+console.log(Object.entries(openingHours)); // (3) [Array(2), Array(2), Array(2)]
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap); // Map (3)
 
 
-// 2. nacin 
+// Quiz app
+console.log(question.get('question'));
 
-const capitalizeName = function(name) {
-    const names = name.split(' ');
-    const namesUpper = [];
-
-    for (const firstLetter of names) {
-        namesUpper.push( firstLetter.replace(firstLetter[0], firstLetter[0].toUpperCase() ) );
+for (const [key, value] of question) {
+    if(typeof key === 'number') {
+        console.log(`Answer ${key}: ${value}`);
     };
-    console.log(namesUpper.join(' '));
 };
-capitalizeName('jessica ann smith davis');
-capitalizeName('kerim imamovic');
 
+const answer = Number(prompt(`Your answer`));
+console.log(answer);
 
-// Padding
-const message = 'Go to gate 23!';
-console.log(message.padStart(25, '+').padEnd(35, '+'));
-console.log('Kerim'.padStart(25, '-').padEnd(30, '-'));
+// console.log(question.get('correct') === answer);
+console.log(question.get(question.get('correct') === answer)); // Boolean values as keys
 
-
-// Function maskCreditCard
-const maskCreditCard = function(number) {
-    const str = number + '';
-    const last = str.slice(-4);
-    // return last;
-    return last.padStart(str.length, '*');
-};
-console.log(maskCreditCard(1122334455667788));
-console.log(maskCreditCard('8877665544332211'));
-
-
-// Repeat
-const repeatMessage = 'Bad weather... All Departues Delayed... ';
-console.log(repeatMessage.repeat(5));
-
-
-const planesInLine = function(numberOfPlanes) {
-    console.log(`There are ${numberOfPlanes} planes in line ${'✈️'.repeat(numberOfPlanes)}.`);
-}; 
-planesInLine(5);
-planesInLine(10);
-planesInLine(20);
+// Convert map to array
+console.log([...question]); // (7)
+console.log([...question.entries()]); // (7)
+console.log([...question.keys()]);  // (7) keys
+console.log([...question.values()]); // (7) values

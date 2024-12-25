@@ -1,116 +1,86 @@
-// 110. Coding Challenge #1
+// 110. Rest Pattern and Parameters
 
 'use strict';
 
-/*
-We're building a football betting app 
+const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-Suppose we get data from a web service about a certain game(below). In this challenge we're gonna work with the data. So here are your tasks:
+    order: function(starterIndex, mainIndex) {
+        console.log(this.starterMenu[starterIndex], this.mainMenu[mainIndex]); 
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    },
 
-1. Create one player array for each team(variables players1 and players2)
-2. The first player in any player array is the goalkeeper and the others are field players. 
-For Bayern Munich (team1) create one variable ('gk') with the goalkeeper's name, and one array ('fieldPlayers) with all the remaining 10 field players
-3. Create an array 'allPlayers' containing all players of both teams (22 players)
-4. During the game, Bayern Munich (team1) used 3 substitute players. So create a new array ('player1Final') containing all the original team1 
-players plus 'Thiago', 'Coutinho' and 'Perisic'
-5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw', and 'team2')
-6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints each of them to the console, 
-along with the number of goals that were scored in total (number of player names passed in)
-7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, WITHOUT using and if/else 
-statement or the ternary operator.
+    orderDelivery: function({starterIndex = 1, mainIndex = 0, time = '20:00', address}) {
+        console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`);
+    },
 
-TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
-*/
+    orderPasta: function(ing1, ing2, ing3) { // ingredients
+        console.log(`Here is your delicios pasta with ${ing1}, ${ing2}, ${ing3}.`);
+    },
 
-const game = {
-    team1: 'Bayern Munich',
-    team2: 'Borussia Dortmund',
-    players: [
-    [
-        'Neuer',
-        'Pavard',
-        'Martinez',
-        'Alaba',
-        'Davies',
-        'Kimmich',
-        'Goretzka',
-        'Coman',
-        'Muller',
-        'Gnabry',
-        'Lewandowski'
-    ],
-    [
-        'Burki',
-        'Schulz',
-        'Hummels',
-        'Akanji',
-        'Hakimi',
-        'Weigl',
-        'Witsel',
-        'Hazard',
-        'Brandt',
-        'Sancho',
-        'Gotze'
-    ]
-    ],
-    score: '4:0',
-    scored: ['Lewandowski', 'Gnabry', 'Lewandowski', 'Hummels'],
-    date: 'Nov 9th 2037',
-    odds: {
-        team1: 1.33,
-        x: 3.25,
-        team2: 6.5,
+    orderPizza: function(mainIngredient, ...otherIngredients) { 
+        console.log(mainIngredient);
+        console.log(otherIngredients);
+    },
+
+    openingHours: {
+      thu: {
+        open: 12,
+        close: 22,
+      },
+      fri: {
+        open: 11,
+        close: 23,
+      },
+      sat: {
+        open: 0, // Open 24 hours
+        close: 24,
+      },
     },
 };
-// console.log(game);
+
+// 1) Destructuring
+
+// SPREAD - because on right side of =
+const arr = [1, 2, ...[3, 4]];
+console.log(arr);
+
+// REST - because on left side of =         
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a);
+console.log(b);
+console.log(others);
+console.log(a, b, others);   
+
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+const { thu, fri, ...weekend} = restaurant.openingHours;
+console.log(weekend);
 
 
-// 1. destructuring arrays
-const [players1, players2] = game.players;
-console.log('players1: ', players1); // (11)
-console.log('players2: ', players2); // (11)
-
-
-// 2. destructuring arrays
-const [gk, ...fieldPlayers] = players1; 
-console.log('gk: ', gk); // Neuer
-console.log('fieldPlayers: ', fieldPlayers); // (10)
-
-const [gk2, ...fieldPlayers2] = players2; 
-console.log('gk: ', gk2); // Burki
-console.log('fieldPlayers: ', fieldPlayers2); // (10)
-
-
-// 3. spread
-const allPlayers = [...players1, ...players2];
-console.log('allPlayers: ', allPlayers); // (22)
-
-
-// 4. 11 players + 3 players
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-console.log('players1Final:',players1Final); // (14)
-
-
-// 5. 
-const {
-    odds: {team1, x: draw, team2},
-} = game;
-// console.log(odds)
-console.log('team1:', team1);
-console.log('draw:', draw);
-console.log('team2:', team2);
-
-
-// 6.
-const printGoals = function(...players) {
-    console.log('players: ', players);
-    console.log(`${players.length} goals were scored.`);
+// 2) Functions
+const add = function(...numbers) {
+    // console.log(numbers);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum = sum + numbers[i];
+    };
+    console.log(sum);
 };
-// printGoals('Davies', 'Muller', 'Lewandowski','Kimmich');
-// printGoals('Davies', 'Muller');
-printGoals(...game.scored);
+add(2, 3); // 5
+add(5, 3, 7, 2); // 17
+add(8, 2, 5, 3, 2, 1, 4); // 25
 
+const x = [23, 5, 7];
+add(...x); // 35
 
-// 7.
-team1 < team2 && console.log('Team 1 is more likely to win.');
-team1 > team2 && console.log('Team 2 is more likely to win.');
+restaurant.orderPizza('mushrooms', 'onios', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
