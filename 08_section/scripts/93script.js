@@ -1,42 +1,26 @@
-// 93. Scoping in Practice
+// 93. Execution Contexts and The Call Stack
 
 'use strict';
 
-function calcAge(birthYear) {
-    const age = 2022 - birthYear;
-    
-    function printAge() {
-        let output = `${firstName}, you are ${age}, born in ${birthYear}.`
-        console.log('output:', output);
+// Execution context - environment in which a pice of JavaScript is executed. Stores all the necessary information for some code to be executed.
 
-        if (birthYear >= 1981 && birthYear <= 1996) { // block scope
-            var millenial = true;
+const name = 'Kerim';
 
-            // Creating new variable with same name as outer scope's variable
-            const firstName = 'John'; // John is defined in current scope
-
-            // Reassigning outer scope's variable
-            output = `New Output!!!`;
-            const str = `Oh, and you're a millenial, ${firstName}.`;
-            console.log('str:', str);
-
-            function addTwoValues(a,b) {
-                return a + b;
-            };
-        };
-        
-        // console.log(str); // str is not defined
-        console.log('millenial:', millenial); // true
-        // console.log(addTwoValues(2, 3)); // addTwoValues is not defined
-        console.log('output 2:', output);
-     };
-    printAge();
-
-    return age;
+const first = () => {
+    let a = 1;
+    const b = second();
+    a = a + b;
+    return a;
 };
+console.log('first():',first()); // 3
 
-const firstName = 'Kerim';
-console.log('caclAge:', calcAge(1996));
+function second() {
+    var c = 2;
+    return c;
+};
+console.log('second():', second()); // 2
 
-// console.log(age); // age is not defined
-// printAge(); // printAge is not defined
+const x = first();
+console.log('x:', x); // 3
+
+// Cal. stact ensures that the order of execution never get lost

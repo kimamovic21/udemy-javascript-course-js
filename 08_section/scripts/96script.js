@@ -1,26 +1,12 @@
-// 96. The This Keyword
-
-/* 
-The special variable that is created for every execution context (every function)
-Takes the value of (points to) the "owner" of the function in which the this keyword is used
-This is NOT static. It depends on how the function is called, and its value is only assigned 
-when the function is actually called 
-
-Method -> this = <Object that is calling the method>
-Simple function call -> this = undefined
-Arrow functions -> this <this of surrounding function(lexical this)>
-*/
+// 96. Variable Environment: Hoisting and the TDZ (Temporal dead zone)
 
 'use strict';
 
-const kerim = {
-    name: 'Kerim',
-    year: 1996,
-    calcAge: function() {
-        console.log('kerim.year:', kerim.year); // 1996
-        console.log('this.year:', this.year); // 1996
-        console.log(kerim.year === this.year); // true
-        return 2022 - this.year;
-    },
+const myName = 'Kerim';
+
+if (myName === 'Kerim') {
+    console.log(`Kerim is a ${job}.`);
+    const age = 2022 - 1996;
+    const job = 'Frontend dev';
+    console.log(age);
 };
-console.log(kerim.calcAge()); // 26

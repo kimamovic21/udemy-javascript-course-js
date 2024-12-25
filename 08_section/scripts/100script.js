@@ -1,53 +1,100 @@
-// 100. Primitives vs. Objects in Practice
+// 100. Regular Functions vs. Arrow Functions
 
 'use strict';
 
-// Primitive types
-let lastName = 'Williams';
-let oldLastName = lastName;
-lastName = 'Davis';
-console.log('lastName:', lastName);
-console.log('oldLastName:', oldLastName);
-console.log('------------------------------------');
+// Example 1
 
-// Reference types
-const jessica = {
-    firstName: 'Jessica',
-    lastName: 'Williams',
-    age: 27,
+// var firstName = 'John';
+// const kerim = {
+//     firstName: 'Kerim',
+//     year: 1996,
+//     calcAge: function() {
+//         console.log(2022 - this.year); 
+//     },
+//     greet: () => {
+//         console.log(this); // Arrow function - Window object
+//         console.log(`Hey ${this.firstName}`);
+//     },
+// };
+// kerim.calcAge();  // 26
+// kerim.greet();  // Hey undefined
+// console.log(this.firstName); // undefined
+
+// Never use arrow function as a method
+
+
+
+// Example 2
+
+// const kerim = {
+//     firstName: 'Kerim',
+//     year: 1996,
+//     calcAge: function() {
+//         console.log(2022 - this.year); 
+
+//         const self = this; // self or that
+//         const isMillenial = function() {
+//             // console.log(this); // undefined
+//             // console.log(this.year >= 1981 && this.year <= 1996);
+//             console.log(self);
+//             console.log(self.year >= 1981 && self.year <= 1996);
+//         };
+
+//         isMillenial();
+//     },
+//     greet: () => {
+//         console.log(this); 
+//         console.log(`Hey ${this.firstName}`);
+//     },
+// };
+// kerim.greet(); 
+// kerim.calcAge();
+
+
+
+// Example 3
+
+const kerim = {
+    firstName: 'Kerim',
+    year: 1996,
+    calcAge: function() {
+        console.log(2022 - this.year); 
+
+        const isMillenial = () => {
+            console.log(this);
+            console.log(this.year >= 1981 && this.year <= 1996); // true
+        };
+        isMillenial();
+    },
+
+    // greet: () => {
+    //     console.log(this); 
+    //     console.log(`Hey ${this.firstName}`);
+    // },
+
+    greet: function() {
+        console.log(this); 
+        console.log(`Hey ${this.firstName}`);
+    },
 };
-// console.log('jessica:', jessica);
+kerim.greet(); 
+kerim.calcAge();
 
-const marriedJessica = jessica;
-console.log('marriedJessica', marriedJessica);
-console.log('------------------------------------');
 
-marriedJessica.lastName = 'Davis';
-
-console.log('Before marriage:', jessica); // 'Davis'
-console.log('After marriage:', marriedJessica); // 'Davis'
-console.log('------------------------------------');
-
-// Copying objects
-const jessica2 = {
-    firstName: 'Jessica',
-    lastName: 'Williams',
-    age: 27,
-    family: ['Alice', 'Bob'],
+// arguments keyword
+const addExpr = function(a, b) {
+    console.log(arguments);
+    return a + b;
 };
-console.log('jessica2:', jessica2);
+addExpr(2,3);
+addExpr(2,4,5);
 
-const jessicaCopy = Object.assign({}, jessica2);  // Oject.assign only creates a shallow copy
-jessicaCopy.lastName = 'Davis';
-console.log('jessicaCopy', jessicaCopy);
 
-console.log('Before marriage:', jessica2); // 'Williams'
-console.log('After marriage:', jessicaCopy); // 'Davis'
-console.log('------------------------------------');
+var addArrow = (a,b) => {
+    console.log(arguments); // arguments is not defined
+    return a + b;
+};
+addArrow(2,3,4);
 
-console.log('----------- Family members ---------');
-jessicaCopy.family.push('Mary');
-jessicaCopy.family.push('John');
 
-console.log('Before marriage:', jessica2); 
-console.log('After marriage:', jessicaCopy);
+// this comes from the parent scope

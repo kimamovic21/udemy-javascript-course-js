@@ -1,54 +1,42 @@
-// 95. Hoisting and TDZ (Temporal Dead Zone )in Practice
+// 95. Scoping in Practice
 
 'use strict';
 
-// Variables
-console.log(me);
-console.log(job);
-console.log(year);
+function calcAge(birthYear) {
+    const age = 2022 - birthYear;
+    
+    function printAge() {
+        let output = `${firstName}, you are ${age}, born in ${birthYear}.`
+        console.log('output:', output);
 
-var me = 'Kerim';
-let job = 'frontend';
-const year = 1996;
+        if (birthYear >= 1981 && birthYear <= 1996) { // block scope
+            var millenial = true;
 
+            // Creating new variable with same name as outer scope's variable
+            const firstName = 'John'; // John is defined in current scope
 
+            // Reassigning outer scope's variable
+            output = `New Output!!!`;
+            const str = `Oh, and you're a millenial, ${firstName}.`;
+            console.log('str:', str);
 
-// Functions
+            function addTwoValues(a,b) {
+                return a + b;
+            };
+        };
+        
+        // console.log(str); // str is not defined
+        console.log('millenial:', millenial); // true
+        // console.log(addTwoValues(2, 3)); // addTwoValues is not defined
+        console.log('output 2:', output);
+     };
+    printAge();
 
-console.log('addDecl:', addDecl(2,3));
-console.log('addExpr:', addExpr(2,3));
-console.log('addArrow:',addArrow(2,3));
-
-function addDecl(a,b) {
-    return a + b;
+    return age;
 };
 
-const addExpr = function(a,b) { // var addExpr
-    return a + b;
-};
+const firstName = 'Kerim';
+console.log('caclAge:', calcAge(1996));
 
-const addArrow = (a,b) => a + b; // var addArrow
-
-
-
-// Example
-
-if (!numProducts) {
-    deleteShoppingCart();
-};
-
-var numProducts = 10;
-
-function deleteShoppingCart() {
-    console.log('All products deleted!');
-};
-
-
-
-var x = 1;
-let y = 2;
-const z = 3;
-
-console.log(x === window.x); // true;
-console.log(y === window.y); // false;
-console.log(z === window.z); // false;
+// console.log(age); // age is not defined
+// printAge(); // printAge is not defined

@@ -1,31 +1,24 @@
-// 92. Scope and The Scope Chain
+// 92. The JavaScript Engine and Runtime
 
 'use strict';
 
-// Lexical scoping: Scoping is controlled by placement of functions and blocks in the code
+// JS Engine is a program that executes javascript code
 
-// Scope: Space or environment in which a certain variable is declared. There is global scope, function scope and block scope
+// Example: V8 Engine
+// https://www.youtube.com/watch?v=hWhMKalEicY
+// Javascript engine contains Call Stack and Heap
+// Call Stack - place where our code is executed
+// Heap - unstructured memory pool which stores all the objects that our application needs
 
-// Scope of a variable: Region of our code where a certain variable can be accessed
 
-// Scope chain vs. Call stack
+// Compilation vs. Interpretation
 
-const a = 'Kerim';
-first();
+// Compilation: Entire code is converted into machine code at once, and written to a binary file that can be executed by a computer
+// Interpretation: Interpreter runs through the source code an executes it line by line
+// Just-in-time (JIT) compilation: Entire code is converted into machine code at once, then executed immediately
 
-function first() {
-    const b = 'Hello!'; 
-    second();
 
-    function second() {
-        const c = 'Hi!';
-        third();
-    };
-};
+// Modern Just-in-time compilation of javascript
 
-function third() {
-    const d = 'Hey!';
-    console.log(d + c + b + a); // ReferenceError
-};
 
-// Scoping asks the question "Where do variables live" or "Where can we access a certain variable and where not ?"
+// Javascript Runtime

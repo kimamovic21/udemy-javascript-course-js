@@ -1,53 +1,54 @@
-// 97. The This Keyword in Practice
+// 97. Hoisting and TDZ (Temporal Dead Zone )in Practice
 
 'use strict';
 
-console.log(this); // Window object
+// Variables
+console.log(me);
+console.log(job);
+console.log(year);
 
-function calcAgeDecl (birthYear) {
-    console.log(2022 - birthYear);
-    console.log(this); // undefined
+var me = 'Kerim';
+let job = 'frontend';
+const year = 1996;
+
+
+
+// Functions
+
+console.log('addDecl:', addDecl(2,3));
+console.log('addExpr:', addExpr(2,3));
+console.log('addArrow:',addArrow(2,3));
+
+function addDecl(a,b) {
+    return a + b;
 };
-calcAgeDecl(1996);
 
-
-const calcAgeExpr = function(birthYear) {
-    console.log(2022 - birthYear);
-    console.log(this); // undefined
+const addExpr = function(a,b) { // var addExpr
+    return a + b;
 };
-calcAgeExpr(1996);
+
+const addArrow = (a,b) => a + b; // var addArrow
 
 
-const calcAgeArrow = (birthYear) => {
-    console.log(2022 - birthYear);
-    console.log(this); // Window
+
+// Example
+
+if (!numProducts) {
+    deleteShoppingCart();
 };
-calcAgeArrow(1996);
 
+var numProducts = 10;
 
-const kerim = {
-    year: 1996,
-    calcAge: function() {
-        console.log(this);
-        console.log(2022 - this.year);
-    },
+function deleteShoppingCart() {
+    console.log('All products deleted!');
 };
-kerim.calcAge();
 
 
-const john = {
-    year: 1990,
-}
-john.calcAge = kerim.calcAge;
-john.calcAge();
 
+var x = 1;
+let y = 2;
+const z = 3;
 
-// f function is just a regular function call
-// it is not attached to any object
-// there is no owner of this function anymore
-
-const f = kerim.calcAge;
-console.log(f);
-// f();
-
-// this keyword always points to the object that is calling the method
+console.log(x === window.x); // true;
+console.log(y === window.y); // false;
+console.log(z === window.z); // false;

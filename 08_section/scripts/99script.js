@@ -1,23 +1,53 @@
-// 99. Primitives vs. Objects (Primitive vs. Reference Types)
+// 99. The This Keyword in Practice
 
 'use strict';
 
-let age = 26;
-let oldAge = age;
-age = 27;
+console.log(this); // Window object
 
-console.log('age:', age);
-console.log('oldAge:', oldAge);
-
-const me = {
-    name: 'Kerim',
-    age: 26,
+function calcAgeDecl (birthYear) {
+    console.log(2022 - birthYear);
+    console.log(this); // undefined
 };
-console.log('me 1:', me);
+calcAgeDecl(1996);
 
-const friend = me;
-console.log('friend 1:', friend);
 
-friend.age = 30;
-console.log('me 2:', me);
-console.log('friend 2:', friend);
+const calcAgeExpr = function(birthYear) {
+    console.log(2022 - birthYear);
+    console.log(this); // undefined
+};
+calcAgeExpr(1996);
+
+
+const calcAgeArrow = (birthYear) => {
+    console.log(2022 - birthYear);
+    console.log(this); // Window
+};
+calcAgeArrow(1996);
+
+
+const kerim = {
+    year: 1996,
+    calcAge: function() {
+        console.log(this);
+        console.log(2022 - this.year);
+    },
+};
+kerim.calcAge();
+
+
+const john = {
+    year: 1990,
+}
+john.calcAge = kerim.calcAge;
+john.calcAge();
+
+
+// f function is just a regular function call
+// it is not attached to any object
+// there is no owner of this function anymore
+
+const f = kerim.calcAge;
+console.log(f);
+// f();
+
+// this keyword always points to the object that is calling the method
