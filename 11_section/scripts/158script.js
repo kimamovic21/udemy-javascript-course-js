@@ -1,4 +1,4 @@
-// 158. Implementing Login
+// 158. The reduce method
 
 'use strict';
 
@@ -68,12 +68,13 @@ const displayMovements = function(movements) {
           const html = `
               <div class="movements__row">
                   <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-                  <div class="movements__value">${mov} €</div>
+                  <div class="movements__value">${mov}</div>
               </div>
           `;
           containerMovements.insertAdjacentHTML('afterbegin', html);
       });
   };
+displayMovements(account1.movements);
 
 
 const calcDisplayBalance = function(movements) {
@@ -82,34 +83,17 @@ const calcDisplayBalance = function(movements) {
     }, 0);
     labelBalance.textContent = `${balance} €`;
 };
-
-
-const calcDisplaySummary = function(acc) {
-    const incomes = acc.movements
-        .filter(mov => mov > 0)
-        .reduce((acc, mov) => acc + mov, 0);
-    labelSumIn.textContent = `${incomes} €`;
-
-    const out = acc.movements
-        .filter(mov => mov < 0)
-        .reduce((acc, mov) => acc + mov, 0);
-    labelSumOut.textContent = `${Math.abs(out)} €`;
-
-    const interest = acc.movements
-        .filter(mov => mov > 0)
-        .map(deposit => deposit * acc.interestRate / 100)
-        .filter((int, i, arr) => {
-            // console.log(arr);
-            return int >= 1;
-        })
-        .reduce((acc, int) => acc + int, 0);
-    labelSumInterest.textContent = `${interest} €`;
-};
+calcDisplayBalance(account1.movements);
+console.log(account1.movements); // (8) [200, 450, -400, 3000, -650, -130, 70, 1300]
 
 
 const createUsernames = function(accs) {
     accs.forEach(function(acc) {
-       acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+       acc.username = acc.owner
+            .toLowerCase()
+            .split(' ')
+            .map(name => name[0])
+            .join('');
     });
 };
 createUsernames(accounts);
@@ -117,37 +101,40 @@ console.log(accounts);  // (4) [{…}, {…}, {…}, {…}]
 
 
 
-// Event handlers
-let currentAccount; 
 
-btnLogin.addEventListener('click', function(e) {
-    // Prevent form from submitting
-    e.preventDefault();
-    // console.log('Login');
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-    currentAccount = accounts
-        .find(acc => acc.username === inputLoginUsername.value);
-    console.log(currentAccount);
+// Example 1
+// acc - accumulator 
+// curr - current value
+// i - index
+// arr - array
+// 0 - initial value of the accumulator in the first loop iteration
+const balance = movements.reduce(function(acc, curr, i, arr) {
+    // console.log(acc);
+    // console.log(curr);
+    console.log(`Iteration number ${i + 1}: ${acc}`);
+    return acc + curr;
+}, 0);   
+console.log('balance:', balance);  // 3840
 
-    if (currentAccount?.pin === Number(inputLoginPin.value)) {
-        // console.log('Login');
 
-        // Display UI and Welcome message
-        labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
-        containerApp.style.opacity = 100;
+// Example 2
+const balance2 = movements.reduce((acc, curr) => acc + curr, 0);
+console.log('balance2:', balance2);  // 3840
 
-        // Clear input fields
-        inputLoginUsername.value = '';
-        inputLoginPin.value = '';
-        inputLoginPin.blur();
 
-        // Display movements
-        displayMovements(currentAccount.movements);
+// Example 3
+let balance3 = 0;
+for (const mov of movements) {
+    balance3 = balance3 + mov;
+};
+console.log('balance3:', balance3); // 3840
 
-        // Display balance
-        calcDisplayBalance(currentAccount.movements);
 
-        // Display summary
-        calcDisplaySummary(currentAccount);
-    };
-});
+// Maximum value
+const max = movements.reduce((acc, mov) => {
+    if (acc > mov) return acc;
+    else return mov;
+}, movements[0]);
+console.log(max); // 3000

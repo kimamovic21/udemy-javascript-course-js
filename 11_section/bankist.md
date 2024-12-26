@@ -1,11 +1,11 @@
 Project "Bankist" App
 
-146. 
+01. 
 -flowchart - logika aplikacije
 -pohranjivanje HTML elemenata u JS varijable
 
 
-147. 
+02. 
 -kreiramo funkciju displayMovements sa movements parametrom
 -dodajemo .forEach metodu - movements.forEach i callback funkciju sa parametrima (mov, i)
 -kreiramo varijablu html sa template literals unutar kojih pisemo HTML kod
@@ -19,7 +19,7 @@ njemu - containerMovements.innerHTML = '';
 -pozivamo funkciju sa argumentom iz niza account1.movements
 
 
-151. 
+03. 
 -kreiramo funkciju createUsernames u kojoj kao parametar uzimamo accs
 -parametru accs dodajemo .forEach() metodu sa callback funkcijom
 -callback funkciji dodajemo kao parametar acc
@@ -29,7 +29,7 @@ njemu - containerMovements.innerHTML = '';
 -pozivamo create Usernames funkciju sa argumentom accounts
 
 
-153. 
+04. 
 -kreiramo funkciju calcDisplayBalance u kojoj kao parametar uzimamo movements
 -parametru movements dodajemo .reduce() metodu sa parametrima acc, mov
 -posto zelimo da dobijemo ukupnu vrijednost vracamo ukupni rezulat acc + mov
@@ -39,7 +39,7 @@ njemu - containerMovements.innerHTML = '';
 -pozivamo funkciju calcDisplayBalance sa argumentom account1.movements (pogledati movements unutar objekta account1)
 
 
-155. 
+05. 
 -kreiramo funkciju calcDisplaySummary u kojoj kao parametar uzimamo movements
 -movements parametru dodajemo .filter() i .reduce() metode
 -pomocu .filter() metode filtriramo sve vrijednosti koje su vece od 0
@@ -59,7 +59,7 @@ njemu - containerMovements.innerHTML = '';
 -pozivamo calcDisplaySummary sa argumentom account1.movements
 
 
-158. 
+06. 
 -dugmetu btnLogin dodajemo addEventListener sa dva parametra click i callback funkcijom
 -unutar callback funkcije dodajemo e.preventDefault()
 -definisemo currentAccount varijablu izvan addEventListeners
@@ -81,7 +81,7 @@ calcDisplaySummary(currentAccount);
 -pravimo izmjene u calcDisplaySummary funkcije gdje kao parametar sada uzimamo acc
 
 
-159. 
+07. 
 -dugmetu btnTransfer dodajemo addEventListener sa dva parametra click i callback funkcijom
 -unutar callback funkcije dodajemo e.preventDefault()
 -vrijednost koju unesemo unutar inputTransferAmountl.value varijable pretvorimo u broj pomocu Number() funkcije
@@ -109,7 +109,7 @@ onu vrijednost koju smo unijeli u amount varijablu
 inputTransferTo.value dodijelimo prazan string
 
 
-160. 
+08. 
 -dugmetu btnClose dodajemo addEventListener sa dva parametra click i callback funkcijom
 -unutar callback funkcije dodajemo e.preventDefault()
 -dodajemo uslov pomocu kojeg provjeravamo da li je uneseno username u polje isto onom sa kojim smo ulogovani
@@ -122,7 +122,7 @@ inputTransferTo.value dodijelimo prazan string
 zelimo izbrisati
 
 
-161.  
+09.  
 -dugmetu btnLoan dodajemo addEventListener sa dva parametra click i callback funkcijom
 -vrijednost unesenu u varijablu inputLoanAmount.value pohranimo u varijablu amount
 -dodajemo uslov da vrijednost amount mora biti vece od 0 i da bilo koji depozit mora biti veci 10% od zahtjeva
@@ -131,7 +131,7 @@ zelimo izbrisati
 -ocistimo polje inputLoanAmount.value
 
 
-163. 
+10. 
 -funkciji displayMovements() dodajemo jos jedan parametar sort = false
 -kreiramo novu varijablu movs koju definisemo sa uslovom
 -ako je sort true, onda movements nizu dodajemo metode .slice() i sort(), a ako je sort false onda prikazujemo samo movements

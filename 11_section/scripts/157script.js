@@ -1,58 +1,25 @@
-// 157. The find method
-
-// .find() method retrieves one element of an array based on condition
-// .find() method only returns the first element which fulfills the condition
+// 157. The filter Method
 
 'use strict';
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3020, -650, -130, 70, 1300];
 
-const firstWithdrawal = movements.find((mov) => {
+const deposits = movements.filter(function(mov) {
+    return mov > 0;
+});
+console.log(movements);
+console.log(deposits);  // (5) [200, 450, 3020, 70, 1300]
+
+
+const depositsFor = [];
+for (const mov of movements) {
     // console.log(mov);
-    return mov < 0;
-});
-
-console.log(movements);  // (8)
-console.log(firstWithdrawal);  // -400
-
-
-// Data
-const account1 = {
-    owner: 'Jonas Schmedtmann',
-    movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
-    interestRate: 1.2, // %
-    pin: 1111,
+    if (mov > 0) {
+        depositsFor.push(mov);
+    }
 };
-  
-const account2 = {
-    owner: 'Jessica Davis',
-    movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
-    interestRate: 1.5,
-    pin: 2222,
-};
-  
-const account3 = {
-    owner: 'Steven Thomas Williams',
-    movements: [200, -200, 340, -300, -20, 50, 400, -460],
-    interestRate: 0.7,
-    pin: 3333,
-};
-  
-const account4 = {
-    owner: 'Sarah Smith',
-    movements: [430, 1000, 700, 50, 90],
-    interestRate: 1,
-    pin: 4444,
-};
-  
-const accounts = [account1, account2, account3, account4];
-
-console.log(accounts);
+console.log(depositsFor);  // (5) [200, 450, 3020, 70, 1300]
 
 
-// Using .find() method we can now basically find an object in the array based on some property of that object
-
-const account = accounts.find((acc) => {
-    return acc.owner === 'Jessica Davis'; 
-});
-console.log(account);  // {owner}
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);  // (3) [-400, -650, -130]

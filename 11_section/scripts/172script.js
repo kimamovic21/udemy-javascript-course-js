@@ -1,4 +1,4 @@
-// 167. some and every
+// 172. More ways of Creating and Filling Arrays
 
 'use strict';
 
@@ -61,9 +61,12 @@ const account1 = {
   const inputClosePin = document.querySelector('.form__input--pin');
   
   
-const displayMovements = function(movements) {
+const displayMovements = function(movements, sort = false) {
       containerMovements.innerHTML = '';
-      movements.forEach(function(mov, i) {
+
+      const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+      movs.forEach(function(mov, i) {
           const type = mov > 0 ? 'deposit' : 'withdrawal';
           const html = `
               <div class="movements__row">
@@ -165,11 +168,7 @@ btnTransfer.addEventListener('click', function(e) {
     inputTransferTo.value = '';
     // console.log(amount);
     // console.log(receiverAcc);
-    if (
-        amount > 0 && 
-        receiverAcc &&
-        currentAccount.balance >= amount && 
-        receiverAcc?.username !== currentAccount.username) {
+    if ( amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
         // Doing the transfer
         // console.log('Transfer valid!');
         currentAccount.movements.push(-amount);
@@ -185,7 +184,6 @@ btnLoan.addEventListener('click', function(e) {
     e.preventDefault();
 
     const amount = Number(inputLoanAmount.value);
-    console.log(amount);
 
     if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
         // Add movement
@@ -219,33 +217,47 @@ btnClose.addEventListener('click', function(e) {
 });
 
 
+let sorted = false;
+
+btnSort.addEventListener('click', function(e) {
+    e.preventDefault();
+    displayMovements(currentAccount.movements, !sorted);
+    sorted = !sorted;
+});
 
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-// Equality
-// console.log(movements);
-console.log(movements.includes(-130));  // true
-
-
-// Some: Condition
-const anyDeposits = movements.some(mov => mov > 0);
-console.log(anyDeposits);  // true
-
-const anyDepositsMinus300 = movements.some(mov => mov === -130);
-console.log(anyDepositsMinus300);  // true
-
-const anyDeposits5000 = movements.some(mov => mov > 5000);
-console.log(anyDeposits5000);  // false
+labelBalance.addEventListener('click', function() {
+    const movementsUI = Array.from(
+        document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', ''))
+    );
+    console.log(movementsUI); // (8) [1300, 70, -130, -650, 3000, -400, 450, 200]
+});
 
 
-// Every: Condition
-console.log(movements.every(mov => mov > 0));  // false
-console.log(account4.movements.every(mov => mov > 0));  // true
 
 
-// Separate callback
-const deposit = mov => mov > 0;
-console.log(movements.some(deposit));  // true
-console.log(movements.every(deposit));  // false
-console.log(movements.filter(deposit));  // (5)
+const x = new Array(7);
+console.log(x);  // (7) [empty × 7]
+// console.log(x.map(() => 5));  // (7) [empty × 7]
+
+// x.fill(1);
+// console.log(x);  // (7) [1, 1, 1, 1, 1, 1, 1]
+
+// Empty array + fill method
+x.fill(1, 3, 5);
+console.log(x);  // (7) [empty × 3, 1, 1, empty × 2]
+
+const arr = [1,2,3,4,5,6,7];
+console.log(new Array(1,2,3,4,5,6,7));
+
+arr.fill(23, 2, 6);
+console.log(arr);  // (7) [1, 2, 23, 23, 23, 23, 7]
+
+
+// Array.from
+const y = Array.from({length: 7}, () => 1);
+console.log(y); // (7) [1, 1, 1, 1, 1, 1, 1]
+
+const z = Array.from({length: 7}, (_, i) => i + 1);
+console.log(z);  // (7) [1, 2, 3, 4, 5, 6, 7]
+

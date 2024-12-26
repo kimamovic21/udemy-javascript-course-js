@@ -173,34 +173,38 @@ Section 10: A Closer Look at Functions
 
 
 Section 11: Working With Arrays
-140. Section Intro
-141. Section Roadmap
-142. Simple Array Methods
-143. The new at Method
-144. Looping Arrays: forEach
-145. forEach With Maps and Sets
-146. PROJECT: "Bankist" App
-147. Creating DOM Elements
-148. Coding Challenge #1
-149. Data Transformations: map, filter, reduce
-150. The map Method
-151. Computing Usernames
-152. The filter Method
-153. The reduce Method
-154. Coding Challenge #2
-155. The Magic of Chaining Methods
-156. Coding Challenge #3
-157. The find Method
-158. Implementing Login
-159. Implementing Transfers
-160. The findIndex Method
-161. some and every
-162. flat and flatMap
-163. Sorting Arrays
-164. More ways of Creating and Filling Arrays
-165. Summary: Which Array Method to Use ?
-166. Array Methods Practice
-167. Coding Challenge #4
+145. Section Intro
+146. Section Roadmap
+147. Simple Array Methods
+148. The new at Method
+149. Looping Arrays: forEach
+150. forEach With Maps and Sets
+151. PROJECT: "Bankist" App
+152. Creating DOM Elements
+153. Coding Challenge #1
+154. Data Transformations: map, filter, reduce
+155. The map Method
+156. Computing Usernames
+157. The filter Method
+158. The reduce Method
+159. Coding Challenge #2
+160. The Magic of Chaining Methods
+161. Coding Challenge #3
+162. The find Method
+163. Implementing Login
+164. Implementing Transfers
+165. The findIndex Method
+166. The New findLast and findLastIndex Methods
+167. some and every
+168. flat and flatMap
+169. CHALLENGE #4
+170. Sorting Arrays
+171. Array Grouping
+172. More ways of Creating and Filling Arrays
+173. Non-Destructive Alternatives: toReversed, toSorted, toSpliced, with
+174. Summary: Which Array Method to Use ?
+175. Array Methods Practice
+176. Coding Challenge #5
 
 
 Section 12: Numbers, Dates, Intl and Timers

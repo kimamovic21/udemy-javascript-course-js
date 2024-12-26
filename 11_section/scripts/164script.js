@@ -1,4 +1,4 @@
-// 164. More ways of Creating and Filling Arrays
+// 164. Implementing Transfers
 
 'use strict';
 
@@ -61,12 +61,9 @@ const account1 = {
   const inputClosePin = document.querySelector('.form__input--pin');
   
   
-const displayMovements = function(movements, sort = false) {
+const displayMovements = function(movements) {
       containerMovements.innerHTML = '';
-
-      const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
-
-      movs.forEach(function(mov, i) {
+      movements.forEach(function(mov, i) {
           const type = mov > 0 ? 'deposit' : 'withdrawal';
           const html = `
               <div class="movements__row">
@@ -155,7 +152,7 @@ btnLogin.addEventListener('click', function(e) {
         inputLoginPin.blur();
 
         //  Update UI
-        updateUI(currentAccount) ;
+        updateUI(currentAccount);
     };
 });
 
@@ -163,101 +160,23 @@ btnLogin.addEventListener('click', function(e) {
 btnTransfer.addEventListener('click', function(e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
+    // const receiverAcc = inputTransferTo.value;
     const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
+    console.log(amount);
+    console.log(receiverAcc);
+
     inputTransferAmount.value = '';
     inputTransferTo.value = '';
-    // console.log(amount);
-    // console.log(receiverAcc);
+
     if ( amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
-        // Doing the transfer
-        // console.log('Transfer valid!');
+
+    // Doing the transfer
+        console.log('Transfer valid!');
         currentAccount.movements.push(-amount);
         receiverAcc.movements.push(amount);
 
-        // Update UI
+    // Update UI
         updateUI(currentAccount);
     };
 });
-
-
-btnLoan.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    const amount = Number(inputLoanAmount.value);
-
-    if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-        // Add movement
-        currentAccount.movements.push(amount);
-
-        // Update UI
-        updateUI(currentAccount);
-    };
-
-    inputLoanAmount.value = '';
-});
-
-
-btnClose.addEventListener('click', function(e) {
-    e.preventDefault();
-    // console.log('Delete');
-
-    if(inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
-        const index = accounts.findIndex(acc => acc.username === currentAccount.username);
-        console.log(index);
-
-        // Delete account
-        accounts.splice(index, 1);
-
-        // Hide UI
-        containerApp.style.opacity = 0;
-    };
-
-    inputCloseUsername.value = '';
-    inputClosePin.value = '';
-});
-
-
-let sorted = false;
-
-btnSort.addEventListener('click', function(e) {
-    e.preventDefault();
-    displayMovements(currentAccount.movements, !sorted);
-    sorted = !sorted;
-});
-
-
-labelBalance.addEventListener('click', function() {
-    const movementsUI = Array.from(
-        document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', ''))
-    );
-    console.log(movementsUI); // (8) [1300, 70, -130, -650, 3000, -400, 450, 200]
-});
-
-
-
-
-const x = new Array(7);
-console.log(x);  // (7) [empty × 7]
-// console.log(x.map(() => 5));  // (7) [empty × 7]
-
-// x.fill(1);
-// console.log(x);  // (7) [1, 1, 1, 1, 1, 1, 1]
-
-// Empty array + fill method
-x.fill(1, 3, 5);
-console.log(x);  // (7) [empty × 3, 1, 1, empty × 2]
-
-const arr = [1,2,3,4,5,6,7];
-console.log(new Array(1,2,3,4,5,6,7));
-
-arr.fill(23, 2, 6);
-console.log(arr);  // (7) [1, 2, 23, 23, 23, 23, 7]
-
-
-// Array.from
-const y = Array.from({length: 7}, () => 1);
-console.log(y); // (7) [1, 1, 1, 1, 1, 1, 1]
-
-const z = Array.from({length: 7}, (_, i) => i + 1);
-console.log(z);  // (7) [1, 2, 3, 4, 5, 6, 7]
-
+ 

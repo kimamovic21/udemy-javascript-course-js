@@ -1,53 +1,27 @@
-// 154. Coding Challenge #2
+// 154. Data Transformations: map, filter, reduce
 
 'use strict';
 
-/* 
-Let's go back to Julia and Kate's study about dogs. This time, they want to convert dog ages to human ages and calculate the 
-average age of the dogs in their study.
-Create a function 'calcAverageHumanAge', which accepts an arrays of dog's ages ('ages'), and does the following things in order:
 
-1. Calculate the dog age in human years using the following formula: if the dog is <= 2 years old, humanAge = 2 * dogAge. 
-If the dog is > 2 years old, humanAge = 16 + dogAge * 4.
+/*
+Map method
 
-2. Exclude all dogs that are less than 18 human years old (which is the same as keeping dogs that are at least 18 years old)
+-Map method creates a brand new array based on original array
+-Map method takes an array, loops over that array, and in each iteration it applies a callback function 
+ that we specify on our code to the current array element
+-Map method return a new array containing the results of applying an operation on all original array elements
 
-3. Calculate the average human age of all adult dogs (you should already know from other challenges how we calculate averages)
 
-4. Run the function for both test datasets
+Filter method
 
-TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
-TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+-FIlter method is used to filter for elements in the original array which satisfy a certain condition
+-All the elements that pass the test that we specified will make it into a new filtered array
+-Elements for which the condition is true will be included in a new array that the filter method returns
+-All other elements will get filtered out, so they will not be included in the new array
+-Filter method returns a new array containing the array elements that passed a specified test condition
+
+
+Reduce method
+
+-Reduce method we use to boil down all the elements of the original array into one single value
 */
-
-
-// 1. map method
-const calcAverageHumanAge = function(ages) {
-    const humanAges = ages.map((age) => {
-        if (age <= 2) {
-            return age * 2;
-        }
-        else {
-            return 16 + age * 4;
-        };
-    });
-    console.log(humanAges);
-
-    // 2. filter method
-    const adults = humanAges.filter((age) => {
-        return age >= 18;
-    });
-    console.log(adults);
-
-    // 3. average
-    const average = adults.reduce((acc, age) => {
-        return acc + age;
-    }, 0) / adults.length;
-    return average;
-};
-
-// 4. call the function
-const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
-console.log(avg1); // 44
-const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
-console.log(avg2); // 47.33

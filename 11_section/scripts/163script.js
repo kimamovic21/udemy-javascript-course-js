@@ -1,4 +1,4 @@
-// 163. Sorting Arrays
+// 163. Implementing Login
 
 'use strict';
 
@@ -61,12 +61,9 @@ const account1 = {
   const inputClosePin = document.querySelector('.form__input--pin');
   
   
-const displayMovements = function(movements, sort = false) {
+const displayMovements = function(movements) {
       containerMovements.innerHTML = '';
-
-      const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
-
-      movs.forEach(function (mov, i) {
+      movements.forEach(function(mov, i) {
           const type = mov > 0 ? 'deposit' : 'withdrawal';
           const html = `
               <div class="movements__row">
@@ -76,14 +73,14 @@ const displayMovements = function(movements, sort = false) {
           `;
           containerMovements.insertAdjacentHTML('afterbegin', html);
       });
-};
+  };
 
 
-const calcDisplayBalance = function(acc) {
-    acc.balance = acc.movements.reduce((acc, mov) => {
+const calcDisplayBalance = function(movements) {
+    const balance = movements.reduce((acc, mov) => {
         return acc + mov;
     }, 0);
-    labelBalance.textContent = `${acc.balance} €`;
+    labelBalance.textContent = `${balance} €`;
 };
 
 
@@ -116,19 +113,8 @@ const createUsernames = function(accs) {
     });
 };
 createUsernames(accounts);
-// console.log(accounts);  // (4) [{…}, {…}, {…}, {…}]
+console.log(accounts);  // (4) [{…}, {…}, {…}, {…}]
 
-
-const updateUI = function(acc) {
-     // Display movements
-     displayMovements(acc.movements);
-
-     // Display balance
-     calcDisplayBalance(acc);
-
-     // Display summary
-     calcDisplaySummary(acc);
-};
 
 
 // Event handlers
@@ -139,7 +125,8 @@ btnLogin.addEventListener('click', function(e) {
     e.preventDefault();
     // console.log('Login');
 
-    currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+    currentAccount = accounts
+        .find(acc => acc.username === inputLoginUsername.value);
     console.log(currentAccount);
 
     if (currentAccount?.pin === Number(inputLoginPin.value)) {
@@ -154,119 +141,13 @@ btnLogin.addEventListener('click', function(e) {
         inputLoginPin.value = '';
         inputLoginPin.blur();
 
-        //  Update UI
-        updateUI(currentAccount) ;
+        // Display movements
+        displayMovements(currentAccount.movements);
+
+        // Display balance
+        calcDisplayBalance(currentAccount.movements);
+
+        // Display summary
+        calcDisplaySummary(currentAccount);
     };
 });
-
-
-btnTransfer.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    const amount = Number(inputTransferAmount.value);
-    const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
-    // console.log(amount);
-    // console.log(receiverAcc);
-
-    inputTransferAmount.value = '';
-    inputTransferTo.value = '';
-
-    if ( amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
-        // Doing the transfer
-        // console.log('Transfer valid!');
-        currentAccount.movements.push(-amount);
-        receiverAcc.movements.push(amount);
-
-        // Update UI
-        updateUI(currentAccount);
-    };
-});
-
-
-btnLoan.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    const amount = Number(inputLoanAmount.value);
-
-    if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-        // Add movement
-        currentAccount.movements.push(amount);
-
-        // Update UI
-        updateUI(currentAccount);
-    };
-
-    inputLoanAmount.value = '';
-});
-
-
-btnClose.addEventListener('click', function(e) {
-    e.preventDefault();
-    // console.log('Delete');
-
-    if(inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
-        const index = accounts.findIndex(acc => acc.username === currentAccount.username);
-        console.log(index);
-
-        // Delete account
-        accounts.splice(index, 1);
-
-        // Hide UI
-        containerApp.style.opacity = 0;
-    };
-
-    inputCloseUsername.value = '';
-    inputClosePin.value = '';
-});
-
-
-let sorted = false;
-
-btnSort.addEventListener('click', function(e) {
-    e.preventDefault();
-    // displayMovements(currentAccount.movements, true);  // works just once
-    displayMovements(currentAccount.movements, !sorted);
-    sorted = !sorted;
-});
-
-
-
-
-// sort() - mutates the original array
-
-const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
-console.log(owners.sort());  // (4) ['Adam', 'Jonas', 'Martha', 'Zach']
-console.log(owners);  // (4) ['Adam', 'Jonas', 'Martha', 'Zach']
-
-// sort() - converts everything to strings
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-// console.log(movements.sort());  // (8) [-130, -400, -650, 1300, 200, 3000, 450, 70]
-
-
-// return < 0, A, B (keep order)
-// return > 0, B, A (switch order)
-
-// a - current value
-// b -next value
-
-// Ascending
-movements.sort((a, b) => {
-    if(a > b) return 1;
-    if(a < b) return -1;
-});
-console.log(movements); // (8) [-650, -400, -130, 70, 200, 450, 1300, 3000]
-
-
-// Descending
-movements.sort((a, b) => {
-    if(a > b) return -1;
-    if(a < b) return 1;
-});
-console.log(movements); // (8) [3000, 1300, 450, 200, 70, -130, -400, -650]
-
-
-movements.sort((a, b) => a - b);
-console.log(movements);  // (8) [-650, -400, -130, 70, 200, 450, 1300, 3000]
-
-movements.sort((a, b) => b - a);
-console.log(movements);  // (8) [3000, 1300, 450, 200, 70, -130, -400, -650]

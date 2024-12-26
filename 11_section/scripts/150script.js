@@ -1,40 +1,36 @@
-// 150. The map method
+// 150. forEach With Maps and Sets
 
 'use strict';
 
-const eurToUsd = 1.1;
-const movements = [200, 450, -400, 3020, -650, -130, 70, 1300];
+// Map
+const currencies = new Map([
+    ['USD', 'United States dollar'],
+    ['EUR', 'Euro'],
+    ['GBP', 'Pound sterling'],
+]);
+console.log(currencies);  // Map(3)
 
-// const movementsUSD = movements.map(function(mov) {
-//     return mov * eurToUsd;
+currencies.forEach(function(value, key, map) {
+    console.log(`${key} : ${value}`);
+});
+
+
+console.log(`---------------------------------------`);
+
+// Set
+const currenciesUnique = new Set(['USD', 'EUR', 'GBP', 'USD', 'EUR']);
+console.log(currenciesUnique); // Set(3) 
+
+// currenciesUnique.forEach(function(value, key, map) {
+//     console.log(`${value} : ${key}`);
 // });
 
-const movementsUSD = movements.map(mov => mov * eurToUsd);
+currenciesUnique.forEach(function(value, _, map) {
+    console.log(`${value} : ${value}`);
+});
 
-console.log(movements);
-console.log(movementsUSD);
-
-const movementsUSDfor = [];
-for(const mov of movements) {
-    movementsUSDfor.push(mov * eurToUsd);
-};
-console.log(movementsUSDfor);
-
-
-// Example 1
-// const movementsDescriptions = movements.map((mov, i, arr) => {
-//     if (mov > 0) {
-//         return `Movement ${i + 1}: You deposited ${mov}`;
-//     }
-//     else {
-//        return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
-//     };
-// });
-// console.log(movementsDescriptions);
-
-
-// Example 2
-const movementsDescriptions = movements.map((mov, i) => 
-    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`
-);
-console.log(movementsDescriptions);
+/*
+-Set doesn't have keys and it doesn't have indexes either
+-So there is no value that would make sense for the key
+-Unnecessary variable ( _ ) inside callback function
+*/

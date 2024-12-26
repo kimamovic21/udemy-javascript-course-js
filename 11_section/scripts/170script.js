@@ -1,4 +1,4 @@
-// 167. some and every
+// 170. Sorting Arrays
 
 'use strict';
 
@@ -61,9 +61,12 @@ const account1 = {
   const inputClosePin = document.querySelector('.form__input--pin');
   
   
-const displayMovements = function(movements) {
+const displayMovements = function(movements, sort = false) {
       containerMovements.innerHTML = '';
-      movements.forEach(function(mov, i) {
+
+      const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+      movs.forEach(function (mov, i) {
           const type = mov > 0 ? 'deposit' : 'withdrawal';
           const html = `
               <div class="movements__row">
@@ -159,17 +162,16 @@ btnLogin.addEventListener('click', function(e) {
 
 btnTransfer.addEventListener('click', function(e) {
     e.preventDefault();
+
     const amount = Number(inputTransferAmount.value);
     const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
-    inputTransferAmount.value = '';
-    inputTransferTo.value = '';
     // console.log(amount);
     // console.log(receiverAcc);
-    if (
-        amount > 0 && 
-        receiverAcc &&
-        currentAccount.balance >= amount && 
-        receiverAcc?.username !== currentAccount.username) {
+
+    inputTransferAmount.value = '';
+    inputTransferTo.value = '';
+
+    if ( amount > 0 && receiverAcc && currentAccount.balance >= amount && receiverAcc?.username !== currentAccount.username) {
         // Doing the transfer
         // console.log('Transfer valid!');
         currentAccount.movements.push(-amount);
@@ -185,7 +187,6 @@ btnLoan.addEventListener('click', function(e) {
     e.preventDefault();
 
     const amount = Number(inputLoanAmount.value);
-    console.log(amount);
 
     if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
         // Add movement
@@ -219,33 +220,53 @@ btnClose.addEventListener('click', function(e) {
 });
 
 
+let sorted = false;
+
+btnSort.addEventListener('click', function(e) {
+    e.preventDefault();
+    // displayMovements(currentAccount.movements, true);  // works just once
+    displayMovements(currentAccount.movements, !sorted);
+    sorted = !sorted;
+});
 
 
+
+
+// sort() - mutates the original array
+
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());  // (4) ['Adam', 'Jonas', 'Martha', 'Zach']
+console.log(owners);  // (4) ['Adam', 'Jonas', 'Martha', 'Zach']
+
+// sort() - converts everything to strings
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-// Equality
-// console.log(movements);
-console.log(movements.includes(-130));  // true
+// console.log(movements.sort());  // (8) [-130, -400, -650, 1300, 200, 3000, 450, 70]
 
 
-// Some: Condition
-const anyDeposits = movements.some(mov => mov > 0);
-console.log(anyDeposits);  // true
+// return < 0, A, B (keep order)
+// return > 0, B, A (switch order)
 
-const anyDepositsMinus300 = movements.some(mov => mov === -130);
-console.log(anyDepositsMinus300);  // true
+// a - current value
+// b -next value
 
-const anyDeposits5000 = movements.some(mov => mov > 5000);
-console.log(anyDeposits5000);  // false
-
-
-// Every: Condition
-console.log(movements.every(mov => mov > 0));  // false
-console.log(account4.movements.every(mov => mov > 0));  // true
+// Ascending
+movements.sort((a, b) => {
+    if(a > b) return 1;
+    if(a < b) return -1;
+});
+console.log(movements); // (8) [-650, -400, -130, 70, 200, 450, 1300, 3000]
 
 
-// Separate callback
-const deposit = mov => mov > 0;
-console.log(movements.some(deposit));  // true
-console.log(movements.every(deposit));  // false
-console.log(movements.filter(deposit));  // (5)
+// Descending
+movements.sort((a, b) => {
+    if(a > b) return -1;
+    if(a < b) return 1;
+});
+console.log(movements); // (8) [3000, 1300, 450, 200, 70, -130, -400, -650]
+
+
+movements.sort((a, b) => a - b);
+console.log(movements);  // (8) [-650, -400, -130, 70, 200, 450, 1300, 3000]
+
+movements.sort((a, b) => b - a);
+console.log(movements);  // (8) [3000, 1300, 450, 200, 70, -130, -400, -650]
