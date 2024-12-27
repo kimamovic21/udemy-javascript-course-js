@@ -1,21 +1,14 @@
-// 197. A Better Way: The Intersection Observer API
+// 197. Styles, Attributes and Classes
 
 'use strict';
+
+///////////////////////////////////////
+// Modal window
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
-const nav = document.querySelector('.nav');
-
-
-///////////////////////////////////////
-// Modal window
 
 const openModal = function (e) {
   e.preventDefault();
@@ -40,123 +33,95 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-///////////////////////////////////////
-// Button scrolling
-
-btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-
-  console.log(s1coords);
-  console.log(e.target.getBoundingClientRect());
-  console.log('Current scroll X:', window.pageXOffset);
-  console.log('Current scroll Y:', window.pageYOffset);
-  console.log('height:', document.documentElement.clientHeight);
-  console.log('width:', document.documentElement.clientWidth);
-
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
-
-
-///////////////////////////////////////
-// Page navigation
-
-// 1. Add event listener co common parent element
-// 2. Determine what element originated the event
-
-document.querySelector('.nav__links').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    // Matching strategy
-    if(e.target.classList.contains('nav__link')) {
-        const id = e.target.getAttribute('href');
-        // console.log(id);
-        document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-    };
-});
-
-
-///////////////////////////////////////
-// Tabbed component
-tabsContainer.addEventListener('click', function(e) {
-    const clicked = e.target.closest('.operations__tab');
-    // console.log(clicked);
-
-    // Guard clause
-    if(!clicked) return;
-
-    // Remove active classes
-    tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
-    tabsContent.forEach(content => content.classList.remove('operations__content--active'));
-
-    // Activate tab
-    clicked.classList.add('operations__tab--active');
-
-    // Activate content area
-    document
-        .querySelector(`.operations__content--${clicked.dataset.tab}`)
-        .classList.add('operations__content--active');
-});
-
-
-///////////////////////////////////////
-// Menu fade animation
-const handleHover = function(e) {
-    if (e.target.classList.contains('nav__link')) {
-        const link = e.target;
-        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-        const logo = link.closest('.nav').querySelector('img');
-
-        siblings.forEach(el => {
-            if (el !== link) el.style.opacity = this;
-        });
-        logo.style.opacity = this;
-    };
-};
-
-// Passing "argument" into handler
-nav.addEventListener('mouseover', handleHover.bind(0.5));
-nav.addEventListener('mouseout', handleHover.bind(1));
-
-
-///////////////////////////////////////
-// Sticky Navigation: The Intersection Observer API
-
-// const obsCallback = function(entries, observer) {
-//     entries.forEach(entry => {
-//         console.log(entry);  // IntersectionObserverEntry
-//     });
-// };
-  
-// const obsOptions = {
-//     root: null,
-//     threshold: [0, 0.2],
-// };
-
-// const observer = new IntersectionObserver(obsCallback, obsOptions);
-// observer.observe(section1);
-
+// Selecting elements
+// console.log(document.documentElement);
+// console.log(document.head);
+// console.log(document.body);
 
 const header = document.querySelector('.header');
+const allSections = document.querySelectorAll('.section');
+// console.log(header);
+// console.log(allSections);  // NodeList(4)
 
-const navHeight = nav.getBoundingClientRect().height;
-// console.log(navHeight);
+const section1 = document.getElementById('section--1');
+const allButtons = document.getElementsByTagName('button');
+// console.log(section1);
+// console.log(allButtons);  // HTMLCollection(9)
 
-const stickyNav = function(entries) {
-    const [entry] = entries;  // first element out of entries
-    console.log(entry);  // IntersectionObserverEntry
+const allButtons2 = document.getElementsByClassName('btn');
+// console.log(allButtons2);  // HTMLCollection(5) 
 
-    // entry.isIntersecting === false
-    if(!entry.isIntersecting) {
-      nav.classList.add('sticky')
-    }
-    else {
-      nav.classList.remove('sticky');
-    }; 
-};
 
-const headerObserver = new IntersectionObserver(stickyNav, {
-    root: null,
-    threshold: 0,
-    rootMargin: `-${navHeight}px`,
+// Creating and inserting elements
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.innerHTML = `
+        We use cookies for improved functionality and analytics. 
+        <button class="btn btn--close-cookie">Got it</button>
+`;
+header.append(message);
+
+
+// Delete elements
+document
+    .querySelector('.btn--close-cookie')
+    .addEventListener('click', function() {
+    message.parentElement.removeChild(message);
 });
-headerObserver.observe(header);
+
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '90%';
+
+console.log(message.style.color);  // empty
+console.log(message.style.backgroundColor);  // rgb(55, 56, 61)
+console.log(message.style.height);  // empty
+
+// console.log(getComputedStyle(message));
+console.log(getComputedStyle(message).color);  // rgb(187, 187, 187)
+console.log(getComputedStyle(message).height);  // 47.5px
+
+message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+
+// Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+logo.alt = 'Beautiful minimalist logo';
+
+
+// Non-standard
+console.log(logo.designer);  // undefined
+console.log(logo.getAttribute('designer'));  // Jonas
+logo.setAttribute('company', 'Bankist');
+
+console.log(logo.src);  // http://127.0.0.1:5500/13_section/img/logo.png
+console.log(logo.getAttribute('src'));  // img/logo.png
+
+const twitterLink = document.querySelector('.twitter-link');
+console.log(twitterLink.href);  // https://twitter.com/jonasschmedtman
+console.log(twitterLink.getAttribute('href'));  // https://twitter.com/jonasschmedtman
+
+const navLinkBtn = document.querySelector('.nav__link--btn');
+console.log(navLinkBtn.href);  // http://127.0.0.1:5500/13_section/index.html#
+console.log(navLinkBtn.getAttribute('href'));  // #
+
+
+// Data attributes
+console.log(logo.dataset.versionNumber);  // 3.0
+
+
+// Classes
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c');
+logo.classList.contains('c');
+
+// Don't use this
+// logo.className = 'kerim';

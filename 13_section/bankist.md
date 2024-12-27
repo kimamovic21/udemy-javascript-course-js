@@ -1,6 +1,6 @@
 Bankist website
 
-184. 
+01. 
 -funkciji openModal() dodajemo e parametar i e.preventDefault()
 -btnsOpenModal je node list
 -varijabli btnsOpenModal dodajemo javascript metodu forEach
@@ -8,11 +8,11 @@ Bankist website
 -svakom btn parametru dodajemo addEventListener
 
 
-185. 
+02. 
 -DOM je interfejs izmedu javascripta i pretrazivaca
 
 
-186. 
+03. 
 -selektovanje elemenata
 -kreiranje i insertovanje elemenata
 -kreiranje DOM elementa div i pohranjivanje istog u varijablu message
@@ -21,13 +21,13 @@ Bankist website
 -brisanje elemenata
 
 
-187. 
+04. 
 -varijabli message dodajemo style javascript metodu
 -dodavanje atributa varijabli logo
 -getAttribute i setAttribute metode
 
 
-188. 
+05. 
 -implementiranje glatkog skrolanja
 -kreiranje varijabli btnScrollTo i section1 
 -varijabli btnScrollTo dodajemo addEventListener
@@ -36,18 +36,18 @@ Bankist website
 -scrollIntoView() metoda
 
 
-189. 
+06. 
 -kreiramo varijablu h1
 -mouseenter dogadaj
 -kreiranje alertH1 funkcije
 -dodavanje setTimeout funkcije koja ce nakon odredenog broja sekundi da ukloni EventListener 
 
 
-190. 
+07. 
 -Bubbling and Capturing
 
 
-191. 
+08. 
 -event propagation 
 -kreiramo funkciju randomInt()
 -kreiramo funkciju randomColor()
@@ -55,14 +55,14 @@ Bankist website
 -tim elemetima dodajemo addEventListener
 
 
-192. 
+09. 
 -event delegation
 -selektujemo HTML element sa klasom .nav__links
 -selektovanom HTML elementu dodajemo addEventListener
 -unutar callback funkcije dodamo if uslov
 
 
-193. 
+10. 
 -kreiramo varijablu h1
 -h1 varijabli dodjeljujemo firstElementChild i lastElementChild metode
 -h1 varijabli dodajemo closest() javascript metodu
@@ -70,7 +70,7 @@ Bankist website
 -h1.parentElement.children nizu dodajemo forEach() metodu
 
 
-194. 
+11. 
 -kreiramo varijablu tabs
 -kreiramo varijablu tabsContainer
 -kreiramo varijablu tabsContent
@@ -83,7 +83,7 @@ Bankist website
 -tabsContent varijabli dodajemo forEach() metodu pomocu kojeg uklanjamo klasu elementa
 
 
-195. 
+12. 
 -kreiramo nav varijablu
 -nav varijabli dodajemo addEventListener sa dogadajem mouseover
 -nav varijabli dodajemo addEventListener sa dogadajem mouseout
@@ -93,13 +93,13 @@ Bankist website
 -siblings varijabli dodajemo metodu forEach()
 
 
-196. 
+13. 
 -kreiramo initialCoords varijablu
 -varijabli initialCoords dodjeljujemo varijablu section1 sa metodom getBoundingClientRect()
 -dodajemo uslov za pojavljivanje sticky navigacije
 
 
-197. 
+14. 
 -kreiramo varijablu header
 -kreiramo varijablu navHeight
 -kreiramo stickyNav funkciju
@@ -108,7 +108,7 @@ Bankist website
 -varijabli headerObserver dodajemo metodu .observe() sa parametrom header
 
 
-198. 
+15. 
 -kreiramo varijablu sectionObserver
 -kreiramo funkciju revealSection
 -kreiramo varijablu allSections
@@ -116,7 +116,7 @@ Bankist website
 -varijabli observer dodajemo .unobserve() metodu sa parametrom entry.target
 
 
-199. 
+16. 
 -kreiramo varijablu imgTargets
 -kreiramo imgObserver varijablu
 -imgTargets varijabli dodajemo .forEach() metodu
@@ -124,7 +124,7 @@ Bankist website
 -varijabli observer dodajemo metodu .unobserve() metodu sa parametrom entry.target;
 
 
-200. 
+17. 
 -kreiramo varijablu slides
 -varijabli slides dodajemo metodu .forEach() sa parametrima s(slide) i i(index)
 -kreiramo varijablu slider
@@ -140,7 +140,7 @@ Bankist website
 -unutar prevSlide() funkcije dodajemo if - else uslov
 
 
-201. 
+18. 
 -dokumentu elementu dodajemo addEventListener sa keydown dogadajem
 -kreiramo varijablu dotContainer
 -kreiramo funkciju createDots()
@@ -159,6 +159,6 @@ Bankist website
 -kod koji smo pisali za slider komponentu ubacimo u slider() funkciju
 
 
-202. 
+19. 
 -dokumentu dodajemo addEventListener sa DOMContentLoaded dogadajem i callback funkcijom sa parametrom e
 -window varijabli dodajemo addEventListener sa load dogadajem i callback funkcijom sa parametrom e

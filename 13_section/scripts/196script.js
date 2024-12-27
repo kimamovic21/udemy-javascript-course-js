@@ -1,21 +1,14 @@
-// 196. Implementing a Sticky Navigation: The Scroll Event
+// 196. Selecting, Creating and Deleting Elements
 
 'use strict';
+
+///////////////////////////////////////
+// Modal window
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
-const nav = document.querySelector('.nav');
-
-
-///////////////////////////////////////
-// Modal window
 
 const openModal = function (e) {
   e.preventDefault();
@@ -40,99 +33,49 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-///////////////////////////////////////
-// Button scrolling
+// Selecting elements
+console.log(document.documentElement);  // <html></html>
+console.log(document.head);   // <head></head>
+console.log(document.body);   // <body></body>
 
-btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
+const header = document.querySelector('.header');
+console.log(header);  // <header></header>
 
-  console.log(s1coords);
-  console.log(e.target.getBoundingClientRect());
-  console.log('Current scroll X:', window.pageXOffset);
-  console.log('Current scroll Y:', window.pageYOffset);
-  console.log('height:', document.documentElement.clientHeight);
-  console.log('width:', document.documentElement.clientWidth);
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);  // NodeList(4)
 
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+const section1 = document.getElementById('section--1');
+console.log(section1);   // <section></section>
 
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);  // HTMLCollection(9)
 
-///////////////////////////////////////
-// Page navigation
-
-// 1. Add event listener co common parent element
-// 2. Determine what element originated the event
-
-document.querySelector('.nav__links').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    // Matching strategy
-    if(e.target.classList.contains('nav__link')) {
-        const id = e.target.getAttribute('href');
-        console.log(id);
-        document.querySelector(id).scrollIntoView({behavior: 'smooth'});
-    };
-});
+const allButtons2 = document.getElementsByClassName('btn');
+console.log(allButtons2);  // HTMLCollection(5) 
 
 
-///////////////////////////////////////
-// Tabbed component
-tabsContainer.addEventListener('click', function(e) {
-    const clicked = e.target.closest('.operations__tab');
-    console.log(clicked);
+// Creating and inserting elements
 
-    // Guard clause
-    if(!clicked) return;
+const message = document.createElement('div');
+message.classList.add('cookie-message');
 
-    // Remove active classes
-    tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
-    tabsContent.forEach(content => content.classList.remove('operations__content--active'));
+// message.textContent = `We use cookies for improved functionality and analytics.`;
+message.innerHTML = `
+        We use cookies for improved functionality and analytics. 
+        <button class="btn btn--close-cookie">Got it</button>
+`;
 
-    // Activate tab
-    clicked.classList.add('operations__tab--active');
+// header.prepend(message);
+header.append(message);
+// header.append(message.cloneNode(true));
 
-    // Activate content area
-    document
-        .querySelector(`.operations__content--${clicked.dataset.tab}`)
-        .classList.add('operations__content--active');
-});
+// header.before(message);
+// header.after(message);
 
 
-///////////////////////////////////////
-// Menu fade animation
-const handleHover = function(e) {
-    if (e.target.classList.contains('nav__link')) {
-        const link = e.target;
-        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-        const logo = link.closest('.nav').querySelector('img');
-
-        siblings.forEach(el => {
-            if (el !== link) el.style.opacity = this;
-        });
-        logo.style.opacity = this;
-    };
-};
-
-// Passing "argument" into handler
-nav.addEventListener('mouseover', handleHover.bind(0.5));
-nav.addEventListener('mouseout', handleHover.bind(1));
-
-
-///////////////////////////////////////
-// Sticky navigation
-const initialCoords = section1.getBoundingClientRect();
-console.log(initialCoords);  // DOMRect
-
-window.addEventListener('scroll', function(e) {
-    // console.log(e);  // Event
-    // console.log(window.scrollX);
-    // console.log(window.scrollY);
-
-    // Navigation becomes sticky as soon as we reach the first section
-    if (window.scrollY > initialCoords.top) {
-        nav.classList.add('sticky');
-    } 
-    else {
-        nav.classList.remove('sticky');
-    } 
+// Delete elements
+document.querySelector('.btn--close-cookie')
+        .addEventListener('click', function() {
+        message.remove();
+        // message.parentElement.removeChild(message);
 });

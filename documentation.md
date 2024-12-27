@@ -225,29 +225,30 @@ Section 12: Numbers, Dates, Intl and Timers [Project]
 191. Implementing a Countdown Timer
 
 
-Section 13: Advanced DOM and Events
-182. Section Intro
-183. Section Roadmap
-184. PROJECT: "Bankist" Website
-185. How the DOM Really Works
-186. Selecting, Creating and Deleting Elements
-187. Styles, Attributes and Classes
-188. Implementing Smooth Scrolling 
-189. Types of Events and Event Handlers
-190. Event Propagation: Bubbling and Capturing
-191. Event Propagation in Practice
-192. Event Delegation: Implementing Page Navigation
-193. DOM Traversing
-194. Building a Tabbed Component
-195. Passing Arguments to Event Handlers
-196. Implementing a Sticky Navigation: The Scroll Event
-197. A Better Way: The Intersection Observer API
-198. Revealing Elements on Scroll
-199. Lazy Loading Images
-200. Building a Slider Component: Part 1
-201. Building a Slider Component: Part 2
-202. Lifecycle DOM Events
-203. Efficient Script Loading: defer and async
+Section 13: Advanced DOM and Events [Project]
+192. Section Intro
+193. Section Roadmap
+194. PROJECT: "Bankist" Website
+195. How the DOM Really Works
+196. Selecting, Creating and Deleting Elements
+197. Styles, Attributes and Classes
+198. Implementing Smooth Scrolling 
+199. Types of Events and Event Handlers
+200. Event Propagation: Bubbling and Capturing
+201. Event Propagation in Practice
+202. Event Delegation: Implementing Page Navigation
+203. DOM Traversing
+204. Building a Tabbed Component
+205. Passing Arguments to Event Handlers
+206. Implementing a Sticky Navigation: The Scroll Event
+207. A Better Way: The Intersection Observer API
+208. Revealing Elements on Scroll
+209. Fixing a Small Scrolling Bug
+210. Lazy Loading Images
+211. Building a Slider Component: Part 1
+212. Building a Slider Component: Part 2
+213. Lifecycle DOM Events
+214. Efficient Script Loading: defer and async
 
 
 Section 14: Object-Oriented Programming (OOP) With Javascript
