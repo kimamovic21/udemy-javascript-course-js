@@ -1,4 +1,4 @@
-// 176. Adding Dates to "Bankist" App
+// 183. Working with BigInt
 
 'use strict';
 
@@ -75,28 +75,23 @@ const account1 = {
   const inputCloseUsername = document.querySelector('.form__input--user');
   const inputClosePin = document.querySelector('.form__input--pin');
   
-
+  
   /////////////////////////////////////////////////
   // Functions
   
-  const displayMovements = function (acc, sort = false) {
+  const displayMovements = function (movements, sort = false) {
     containerMovements.innerHTML = '';
   
-    const movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+    const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
   
     movs.forEach(function (mov, i) {
       const type = mov > 0 ? 'deposit' : 'withdrawal';
   
-      const date = new Date(acc.movementsDates[i]);
-      const day = `${date.getDate()}`.padStart(2, 0);
-      const month = `${date.getMonth() + 1}`.padStart(2, 0);
-      const year = date.getFullYear();
-      const displayDate = `${day}/${month}/${year}`;
-
       const html = `
         <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-          <div className="movements__date">${displayDate}</div>
+          <div class="movements__type movements__type--${type}">${
+        i + 1
+      } ${type}</div>
           <div class="movements__value">${mov.toFixed(2)}€</div>
         </div>
       `;
@@ -133,8 +128,8 @@ const account1 = {
       .reduce((acc, int) => acc + int, 0);
     labelSumInterest.textContent = `${interest.toFixed(2)}€`;
   };
-  
 
+  
   const createUsernames = function (accs) {
     accs.forEach(function (acc) {
       acc.username = acc.owner
@@ -145,11 +140,11 @@ const account1 = {
     });
   };
   createUsernames(accounts);
-  
 
+  
   const updateUI = function (acc) {
     // Display movements
-    displayMovements(acc);
+    displayMovements(acc.movements);
   
     // Display balance
     calcDisplayBalance(acc);
@@ -162,13 +157,7 @@ const account1 = {
   ///////////////////////////////////////
   // Event handlers
   let currentAccount;
-
-  // Fake always logged in
-  currentAccount = account1;
-  updateUI(currentAccount);
-  containerApp.style.opacity = 100;
   
-
   btnLogin.addEventListener('click', function (e) {
     // Prevent form from submitting
     e.preventDefault();
@@ -180,16 +169,6 @@ const account1 = {
       // Display UI and message
       labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`;
       containerApp.style.opacity = 100;
-
-      // Create current date and time
-      const now = new Date();
-      const day = `${now.getDate()}`.padStart(2, 0);
-      const month = `${now.getMonth() + 1}`.padStart(2, 0);
-      const year = now.getFullYear();
-      const hours = `${now.getHours()}`.padStart(2, 0);
-      const minutes = `${now.getMinutes()}`.padStart(2, 0);
-      labelDate.textContent = `${day}/${month}/${year}, ${hours}:${minutes}`;
-      // day/month/day
   
       // Clear input fields
       inputLoginUsername.value = inputLoginPin.value = '';
@@ -211,11 +190,7 @@ const account1 = {
       // Doing the transfer
       currentAccount.movements.push(-amount);
       receiverAcc.movements.push(amount);
-
-      // Add transfer date
-      currentAccount.movementsDates.push(new Date().toISOString());
-      receiverAcc.movementsDates.push(new Date().toISOString());
-
+  
       // Update UI
       updateUI(currentAccount);
     }
@@ -230,21 +205,18 @@ const account1 = {
     if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
       // Add movement
       currentAccount.movements.push(amount);
-
-      // Add loan date
-      currentAccount.movementsDates.push(new Date().toISOString());
-
+  
       // Update UI
       updateUI(currentAccount);
     }
     inputLoanAmount.value = '';
   });
-
   
+
   btnClose.addEventListener('click', function (e) {
     e.preventDefault();
   
-    if ( inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
+    if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
       const index = accounts.findIndex(acc => acc.username === currentAccount.username);
       console.log(index);
       // .indexOf(23)
@@ -263,8 +235,49 @@ const account1 = {
   let sorted = false;
   btnSort.addEventListener('click', function (e) {
     e.preventDefault();
-    displayMovements(currentAccount, !sorted);
+    displayMovements(currentAccount.movements, !sorted);
     sorted = !sorted;
   });
 
-// currentAccount.movements -> currentAccount
+
+
+
+console.log(2 ** 53 - 1);  
+console.log(Number.MAX_SAFE_INTEGER);  // 9007199254740991
+
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(345362652364592364509237402752);
+console.log(345362652364592364509237402752n);
+console.log(BigInt(34536265236));
+
+
+// Operations
+console.log(10000n + 10000n);  // 20000n
+console.log(213401623094129036401923649634n * 8346482634081263401263498126n);
+// console.log(Math.sqrt(16n));  // Error
+
+const huge = 2345823495823452342823203452397n;
+const num = 23;
+// console.log(huge * num);  // Error
+console.log(huge * BigInt(num)); 
+
+
+// Exceptions
+console.log(20n > 15);  // true
+console.log(20n === 20);  // false
+console.log(20n == 20);  // true
+console.log(typeof 20n);  // bigint
+console.log(20n == '20');  // true
+
+
+// String 
+console.log(huge + ` is REALLY big number!!!`);  // string
+
+
+// Divisions
+console.log(10 / 3);  // 3.33
+console.log(10n / 3n);  // 3n

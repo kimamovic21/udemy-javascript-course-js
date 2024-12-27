@@ -172,7 +172,7 @@ Section 10: A Closer Look at Functions
 144. Coding Challenge #2
 
 
-Section 11: Working With Arrays
+Section 11: Working With Arrays [Project]
 145. Section Intro
 146. Section Roadmap
 147. Simple Array Methods
@@ -207,21 +207,22 @@ Section 11: Working With Arrays
 176. Coding Challenge #5
 
 
-Section 12: Numbers, Dates, Intl and Timers
-168. Section Intro
-169. Section Roadmap
-170. Converting and Checking Numbers
-171. Math and Rounding
-172. The Remainder Operator
-173. Numeric Separators
-174. Working with BigInt
-175. Creating Dates
-176. Adding Dates to "Bankist" App
-177. Operations With Dates
-178. Internationalizing Dates (Intl)
-179. Internationalizing Numbers (Intl)
-180. Timers: setTimeout and setInterval
-181. Implementing a Countdown Timer
+Section 12: Numbers, Dates, Intl and Timers [Project]
+177. Section Intro
+178. Section Roadmap
+179. Converting and Checking Numbers
+180. Math and Rounding
+181. The Remainder Operator
+182. Numeric Separators
+183. Working with BigInt
+184. Creating Dates
+185. Adding Dates to "Bankist" App
+186. Fixing a Sorting Bug
+187. Operations With Dates
+188. Internationalizing Dates (Intl)
+189. Internationalizing Numbers (Intl)
+190. Timers: setTimeout and setInterval
+191. Implementing a Countdown Timer
 
 
 Section 13: Advanced DOM and Events

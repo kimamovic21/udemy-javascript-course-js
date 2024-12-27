@@ -1,11 +1,11 @@
 Project "Bankist" App
 
-146. 
+01. 
 -flowchart - logika aplikacije
 -pohranjivanje HTML elemenata u JS varijable
 
 
-147. 
+02. 
 -kreiramo funkciju displayMovements sa movements parametrom
 -dodajemo .forEach metodu - movements.forEach i callback funkciju sa parametrima (mov, i)
 -kreiramo varijablu html sa template literals unutar kojih pisemo HTML kod
@@ -19,7 +19,7 @@ njemu - containerMovements.innerHTML = '';
 -pozivamo funkciju sa argumentom iz niza account1.movements
 
 
-151. 
+03. 
 -kreiramo funkciju createUsernames u kojoj kao parametar uzimamo accs
 -parametru accs dodajemo .forEach() metodu sa callback funkcijom
 -callback funkciji dodajemo kao parametar acc
@@ -29,7 +29,7 @@ njemu - containerMovements.innerHTML = '';
 -pozivamo create Usernames funkciju sa argumentom accounts
 
 
-153. 
+04. 
 -kreiramo funkciju calcDisplayBalance u kojoj kao parametar uzimamo movements
 -parametru movements dodajemo .reduce() metodu sa parametrima acc, mov
 -posto zelimo da dobijemo ukupnu vrijednost vracamo ukupni rezulat acc + mov
@@ -39,7 +39,7 @@ njemu - containerMovements.innerHTML = '';
 -pozivamo funkciju calcDisplayBalance sa argumentom account1.movements (pogledati movements unutar objekta account1)
 
 
-155. 
+05. 
 -kreiramo funkciju calcDisplaySummary u kojoj kao parametar uzimamo movements
 -movements parametru dodajemo .filter() i .reduce() metode
 -pomocu .filter() metode filtriramo sve vrijednosti koje su vece od 0
@@ -60,7 +60,7 @@ broj (crvena boja)
 -pozivamo calcDisplaySummary sa argumentom account1.movements
 
 
-158. 
+06. 
 -dugmetu btnLogin dodajemo addEventListener sa dva parametra click i callback funkcijom
 -unutar callback funkcije dodajemo e.preventDefault()
 -definisemo currentAccount varijablu izvan addEventListeners
@@ -82,7 +82,7 @@ calcDisplaySummary(currentAccount);
 -pravimo izmjene u calcDisplaySummary funkcije gdje kao parametar sada uzimamo acc
 
 
-159. 
+07. 
 -dugmetu btnTransfer dodajemo addEventListener sa dva parametra click i callback funkcijom
 -unutar callback funkcije dodajemo e.preventDefault()
 -vrijednost koju unesemo unutar inputTransferAmountl.value varijable pretvorimo u broj pomocu Number() funkcije
@@ -110,7 +110,7 @@ onu vrijednost koju smo unijeli u amount varijablu
 inputTransferTo.value dodijelimo prazan string
 
 
-160. 
+08. 
 -dugmetu btnClose dodajemo addEventListener sa dva parametra click i callback funkcijom
 -unutar callback funkcije dodajemo e.preventDefault()
 -dodajemo uslov pomocu kojeg provjeravamo da li je uneseno username u polje isto onom sa kojim smo ulogovani
@@ -123,7 +123,7 @@ inputTransferTo.value dodijelimo prazan string
 zelimo izbrisati
 
 
-161.  
+09.  
 -dugmetu btnLoan dodajemo addEventListener sa dva parametra click i callback funkcijom
 -vrijednost unesenu u varijablu inputLoanAmount.value pohranimo u varijablu amount
 -dodajemo uslov da vrijednost amount mora biti vece od 0 i da bilo koji depozit mora biti veci 10% od zahtjeva
@@ -132,7 +132,7 @@ zelimo izbrisati
 -ocistimo polje inputLoanAmount.value
 
 
-163. 
+10. 
 -funkciji displayMovements() dodajemo jos jedan parametar sort = false
 -kreiramo novu varijablu movs koju definisemo sa uslovom
 -ako je sort true, onda movements nizu dodajemo metode .slice() i sort(), a ako je sort false onda prikazujemo 
@@ -145,14 +145,14 @@ samo movements
 -dodajemo sorted = !sorted; da mozemo mjenjati stanje varijable iz true u false
 
 
-171. 
+11. 
 -u btnLoan addEventListeneru, u callback funkciji, dodajemo Math.floor u varijabli amount
 -u funkciji displayMovements dodajemo mov.toFixed(2) unutar html varijable
 -u funkciji calcDisplayBalance dodajemo acc.balance.toFixed(2) u varijabli labelBalance.textContent
 -u funkciji calcDisplaySummary dodajemo .toFixed(2) varijablama labelSumIn, labelSumOut i labelSumInterest
 
 
-176. 
+12. 
 -pisemo kod za Fake always logged in pomocu koje cemo uvijek biti ulogovani sa account1
 -u btnLogin addEventListener, unutar callback funkcije, pisemo varijable u koje pohranjujemo podatke o datumu
 -metodu .textContent dodajemo labelDate varijabli kojoj pohranjujemo unutar template literals varijable u kojima su 
@@ -174,7 +174,7 @@ pushati u movementsDates niz za korisnika koji je posudio novac iz banke
 -datumima u btnTransfer i btnLoan dodajmoe .toISOString() metodu
 
 
-177. 
+13. 
 -kreiramo funkciju formatMovementsDate
 -u funkciji displayMovements pravimo izmjene u varijablama date i displayDate
 -varijabli date dodjeljujemo vrijednost new Date objekta sa argumentom acc.movementsDates[i]
@@ -186,7 +186,7 @@ dva argumenta newDate() i date
 prikazujemo taj broj dana, a ako je od transakcije proslo vise od 7 dana tada prikazujemo datum transakcije
 
 
-178. 
+14. 
 -u btnLogin addEventListener, unutar callback funkcije, mijenjamo izmjene u prikazivanju datuma koristeci Intl.DateTimeFormat
 datum objekt
 -funkciji formatMovementDate dodajemo parametar locale
@@ -195,7 +195,7 @@ datum objekt
 argument acc.locale
 
 
-179. 
+15. 
 -unutar funkcije displayMovements kreiramo varijablu formattedMov kojoj dodjeljujemo vrijednost funkcije formatCur sa 
 argumentima mov, acc.locale i acc.currency
 -u varijabli html, unutar div elementa sa klasom movements__value dodajemo varijablu formattedMov pod template strings
@@ -206,12 +206,12 @@ argumentima mov, acc.locale i acc.currency
 dodjeljujemo vrijednost funkcije formatCur sa argumentima
 
 
-180. 
+16. 
 -unutar btnLoan addEventListener, unutar callback funkcije, unutar if uslova, dodajemo funkciju setTimeot
 -setTimeout funkcija ima 2 parametra, callback funkciju i vrijeme trajanja
 
 
-181. 
+17. 
 -kreiramo funkciju startLogOutTimer
 -deklarisemo varijable min i sec
 -koristeci metodu .textContent varijabli labelTimer dodjeljujemo vrijednost varijabli min i sec

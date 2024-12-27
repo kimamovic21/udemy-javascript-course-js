@@ -1,4 +1,4 @@
-// 171. Math and Rounding
+// 182. Numeric Separators
 
 'use strict';
 
@@ -11,6 +11,7 @@ const account1 = {
     movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
     interestRate: 1.2, // %
     pin: 1111,
+  
     movementsDates: [
       '2019-11-18T21:31:17.178Z',
       '2019-12-23T07:42:02.383Z',
@@ -30,6 +31,7 @@ const account1 = {
     movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
     interestRate: 1.5,
     pin: 2222,
+  
     movementsDates: [
       '2019-11-01T13:15:33.035Z',
       '2019-11-30T09:48:16.867Z',
@@ -45,8 +47,8 @@ const account1 = {
   };
   
   const accounts = [account1, account2];
-  
 
+  
   /////////////////////////////////////////////////
   // Elements
   const labelWelcome = document.querySelector('.welcome');
@@ -74,6 +76,7 @@ const account1 = {
   const inputCloseUsername = document.querySelector('.form__input--user');
   const inputClosePin = document.querySelector('.form__input--pin');
   
+
   /////////////////////////////////////////////////
   // Functions
   
@@ -87,7 +90,9 @@ const account1 = {
   
       const html = `
         <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+          <div class="movements__type movements__type--${type}">${
+        i + 1
+      } ${type}</div>
           <div class="movements__value">${mov.toFixed(2)}€</div>
         </div>
       `;
@@ -174,8 +179,8 @@ const account1 = {
       updateUI(currentAccount);
     }
   });
-  
 
+  
   btnTransfer.addEventListener('click', function (e) {
     e.preventDefault();
     const amount = Number(inputTransferAmount.value);
@@ -212,7 +217,8 @@ const account1 = {
   btnClose.addEventListener('click', function (e) {
     e.preventDefault();
   
-    if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
+    if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin
+    ) {
       const index = accounts.findIndex(acc => acc.username === currentAccount.username);
       console.log(index);
       // .indexOf(23)
@@ -227,9 +233,8 @@ const account1 = {
     inputCloseUsername.value = inputClosePin.value = '';
   });
   
-
+  
   let sorted = false;
-
   btnSort.addEventListener('click', function (e) {
     e.preventDefault();
     displayMovements(currentAccount.movements, !sorted);
@@ -239,59 +244,22 @@ const account1 = {
 
 
 
-console.log(Math.sqrt(25));  // 5
-console.log(25 ** (1/2));  // 5
-console.log(8 ** (1/3));  // 2
+// 287,460,000,000
+const diametar = 287_460_000_000;
+console.log(diametar);  // 287460000000
 
+const priceCents = 345_99;
+console.log(priceCents);  // 34599
 
-// Max value
-console.log(Math.max(5, 18, 23, 11, 2));  // 23
-console.log(Math.max(5, 18, '23', 11, 2));  // 23
-console.log(Math.max(5, 18, '23px', 11, 2));  // NaN
+const transferFee1 = 15_00;
+console.log(transferFee1);  // 1500
 
+const transferFee2 = 1_500;
+console.log(transferFee2);  // 1500
 
-// Min value
-console.log(Math.min(5, 18, 23, 11, 2))  // 2
-console.log(Math.min(5, 18, 23, 11, '2'))  // 2
-console.log(Math.max(5, 18, 23, 11, '2px'));  // NaN
+const PI = 3.14_15;
+console.log(PI);  // 3.1415
 
-
-// PI
-console.log(Math.PI);  // 3.14
-console.log(Math.PI * Number.parseFloat('10px') ** 2);  // 314.15
-
-
-// Math.random
-console.log(Math.random());  // random value between 0 and 0.99
-console.log(Math.random() * 6);  // random value between 0 and 5.99
-console.log(Math.trunc(Math.random() * 6) + 1);  // random value between 1 and 6
-
-
-const randomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min) + 1) + min;
-};
-// 0...1 -> 0...(max - min) -> min...max
-console.log(randomInt(10, 20));
-
-
-// Rounding integers
-console.log(Math.round(23.3));  // 23
-console.log(Math.round(23.9));  // 24
-
-console.log(Math.ceil(23.3));  // 24
-console.log(Math.ceil(23.9));  // 24
-
-console.log(Math.floor(23.3));  // 23
-console.log(Math.floor(23.9));  // 23
-
-console.log(Math.trunc(23.3));  // 23
-
-console.log(Math.trunc(-23.3));  // -23
-console.log(Math.floor(-23.3));  // -24
-
-
-// Rounding decimals
-console.log((2.7).toFixed(0));  // 3  string 
-console.log((2.7).toFixed(3));  // 2.700   string 
-console.log((2.3456).toFixed(2));  // 2.35   string
-console.log(+(2.3456).toFixed(2));  // 2.35   number
+console.log(Number('230000'));  // 230000
+console.log(Number('230_000'));  // NaN
+console.log(parseInt('230_000'));  // 230
