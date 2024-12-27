@@ -1,4 +1,4 @@
-// 278. Bundling With Parcel and NPM Scripts
+// 09. Bundling With Parcel and NPM Scripts
 // Exporting module
 
 console.log(`Exporting module`);

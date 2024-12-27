@@ -1,18 +1,18 @@
 Modules
 
-272. 
--u fajl 272script.js importujemo 272shoppingCart.js fajl
--u fajlu 272shoppingCart kreiramo shippingCost i cart varijable
--u fajlu 272shoppingCart kreiramo addToCart funkciju
+01. 
+-u fajl script.js importujemo shoppingCart.js fajl
+-u fajlu shoppingCart kreiramo shippingCost i cart varijable
+-u fajlu shoppingCart kreiramo addToCart funkciju
 -unutar addToCart funkcije cart varijabli dodajemo push metodu
--u fajlu 272shoppingCart kreiramo totalPrice i totalQuantity varijable
+-u fajlu shoppingCart kreiramo totalPrice i totalQuantity varijable
 -eksportujemo totalPrice i totalQuantity varijable
--u fajlu 272script dodajemo import * as ShoppingCart from './272shoppingCart.js';
--u fajlu 272shoppingCart kreiramo export default funkciju bez imena 
--u fajlu 272script pozivamo funkciju add sa dva argumenta, imenom hrane i kolicina
+-u fajlu script dodajemo import * as ShoppingCart from './shoppingCart.js';
+-u fajlu shoppingCart kreiramo export default funkciju bez imena 
+-u fajlu script pozivamo funkciju add sa dva argumenta, imenom hrane i kolicina
 
 
-273. 
+02. 
 -kreiramo varijablu res u koje ce biti pohranjena vrijednost metodu await fetch
 -kreiramo funkciju getLastPost
 -unutar getLastPost funkcije dodajemo res varijablu
@@ -26,7 +26,7 @@ Modules
 u lastPost2 varijabli
 
 
-274. 
+03. 
 -kreiramo IIFE funkciju
 -kreiramo varijable unutar IIFE funkcije
 -kreiramo addToCart funkciju
@@ -36,24 +36,24 @@ u lastPost2 varijabli
 -pozivamo orderStock funkciju sa dva argumenta
 
 
-276. 
+04. 
 -komande u terminalu
 
 
-277. 
+05. 
 -NPM komande
 
 
-278. 
+06. 
 -uslov if
 -izmjene u "scripts" unutar package.json fajla
 
 
-279. 
+07. 
 -kreiramo klasu Person
 
 
-281. 
+08. 
 -pravimo izmjene u clean.js fajlu
 -funkciji add mijenjamo ime u addExpense
 -funkciji expense mijenjamo ime u checkExpense
@@ -66,7 +66,7 @@ u lastPost2 varijabli
 -funkciji bigExpenses mijenjamo ime u logBigExpenses
 
 
-283. 
+09. 
 -Metodu Object.freeze dodajemo varijablama spendingLimits i budget
 -kreiramo cleanUser varijablu
 -kreiramo bigExpenses varijablu

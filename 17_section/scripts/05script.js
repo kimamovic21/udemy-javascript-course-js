@@ -1,4 +1,4 @@
-// 274. The Module Pattern
+// 05. The Module Pattern
 
 const ShoppingCart = (function() {
     const cart = [];

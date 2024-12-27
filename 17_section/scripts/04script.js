@@ -1,6 +1,6 @@
-// 273. Top-Level await(ES2022)
+// 04. Top-Level await(ES2022)
 
-import add, {cart} from './273shoppingCart.js';
+import add, {cart} from './04shoppingCart.js';
 add('pizzas', 2);  // 2 pizzas added to cart!
 add('breads', 3);  // 2 pizza added to cart!
 add('apples', 4);  // 2 pizza added to cart!

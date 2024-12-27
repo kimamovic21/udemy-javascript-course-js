@@ -1,4 +1,4 @@
-// 279. Configuring Babel and Polyfilling
+// 11. Configuring Babel and Polyfilling
 // Exporting module
 
 console.log(`Exporting module`);

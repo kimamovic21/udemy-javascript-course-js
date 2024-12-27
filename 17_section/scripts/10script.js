@@ -1,9 +1,9 @@
-// 279. Configuring Babel and Polyfilling
+// 10. Configuring Babel and Polyfilling
 
 console.log(`Importing module`);
 
 import cloneDeep from 'lodash-es';
-import add, {cart} from './279shoppingCart.js';
+import add, {cart} from './10shoppingCart.js';
 
 add('pizzas', 2);
 add('breads', 5);

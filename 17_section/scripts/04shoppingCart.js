@@ -1,4 +1,4 @@
-// 273. Top-Level await (ES2022)
+// 04. Top-Level await (ES2022)
 // Exporting module
 
 console.log(`Exporting module`);

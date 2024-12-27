@@ -1,4 +1,4 @@
-// 278. Bundling With Parcel and NPM Scripts
+// 09. Bundling With Parcel and NPM Scripts
 
 // npx parcel index.html
 // npm i parcel --save-dev
@@ -12,7 +12,7 @@ console.log(`Importing module`);
 
 // import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
 import cloneDeep from 'lodash-es';
-import add, {cart} from './278shoppingCart.js';
+import add, {cart} from './09shoppingCart.js';
 
 add('pizzas', 2);
 add('breads', 5);

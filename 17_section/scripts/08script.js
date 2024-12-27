@@ -1,4 +1,4 @@
-// 277. Introduction to NPM
+// 08. Introduction to NPM
 
 // NPM commands
 // npm -v  8.12.1 (14.04.2023.)
@@ -7,7 +7,7 @@
 // npm install lodash-es
 // npm i
 
-import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es/cloneDeep.js';
 
 const state = {
     cart: [

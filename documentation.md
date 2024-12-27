@@ -323,23 +323,23 @@ Section 16: Asynchronous Javascript: Promises, Async/Await, and AJAX
 277. Coding Challenge #3
 
 
-Section 17: Modern Javascript Development: Modules, Tooling, and Functional Progamming
-268. Section Intro
-269. Section Roadmap
-270. An Overview of Modern Javascript Development
-271. An Overview of Modules in Javascript
-272. Exporting and Importing in ES6 Modules
-273. Top-Level await(ES2022)
-274. The Module Pattern
-275. CommonJS Modules
-276. A Brief Introduction to the Command Line
-277. Introduction to NPM
-278. Bundling With Parcel and NPM Scripts
-279. Configuring Babel and Polyfilling
-280. Review: Writing Clean and Modern Javascript
-281. Let's Fix Some Bad Code: Part 1
-282. Declarative and Functional Javascript Principles
-283. Let's Fix Some Bad Code: Part 2
+Section 17: Modern Javascript Development: Modules, Tooling, and Functional Programming
+278. Section Intro
+279. Section Roadmap
+280. An Overview of Modern Javascript Development
+281. An Overview of Modules in Javascript
+282. Exporting and Importing in ES6 Modules
+283. Top-Level await(ES2022)
+284. The Module Pattern
+285. CommonJS Modules
+286. A Brief Introduction to the Command Line
+287. Introduction to NPM
+288. Bundling With Parcel and NPM Scripts
+289. Configuring Babel and Polyfilling
+290. Review: Writing Clean and Modern Javascript
+291. Let's Fix Some Bad Code: Part 1
+292. Declarative and Functional Javascript Principles
+293. Let's Fix Some Bad Code: Part 2
 
 
 Section 18: Forkify App: Building a Modern Application

@@ -1,17 +1,17 @@
-// 272. Exporting and Importing in ES6 Modules
+// 03. Exporting and Importing in ES6 Modules
 
 // Importing module
 console.log('Importing module');
 
 
-// import './272shoppingCart.js';
-import { addToCart } from './272shoppingCart.js';
+// import './shoppingCart.js';
+import { addToCart } from './03shoppingCart.js';
 
-// import { totalPrice } from './272shoppingCart.js';
-// import { totalQuantity } from './272shoppingCart.js';
+// import { totalPrice } from './03shoppingCart.js';
+// import { totalQuantity } from './03shoppingCart.js';
 
-import { totalPrice as price } from './272shoppingCart.js';
-import { quantity } from './272shoppingCart.js';
+import { totalPrice as price } from './03shoppingCart.js';
+import { quantity } from './03shoppingCart.js';
 
 
 // console.log(`Importing module`);
@@ -25,7 +25,7 @@ import { quantity } from './272shoppingCart.js';
 // console.log(quantity);  // 23
 
 
-import * as ShoppingCart from './272shoppingCart.js';
+import * as ShoppingCart from './03shoppingCart.js';
 
 console.log(ShoppingCart)  // Module {…}
 ShoppingCart.addToCart('breads', 5);  // 5 breads added to cart!
@@ -34,7 +34,7 @@ console.log(ShoppingCart.totalQuantity);  // undefined
 console.log(ShoppingCart.quantity);   // 23
 
 
-import add, {cart} from './272shoppingCart.js';
+import add, {cart} from './03shoppingCart.js';
 add('pizzas', 2);  // 2 pizzas added to cart!
 add('breads', 3);  // 3 breads added to cart!
 add('apples', 4);  // 4 apples added to cart!
