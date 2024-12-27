@@ -1,4 +1,4 @@
-// 253. Chaining Promises
+// 09. Handling Rejected Promises
 
 'use strict';
 
@@ -21,21 +21,28 @@ const renderCountry = function(data, className = '') {
         </article>
     `;
     countriesContainer.insertAdjacentHTML('beforeend', html);
-    countriesContainer.style.opacity = 1;
+    // countriesContainer.style.opacity = 1;
+};
+
+
+const renderError = function(msg) {
+    countriesContainer.insertAdjacentText('beforeend', msg);
+    // countriesContainer.style.opacity = 1;
 };
 
 
 const request = fetch(`https://restcountries.com/v2/name/portugal`);
 console.log(request);  // Promise {<pending>}
 
-
 const getCountryData = country => {
     // Country 1
     fetch(`https://restcountries.com/v2/name/${country}`)
-        .then(response => response.json())
+        .then(
+            response => response.json(), 
+            // err => alert(err)
+        )
         .then(data => {
             renderCountry(data[0]);
-            // const neighbour = data[0].borders[0];
             const neighbour = data[0].borders?.[0];
 
             if(!neighbour) return;
@@ -43,14 +50,24 @@ const getCountryData = country => {
             // Country 2
             return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
 
-            // return 23;
         })
-        .then(response => response.json())
-        .then(data => renderCountry(data, 'neighbour'));
-
-        // .then(data => alert(data));
+        .then(
+            response => response.json(),
+            // err => alert(err)
+        )
+        .then(data => renderCountry(data, 'neighbour'))
+        .catch(err => {
+            console.log(`${err} ⛔⛔⛔`);
+            renderError(`Something went wrong ⛔⛔⛔ ${err.message}. Try again!`);
+        })
+        .finally(() => {
+            countriesContainer.style.opacity = 1;
+        });
 };
 
-getCountryData('portugal');
-// getCountryData('usa');
-// getCountryData('malta');
+btn.addEventListener('click', function() {
+    getCountryData('portugal');
+});
+
+
+// getCountryData('kerim');  // Error

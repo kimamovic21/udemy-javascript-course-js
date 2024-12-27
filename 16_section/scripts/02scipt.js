@@ -1,4 +1,4 @@
-// 247. IMPORTANT: API URL Chane
+// 247. IMPORTANT: API URL Change
 
 'use strict';
 

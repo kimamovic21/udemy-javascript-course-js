@@ -1,4 +1,4 @@
-// 255. Throwing Errors Manually
+// 10. Throwing Errors Manually
 
 'use strict';
 

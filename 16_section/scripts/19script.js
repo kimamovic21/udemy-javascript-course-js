@@ -1,4 +1,4 @@
-// 264. Returning Values from Async Functions
+// 19. Returning Values from Async Functions
 
 'use strict';
 

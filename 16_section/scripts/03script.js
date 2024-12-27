@@ -1,4 +1,4 @@
-// 248. Our First AJAX Call: XMLHttpRequest
+// 03. Our First AJAX Call: XMLHttpRequest
 
 'use strict';
 

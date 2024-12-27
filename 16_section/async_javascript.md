@@ -1,6 +1,6 @@
 Async Javascript
 
-248. 
+01. 
 -kreiramo btn varijablu
 -kreiramo countriesContainer varijablu
 -kreiramo varijablu request
@@ -17,25 +17,25 @@ Async Javascript
 -pozivamo getCountryData funkciju sa parametrom imena drzave
 
 
-250. 
+02. 
 -kreiramo funkciju getCountryDataAndNeighbor
 -kreiramo funkciju renderCountry sa dva parametra
 -pozivamo funkciju renderCountry sa dva parametra, data2 i klasom neighbour
 -pozivamo funkciju getCountryDataAndNeighbor sa jednim parametrom
 
 
-251. 
+03. 
 -kreiramo funkciju getCountryData sa jednim parametrom
 -unutar getCountryData funkcije dodajemo fetch metodu
 -nakon fetch metode, dodajemo then metode
 
 
-253. 
+04. 
 -unutar funkcije getCountryData, unutar then metode, dodajemo funkciju renderCountry sa parametrom
 -kreiramo varijablu neighbour
 
 
-254. 
+05. 
 -btn varijabli dodajemo addEventListener sa dva parametra
 -unutar getCountryData funkcije dodajemo catch metodu
 -kreiramo funkciju renderError sa msg parametrom
@@ -44,31 +44,31 @@ Async Javascript
 -nakon catch metode dodajemo finally metodu
 
 
-255. 
+06. 
 -kreiramo funkciju getJSON sa dva parametra
 -unutar getJSON funkcije dodajemo fetch, then metode
 -nakon toga dadajemo if uslov i throw new Error
 -unutar getCountryData dodajemo getJSON funkciju
 
 
-256. 
+07. 
 -kreiramo funkciju whereAmI
 
 
-258. 
+08. 
 -Promise.resolve metoda
 
 
-259. 
+09. 
 -kreiramo varijablu lotteryPromise
 -kreiramo wait funkciju
 
 
-260. 
+10. 
 -kreiramo funkciju getPosition
 
 
-261. 
+11. 
 -kreiramo createImage funkciju sa parametrom imgPath
 -unutar funkcije kreiramo Promise
 -unutar Promise, kreiramo funkciju sa dva parametra resolve i reject
@@ -94,7 +94,7 @@ Async Javascript
 -unutar cetvrte then metode currentImg varijabli dodajemo display metodu
 
 
-262. 
+12. 
 -kreiramo funkciju whereAmI dodavajuci async keyword
 -unutar funkcije kreiramo res varijablu
 -vrijednost res varijable ce biti jednaka await fetch metodi
@@ -110,17 +110,17 @@ Async Javascript
 -dobiveni rezultat pohranimo u dataGeo varijablu
 
 
-263. 
+13. 
 -dodajemo try - catch metode
 -u try bloku dodajemo dva if uslova
 
 
-264. 
+14. 
 -dodajemo return prije catch bloka
 -nakon catch blocka dodajemo throw err
 
 
-265. 
+15. 
 -kreiramo get3Countries async funkciju
 -dodajemo try - catch blokove koda
 -kreiramo getJSON funkciju
@@ -128,7 +128,7 @@ Async Javascript
 -varijabli data dodajemo await Promise.all metodu
 
 
-266. 
+16. 
 -kreiramo async iife funkciju
 -kreiramo timeout funkciju
 -kreiramo Promise.race metodu
@@ -137,7 +137,7 @@ Async Javascript
 -kreiramo Promise.any metodu
 
 
-267. 
+17. 
 -Part 1
 -kreiramo imgContainer varijablu
 -kreiramo wait funkciju

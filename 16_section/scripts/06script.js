@@ -1,4 +1,4 @@
-// 251. Promises and the Fetch API
+// 06. Promises and the Fetch API
 
 'use strict';
 

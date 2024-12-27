@@ -1,4 +1,4 @@
-// 252. Consuming Promises
+// 07. Consuming Promises
 
 'use strict';
 

@@ -1,4 +1,4 @@
-// 263. Error Handling With try...catch
+// 17. Consuming Promises with Async/Await
 
 'use strict';
 
@@ -25,6 +25,10 @@ const renderCountry = function(data, className = '') {
 };
 
 
+// async keyword
+// await keyword
+
+
 const getPosition = function() {
     return new Promise(function(resolve, reject) {
         navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -32,50 +36,30 @@ const getPosition = function() {
 };
 
 
+// fetch(`https://restcountries.com/v2/name/${country}`)
+// .then(res => console.log(res));
+// console.log(res);
+
+
+// const whereAmI = async function(country) {
 const whereAmI = async function() {
-    try {
-        // Geolocation
-        const pos = await getPosition();
-        const {latitude: lat, longitude: lng} = pos.coords;
-    
-        // Reverse geocoding
-        const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    // Geolocation
+    const pos = await getPosition();
+    const {latitude: lat, longitude: lng} = pos.coords;
 
-        if(!resGeo.ok) {
-            throw new Error(`Problem getting location data`);
-        };
+    // Reverse geocoding
+    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    const dataGeo = await resGeo.json();
+    console.log(dataGeo);  // {}
 
-        const dataGeo = await resGeo.json();
-        console.log(dataGeo);
-    
-        // Country data
-        const res = await fetch(`https://restcountries.com/v2/name/${dataGeo.country}`);
+    // Country data
+    // const res = await fetch(`https://restcountries.com/v2/name/${country}`);
+    const res = await fetch(`https://restcountries.com/v2/name/${dataGeo.country}`);
 
-        if(!res.ok) {
-            throw new Error(`Problem getting country`);
-        };
-    
-        const data = await res.json();
-        console.log(data);  // [{…}]
-        renderCountry(data[0]);
-    }
-
-    catch(err) {
-        console.error(`${err} ⛔`);
-        // renderError(`Something went wrong ${err.message} ⛔`);
-    };
+    const data = await res.json();
+    console.log(data);  // [{…}]
+    renderCountry(data[0]);
 };  
-
+// whereAmI('portugal');  // Response
 whereAmI();  
 console.log('First');
-
-
-// try {
-//     let y = 1;
-//     const x = 2;
-//     y = 3;
-// }
-// catch(err) {
-//     console.log(err);
-// };
-

@@ -1,4 +1,4 @@
-// 259. Building a Simple Promise
+// 14. Building a Simple Promise
 
 'use strict';
 

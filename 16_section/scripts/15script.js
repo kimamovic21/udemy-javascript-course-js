@@ -1,4 +1,4 @@
-// 260. Promisifying the Geolocation API
+// 15. Promisifying the Geolocation API
 
 'use strict';
 

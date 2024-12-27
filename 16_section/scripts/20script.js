@@ -1,4 +1,4 @@
-// 265. Running Promises in Parallel
+// 20. Running Promises in Parallel
 
 'use strict';
 

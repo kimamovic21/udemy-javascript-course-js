@@ -1,4 +1,4 @@
-// 266. Other Promise Combinators: race, allSettled and any
+// 21. Other Promise Combinators: race, allSettled and any
 
 'use strict';
 

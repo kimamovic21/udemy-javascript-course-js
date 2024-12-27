@@ -297,30 +297,30 @@ Section 15: Mapty App: OOP, Geolocation, External Libraries and More!
 
 
 Section 16: Asynchronous Javascript: Promises, Async/Await, and AJAX
-244. Section Intro
-245. Section Roadmap
-246. Asyncchronous Javascript, AJAX and APIs
-247. IMPORTANT: API URL Chane
-248. Our First AJAX Call: XMLHttpRequest
-249. How the Web Works: Requests and Responses
-250. Welcome to Callback Hell
-251. Promises and the Fetch API
-252. Consuming Promises
-253. Chaining Promises
-254. Handling Rejected Promises
-255. Throwing Errors Manually
-256. Coding Challenge #1
-257. Asynchronous Behind the Scenes: The Event loop
-258. The Event Loop in Practice
-259. Building a Simple Promise
-260. Promisifying the Geolocation API
-261. Coding Challenge #2
-262. Consuming Promises with Async/Await
-263. Error Handling With try...catch
-264. Returning Values from Async Functions
-265. Running Promises in Parallel
-266. Other Promise Combinators: race, allSettled and any
-267. Coding Challenge #3
+254. Section Intro
+255. Section Roadmap
+256. Asynchronous Javascript, AJAX and APIs
+257. IMPORTANT: API URL Change
+258. Our First AJAX Call: XMLHttpRequest
+259. [Optional] How the Web Works: Requests and Responses
+260. Welcome to Callback Hell
+261. Promises and the Fetch API
+262. Consuming Promises
+263. Chaining Promises
+264. Handling Rejected Promises
+265. Throwing Errors Manually
+266. Coding Challenge #1
+267. Asynchronous Behind the Scenes: The Event loop
+268. The Event Loop in Practice
+269. Building a Simple Promise
+270. Promisifying the Geolocation API
+271. Coding Challenge #2
+272. Consuming Promises with Async/Await
+273. Error Handling With try...catch
+274. Returning Values from Async Functions
+275. Running Promises in Parallel
+276. Other Promise Combinators: race, allSettled and any
+277. Coding Challenge #3
 
 
 Section 17: Modern Javascript Development: Modules, Tooling, and Functional Progamming
