@@ -343,33 +343,33 @@ Section 17: Modern Javascript Development: Modules, Tooling, and Functional Prog
 
 
 Section 18: Forkify App: Building a Modern Application
-284. Section Intro
-285. Section Roadmap
-286. Project Overview and Planning(I)
-287. Latest Code Updates(Parcel v2 and more)
-288. Loading a Recipe from API
-289. Rendering the Recipe
-290. Listening For load and hashchange Events
-291. The MVC Architecture
-292. Refactoring for MVC
-293. Helpers and Configuration Files
-294. Event Handlers in MVC: Publisher-Subscriber Pattern
-295. Implementing Error and Success Messages
-296. Implementing Search Results - Part 1
-297. Implementing Search Results - Part 2
-298. Implementing Pagination - Part 1
-299. Implementing Pagination - Part 2
-300. Project Planning II
-301. Updating Recipe Servings
-302. Developing a DOM Updating Algorithm
-303. Implementing Bookmarks - Part 1
-304. Implementing Bookmarks - Part 2
-305. Storing Bookmarks With localStorage
-306. Project Planning III 
-307. Uploading a New Recipe - Part 1
-308. Uploading a New Recipe - Part 2
-309. Uploading a New Recipe - Part 3
-310. Wrapping Up: Final Considerations
+294. Section Intro
+295. Section Roadmap
+296. Project Overview and Planning(I)
+297. Latest Code Updates(Parcel v2 and more)
+298. Loading a Recipe from API
+299. Rendering the Recipe
+300. Listening For load and hashchange Events
+301. The MVC Architecture
+302. Refactoring for MVC
+303. Helpers and Configuration Files
+304. Event Handlers in MVC: Publisher-Subscriber Pattern
+305. Implementing Error and Success Messages
+306. Implementing Search Results - Part 1
+307. Implementing Search Results - Part 2
+308. Implementing Pagination - Part 1
+309. Implementing Pagination - Part 2
+310. Project Planning II
+311. Updating Recipe Servings
+312. Developing a DOM Updating Algorithm
+313. Implementing Bookmarks - Part 1
+314. Implementing Bookmarks - Part 2
+315. Storing Bookmarks With localStorage
+316. Project Planning III 
+317. Uploading a New Recipe - Part 1
+318. Uploading a New Recipe - Part 2
+319. Uploading a New Recipe - Part 3
+320. Wrapping Up: Final Considerations
 
 
 Section 19: Setting Up Git and Deployment
