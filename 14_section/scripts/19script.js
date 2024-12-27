@@ -1,4 +1,4 @@
-// 225. Chaining Methods
+// 19. Encapsulation: Private Class Fields and Methods
 
 'use strict';
 
@@ -33,12 +33,10 @@ class Account {
 
     deposit(val) {
         this.#movements.push(val);
-        return this;  // this is current object
     };
 
     withdraw(val) {
         this.deposit(-val);
-        return this;
     };
 
     requestLoan(val) {
@@ -46,7 +44,6 @@ class Account {
             if(this._approveLoan(val)) {
             this.deposit(val);
             console.log(`Loan approved!`);
-            return this;
         }
     };
 
@@ -56,13 +53,13 @@ class Account {
 
     // 4) Private methods
     // #approveLoan(val) {
-        _approveLoan(val) {
+    _approveLoan(val) {
         return true;
     };
 };
 
 const acc1 = new Account('Kerim', 'EUR', 1111);
-console.log(acc1);
+console.log(acc1);  // Account
 
 // acc1._movements.push(250);
 // acc1._movements.push(-200);
@@ -74,7 +71,7 @@ acc1.requestLoan(1000);
 // acc1._approveLoan(1000);
 acc1.getMovements(acc1.getMovements);
 
-console.log(acc1);
+console.log(acc1);  // Account
 // console.log(acc1._pin);
 
 // ._movements is not supposed  to be touched outside of the class
@@ -86,15 +83,3 @@ console.log(acc1);
 
 Account.helper();  // Helper function
 
-
-// Chaining
-acc1
-    .deposit(300)
-    .deposit(500)
-    .withdraw(35)
-    .requestLoan(25000)
-    .withdraw(4000);
-    
-console.log(acc1.getMovements());  // (8) [250, -200, 1000, 300, 500, -35, 25000, -4000]
-
-// keyword this will make methods chainable

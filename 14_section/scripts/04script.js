@@ -1,4 +1,4 @@
-// 209. Prototypes
+// 04. Prototypes
 
 'use strict';
 

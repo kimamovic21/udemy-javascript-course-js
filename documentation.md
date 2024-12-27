@@ -252,30 +252,29 @@ Section 13: Advanced DOM and Events [Project]
 
 
 Section 14: Object-Oriented Programming (OOP) With Javascript
-204. Section Intro
-205. Section Roadmap
-206. What is Object-Oriented Programming ?
-207. OOP in Javascript
-208. Constructor Functions and the new Operator
-209. Prototypes
-210. Prototypal Inheritance on Built-In Objects
-211. Prototypal Inheritance on Built-In Objects
-212. Coding Challenge #1
-213. ES6 Classes
-214. Setters and Getters
-215. Static Methods
-216. Object.create
-217. Coding Challenge #2
-218. Inheritance between "Classes"
-219. Coding Challenge #3
-220. Inheritance Between "Classes": ES6 Classes
-221. Inheritance Between "Classes": Object.create
-222. Another Class Example
-223. Encapsulation: Protected Properties and Methods
-224. Encapsulation: Private Class Fields and Methods
-225. Chaining Methods
-226. ES6 Classes Summary
-227. Coding Challenge #4
+215. Section Intro
+216. Section Roadmap
+217. What is Object-Oriented Programming ?
+218. OOP in Javascript
+219. Constructor Functions and the new Operator
+220. Prototypes
+221. Prototypal Inheritance on Built-In Objects
+222. Prototypal Inheritance on Built-In Objects
+223. Coding Challenge #1
+224. ES6 Classes
+225. Setters and Getters
+226. Static Methods
+227. Object.create
+228. Coding Challenge #2
+229. Inheritance between "Classes": Constructor Functions
+230. Coding Challenge #3
+231. Inheritance Between "Classes": ES6 Classes
+232. Inheritance Between "Classes": Object.create
+233. Another Class Example
+234. Encapsulation: Private Class Fields and Methods
+235. Chaining Methods
+236. ES6 Classes Summary
+237. Coding Challenge #4
 
 
 Section 15: Mapty App: OOP, Geolocation, External Libraries and More!

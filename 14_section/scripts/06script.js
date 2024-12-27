@@ -1,4 +1,4 @@
-// 211. Prototypal Inheritance on Built-In Objects
+// 06. Prototypal Inheritance on Built-In Objects
 
 'use strict';
 

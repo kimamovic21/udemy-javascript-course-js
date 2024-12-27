@@ -1,4 +1,4 @@
-// 215. Static Methods
+// 10. Static Methods
 
 'use strict';
 

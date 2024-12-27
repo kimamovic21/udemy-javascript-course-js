@@ -1,4 +1,4 @@
-// 217. Coding Challenge #2
+// 12. Coding Challenge #2
 
 'use strict';
 

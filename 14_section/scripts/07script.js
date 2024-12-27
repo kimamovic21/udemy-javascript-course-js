@@ -1,4 +1,4 @@
-// 212. Coding Challenge #1
+// 07. Coding Challenge #1
 
 'use strict';
 

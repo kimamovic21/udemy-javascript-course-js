@@ -1,4 +1,4 @@
-// 221. Inheritance Between "Classes": Object.create
+// 16. Inheritance Between "Classes": Object.create
 
 'use strict';
 

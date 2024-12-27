@@ -1,4 +1,4 @@
-// 213. ES6 Classes
+// 08. ES6 Classes
 
 'use strict';
 

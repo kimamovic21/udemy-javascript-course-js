@@ -1,4 +1,4 @@
-// 220. Inheritance Between "Classes": ES6 Classes
+// 15. Inheritance Between "Classes": ES6 Classes
 
 'use strict';
 

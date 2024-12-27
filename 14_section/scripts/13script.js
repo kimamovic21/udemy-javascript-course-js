@@ -1,4 +1,4 @@
-// 218. Inheritance between "Classes"
+// 13. Inheritance between "Classes"
 
 'use strict';
 

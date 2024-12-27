@@ -1,10 +1,10 @@
-// 208. Constructor Functions and the new Operator
+// 03. Constructor Functions and the new Operator
 
 'use strict';
 
 const Person = function(firstName, birthYear) {
     console.log(this);  // Person {}
-    // instance properties - will be availabe on all the instances that are created through this constructor function
+    // instance properties - will be available on all the instances that are created through this constructor function
     this.firstName = firstName;
     this.birthYear = birthYear;
 
