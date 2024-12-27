@@ -1,4 +1,4 @@
-// 238. Managing Workout Data: Creating Classes
+// 07. Managing Workout Data: Creating Classes
 
 'use strict';
 

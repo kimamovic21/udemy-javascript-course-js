@@ -1,19 +1,19 @@
 Mapty OOP App
 
 
-232. 
+01. 
 -pohranjujemo HTML elemente unutar varijable da bi vrsili manipulaciju sa njima
 -dodajemo uslov if(navigator.geolocation) i unutar njega kod za nasu trenutnu lokaciju
 -samo prvoj funkciji dodajemo parametar position
 
-233. 
+02. 
 -otvaramo stranicu https://leafletjs.com/
 -kopiramo link i script elemente unutar head elementa
 -kopiramo kod let map unutar uslova if(navigator.geolocation)
 -kreiramo coords niz sa dva elementa
 
 
-234. 
+03. 
 -dodajemo map.on sa callback funkcijom koja ima parametar mapEvent
 -L.marker() prebacujemo unutar map.on() da imamo mogucnost da mi postavljamo marker na mapu, na mjesto na koje zelimo
 -pravimo izmjene unutar L.marker -> L.marker([lat, lng])
@@ -21,7 +21,7 @@ Mapty OOP App
 -dodajemo .setPopupContent
 
 
-235. 
+04. 
 -unutar map.on() dodajemo varijabli form dodajemo klasu classList pomocu koje uklanjamo klasu hidden
 -varijabli inputDistance dodajemo .focus() metodu
 -form varijabli dodajemo addEventListener
@@ -34,7 +34,7 @@ Mapty OOP App
 -varijalbi inputCadence dodajemo iste metode
 
 
-237. 
+05. 
 -kreiramo klasu App i unutar nje funkcije koje ce nam trebati
 -kreiramo varijablu const app
 -unutar constructor funkcije dodajemo this._getPosition()
@@ -43,11 +43,9 @@ Mapty OOP App
 -uredujemo metode unutar klase App
 
 
-238. 
+06. 
 -kreiramo novu klasu Workout
 
 
-239. 
+07. 
 -uredujemo _newWorkout metodu 
-
-

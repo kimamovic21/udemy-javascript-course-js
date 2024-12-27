@@ -1,4 +1,4 @@
-// 237. Refactoring for Project Architecture
+// 06. Refactoring for Project Architecture
 
 'use strict';
 

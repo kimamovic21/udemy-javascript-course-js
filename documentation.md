@@ -278,22 +278,22 @@ Section 14: Object-Oriented Programming (OOP) With Javascript
 
 
 Section 15: Mapty App: OOP, Geolocation, External Libraries and More!
-228. Section Intro
-229. Section Roadmap
-230. Project Overview
-231. How to Plan a Web Project
-232. Using the Geolocation API
-233. Displaying a Map Using Leaflet Library
-234. Displaying a Map Marker
-235. Rendering Workout Input Form
-236. Project Architecture
-237. Refactoring for Project Architecture
-238. Managing Workout Data: Creating Classes
-239. Creating a New Workout
-240. Rendering Workouts
-241. Move to Marker On Click
-242. Working with localStorage
-243. Final Considerations
+238. Section Intro
+239. Section Roadmap
+240. Project Overview
+241. How to Plan a Web Project
+242. Using the Geolocation API
+243. Displaying a Map Using Leaflet Library
+244. Displaying a Map Marker
+245. Rendering Workout Input Form
+246. Project Architecture
+247. Refactoring for Project Architecture
+248. Managing Workout Data: Creating Classes
+249. Creating a New Workout
+250. Rendering Workouts
+251. Move to Marker On Click
+252. Working with localStorage
+253. Final Considerations
 
 
 Section 16: Asynchronous Javascript: Promises, Async/Await, and AJAX
