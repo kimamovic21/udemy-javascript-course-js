@@ -373,19 +373,19 @@ Section 18: Forkify App: Building a Modern Application
 
 
 Section 19: Setting Up Git and Deployment
-311. Section Intro
-312. Section Roadmap
-313. Simple Deployment With Netlify
-314. Setting Up Git and GitHub
-315. Git Fundamentals
-316. Pushing to Github 
-317. Setting Up Continuous Integration With Netlify
+321. Section Intro
+322. Section Roadmap
+323. Simple Deployment With Netlify
+324. Setting Up Git and GitHub
+325. Git Fundamentals
+326. Pushing to Github 
+327. Setting Up Continuous Integration With Netlify
 
 
 Section 20: The End !
-318. Where to Go from Here
-319. My Other Courses + Updates
+328. Where to Go from Here
+329. My Other Courses + Updates
 
 
 Section 21: [LEGACY] Access the Old Course
-320. Access the Old Course
+330. Access the Old Course
